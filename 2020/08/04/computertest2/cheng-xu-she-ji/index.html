@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="404, Taylor">
+    <meta name="keywords" content="计算机二级公共基础-程序设计, Taylor">
     <meta name="description" content="何も捨弃てることができない人には、何もかえことができない。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>404 | Taylor</title>
+    <title>计算机二级公共基础-程序设计 | Taylor</title>
     <link rel="icon" type="image/png" href="/wearecio.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/wearecio.github.io/libs/awesome/css/all.css">
@@ -284,23 +284,29 @@
 
 </header>
 
-    <style type="text/css">
-    /* don't remove. */
-    .about-cover {
-        height: 90.2vh;
-    }
-</style>
-<div class="bg-cover pd-header about-cover">
-    <div class="container">
+    
+<script src="/wearecio.github.io/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/wearecio.github.io/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/wearecio.github.io/medias/featureimages/6.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+            <div class="col s12 m12 l12">
                 <div class="brand">
-                    <div class="title center-align">
-                        404
-                    </div>
-                    <div class="description center-align">
-                        Oops～，我崩溃了！找不到你想要的页面 :(
-                    </div>
+                    <h1 class="description center-align post-title">计算机二级公共基础-程序设计</h1>
                 </div>
             </div>
         </div>
@@ -308,11 +314,373 @@
 </div>
 
 
-    <script>
-        // 每天切换 banner 图.  Switch banner image every day.
-        var bannerUrl = "/wearecio.github.io/medias/banner/" + new Date().getDay() + '.jpg';
-        $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/wearecio.github.io/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
+                                <span class="chip bg-color">程序设计</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/wearecio.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7/" class="post-category">
+                                计算机二级
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2020-08-04
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2020-08-06
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    762
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/wearecio.github.io/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="程序设计基础"><a href="#程序设计基础" class="headerlink" title="程序设计基础"></a>程序设计基础</h1><h2 id="程序设计方法与风格"><a href="#程序设计方法与风格" class="headerlink" title="程序设计方法与风格"></a>程序设计方法与风格</h2><ol>
+<li><p>形成良好的程序设计风格需注意：<br>①源程序文档化；<br>②数据说明的方法；<br>③语句的结构；<br>④输入和输出。<br>⑤模块设计要保证低耦合、高内聚。<br>(内聚：每个模块尽可能独立完成自己的功能，不依赖于模块外部的代码。<br>耦合：模块与模块之间接口的复杂程度，模块之间联系越复杂耦合度越高，牵一发<strong>而动全身。)</strong></p>
+<p><strong>清晰第一，效率第二。</strong></p>
+</li>
+</ol>
+<h2 id="结构化程序设计"><a href="#结构化程序设计" class="headerlink" title="结构化程序设计"></a>结构化程序设计</h2><ol>
+<li><p>结构化程序设计方法的四条原则：<br>①自顶向下；<br>②逐步求精；<br>③模块化；<br>④限制使用goto语句。</p>
+</li>
+<li><p>两类循环语句：先判断后执行的循环体称为<strong>当型循环</strong>结构；先执行循环体后判断的称为<strong>直到型循环</strong>结构。</p>
+</li>
+<li><p>结构化程序的基本结构：<strong>顺序结构、选择结构（分支结构）、重复结构（循环结构）</strong></p>
+</li>
+</ol>
+<h2 id="面向对象的程序设计"><a href="#面向对象的程序设计" class="headerlink" title="面向对象的程序设计"></a>面向对象的程序设计</h2><ol>
+<li>面向对象的程序设计以对象为核心，强调对象的<strong>抽象性</strong>，<strong>封装性</strong>，<strong>继承性</strong>、<strong>多态性</strong>、（依赖性）。</li>
+<li>对象的基本特点：<br>（1）标识惟一性；<br>（2）分类性；<br>（3）多态性；<br>（4）封装性；<br>（5）模块独立性好。</li>
+<li><strong>属性</strong>：即对象所包含的信息，它在设计对象时确定，一般只能通过执行对象的操作来改变。<strong>类</strong>：<strong>是具有相似属性与操作的一组对象</strong>。类是关于对象性质的描述。类是对象的抽象，对象是其对应类的一个实例。</li>
+<li><strong>消息</strong>：是一个实例与另一个实例之间传递的信息。<strong>对象间的通信靠消息传递</strong>。它请求对象执行某一处理或回答某一要求的信息，它统一了数据流和控制流。消息的<strong>组成</strong>包括：<br>（1）接收消息的对象的名称；<br>（2）消息标识符，也称消息名；<br>（3）零个或多个参数。</li>
+<li><strong>多态性</strong>：是指同样的消息被不同的对象接受时可导致完全不同的行动的现象。</li>
+<li>在<strong>软件设计</strong>过程中，必须遵循软件工程的基本原则：这些原则包括<strong>抽象</strong>、<strong>信息隐蔽</strong>、<strong>模块化</strong>、<strong>局部化</strong>、<strong>确定性</strong>、<strong>一致性</strong>、<strong>完备性</strong>和<strong>可靠性</strong>。</li>
+<li><strong>面向对象</strong>的设计方法与传统的的面向过程的方法有本质不同，它的<strong>基本原理是，使用现实世界的概念抽象地思考问题从而自然地解决问题。</strong>它强调模拟现实世界中的概念而不强调算法，它鼓励开发者在软件开发的绝大部分中都用应用领域的概念去思考。</li>
+<li>字符常量是单引号括起来的一个字符，例如’a’，也可以通过转义序列表示方法表示一些不可显示字符或无法通过键盘输入的字符，例如’\n’的含义是换行。</li>
+</ol>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/wearecio.github.io/about" rel="external nofollow noreferrer">方南</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://wearecio.github.io/wearecio.github.io/2020/08/04/computertest2/cheng-xu-she-ji/">https://wearecio.github.io/wearecio.github.io/2020/08/04/computertest2/cheng-xu-she-ji/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="/wearecio.github.io/about" target="_blank">方南</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
     </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/wearecio.github.io/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
+                                    <span class="chip bg-color">程序设计</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/wearecio.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/wearecio.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/wearecio.github.io/2020/08/04/computertest2/shu-ju-jie-gou-yu-suan-fa/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/wearecio.github.io/medias/featureimages/18.jpg" class="responsive-img" alt="计算机二级公共基础-数据结构与算法">
+                        
+                        <span class="card-title">计算机二级公共基础-数据结构与算法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            本片文章主要内容为计算机二级数据结构与算法部分的考点知识
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-04
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/wearecio.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7/" class="post-category">
+                                    计算机二级
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/wearecio.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">数据结构与算法</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/wearecio.github.io/2019/11/09/wearecio/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/wearecio.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="计算机实用网站">
+                        
+                        <span class="card-title">计算机实用网站</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            这是我这些年收集的一些实用的关于计算机学习的网站。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/wearecio.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%9E%E7%94%A8%E7%BD%91%E7%AB%99/" class="post-category">
+                                    计算机实用网站
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/wearecio.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%9E%E7%94%A8%E7%BD%91%E7%AB%99/">
+                        <span class="chip bg-color">计算机实用网站</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + 'From: Taylor<br />'
+            + 'Author: Taylor<br />'
+            + 'Link: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/wearecio.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/wearecio.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/wearecio.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/wearecio.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+    
+
+</main>
+
 
 
 
