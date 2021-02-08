@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="chapter3 列表简介, Taylor">
+    <meta name="keywords" content="python基础教程：, Taylor">
     <meta name="description" content="何も捨弃てることができない人には、何もかえことができない。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>chapter3 列表简介 | Taylor</title>
+    <title>python基础教程： | Taylor</title>
     <link rel="icon" type="image/png" href="/wearecio.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/wearecio.github.io/libs/awesome/css/all.css">
@@ -301,12 +301,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/wearecio.github.io/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/wearecio.github.io/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">chapter3 列表简介</h1>
+                    <h1 class="description center-align post-title">python基础教程：</h1>
                 </div>
             </div>
         </div>
@@ -353,21 +353,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-02-07
+                    2021-01-08
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-02-07
+                    2021-01-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    834
+                    26
                 </div>
                 
 
@@ -387,143 +387,10 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="3-1-列表是什么"><a href="#3-1-列表是什么" class="headerlink" title="3.1 列表是什么"></a>3.1 列表是什么</h2><p>在Python中，用方括号（[]）来表示列表，并用逗号来分隔其中的元素。<br>bicycles.py</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bicycles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'trek'</span>, <span class="token string">'cannondale'</span>, <span class="token string">'redline'</span>, <span class="token string">'specialized'</span><span class="token punctuation">]</span>
-print<span class="token punctuation">(</span>bicycles<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="3-1-1-访问列表元素"><a href="#3-1-1-访问列表元素" class="headerlink" title="3.1.1 访问列表元素"></a>3.1.1 访问列表元素</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bicycles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'trek'</span>, <span class="token string">'cannondale'</span>, <span class="token string">'redline'</span>, <span class="token string">'specialized'</span><span class="token punctuation">]</span>
-print<span class="token punctuation">(</span>bicycles<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 输出第一个元素</span>
-print<span class="token punctuation">(</span>bicycles<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>.title<span class="token punctuation">(</span><span class="token punctuation">))</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-1-2-索引从0-而不是1-开始"><a href="#3-1-2-索引从0-而不是1-开始" class="headerlink" title="3.1.2 索引从0 而不是1 开始"></a>3.1.2 索引从0 而不是1 开始</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">print<span class="token punctuation">(</span>bicycles<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 输出第2个元素</span>
-print<span class="token punctuation">(</span>bicycles<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 输出第4个元素</span>
-print<span class="token punctuation">(</span>bicycles<span class="token punctuation">[</span>-1<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 输出最后一个元素</span>
-print<span class="token punctuation">(</span>bicycles<span class="token punctuation">[</span>-2<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 输出倒数第2个元素</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-1-3-使用列表中的各个值"><a href="#3-1-3-使用列表中的各个值" class="headerlink" title="3.1.3 使用列表中的各个值"></a>3.1.3 使用列表中的各个值</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bicycles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'trek'</span>, <span class="token string">'cannondale'</span>, <span class="token string">'redline'</span>, <span class="token string">'specialized'</span><span class="token punctuation">]</span>
-message <span class="token operator">=</span> <span class="token string">"My first bicycle was a "</span> + bicycles<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">"."</span>
-print<span class="token punctuation">(</span>message<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="3-2-修改、添加和删除元素"><a href="#3-2-修改、添加和删除元素" class="headerlink" title="3.2 修改、添加和删除元素"></a>3.2 修改、添加和删除元素</h2><h3 id="3-2-1-修改列表元素"><a href="#3-2-1-修改列表元素" class="headerlink" title="3.2.1 修改列表元素"></a>3.2.1 修改列表元素</h3><p>motorcycles.py</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">motorcycles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'honda'</span>, <span class="token string">'yamaha'</span>, <span class="token string">'suzuki'</span><span class="token punctuation">]</span>
-print<span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
-
-<span class="token comment"># 修改第一个元素</span>
-motorcycles<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'ducati'</span>
-print<span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-2-2-在列表中添加元素"><a href="#3-2-2-在列表中添加元素" class="headerlink" title="3.2.2 在列表中添加元素"></a>3.2.2 在列表中添加元素</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 在列表中添加元素</span>
-motorcycles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'honda'</span>, <span class="token string">'yamaha'</span>, <span class="token string">'suzuki'</span><span class="token punctuation">]</span>
-print<span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
-
-<span class="token comment"># 使用方法 append() 将元素 ‘ducati’ 添加到列表末尾</span>
-motorcycles.append<span class="token punctuation">(</span><span class="token string">'ducati'</span><span class="token punctuation">)</span>
-print<span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
-
-<span class="token comment"># 创建一个空列表然后添加元素</span>
-motorcycles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-print<span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
-motorcycles.append<span class="token punctuation">(</span><span class="token string">'honda'</span><span class="token punctuation">)</span>
-motorcycles.append<span class="token punctuation">(</span><span class="token string">'yamaha'</span><span class="token punctuation">)</span>
-motorcycles.append<span class="token punctuation">(</span><span class="token string">'suzuki'</span><span class="token punctuation">)</span>
-print<span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
-
-<span class="token comment"># 在列表中插入元素</span>
-motorcycles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'honda'</span>, <span class="token string">'yamaha'</span>, <span class="token string">'suzuki'</span><span class="token punctuation">]</span>
-motorcycles.insert<span class="token punctuation">(</span><span class="token number">0</span>, <span class="token string">'ducati'</span><span class="token punctuation">)</span> <span class="token comment"># 在列表开头插入,第一个参数为列表索引</span>
-print<span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-2-3-从列表中删除元素"><a href="#3-2-3-从列表中删除元素" class="headerlink" title="3.2.3 从列表中删除元素"></a>3.2.3 从列表中删除元素</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 使用del语句删除元素</span>
-motorcycles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'honda'</span>, <span class="token string">'yamaha'</span>, <span class="token string">'suzuki'</span><span class="token punctuation">]</span>
-print<span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
-<span class="token comment"># 删除第一个元素</span>
-del motorcycles<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-print<span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
-
-motorcycles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'honda'</span>, <span class="token string">'yamaha'</span>, <span class="token string">'suzuki'</span><span class="token punctuation">]</span>
-print<span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
-<span class="token comment"># 删除第2个元素</span>
-del motorcycles<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-print<span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
-
-<span class="token comment"># 使用方法 pop() 删除元素</span>
-motorcycles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'honda'</span>, <span class="token string">'yamaha'</span>, <span class="token string">'suzuki'</span><span class="token punctuation">]</span>
-print<span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
-popped_motorcycle <span class="token operator">=</span> motorcycles.pop<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 存储删除的元素</span>
-print<span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
-print<span class="token punctuation">(</span>popped_motorcycle<span class="token punctuation">)</span> <span class="token comment"># pop() 方法删除最后一个元素</span>
-
-
-motorcycles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'honda'</span>, <span class="token string">'yamaha'</span>, <span class="token string">'suzuki'</span><span class="token punctuation">]</span>
-last_owned <span class="token operator">=</span> motorcycles.pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
-print<span class="token punctuation">(</span><span class="token string">"The last motorcycle I owned was a "</span> + last_owned.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">"."</span><span class="token punctuation">)</span>
-
-<span class="token comment"># 弹出元素中任何位置处的元素</span>
-motorcycles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'honda'</span>, <span class="token string">'yamaha'</span>, <span class="token string">'suzuki'</span><span class="token punctuation">]</span>
-
-first_owned <span class="token operator">=</span> motorcycles.pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
-print<span class="token punctuation">(</span><span class="token string">"The first motorcycle I owned was a "</span> + first_owned.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">"."</span><span class="token punctuation">)</span>
-
-<span class="token comment"># 根据值测试元素</span>
-<span class="token comment"># 有时不知道要从列表中删除的值所处的位置，但是只要知道要删除元素的值，可以使用方法 remove()</span>
-motorcycles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'honda'</span>, <span class="token string">'yamaha'</span>, <span class="token string">'suzuki'</span>, <span class="token string">'ducati'</span><span class="token punctuation">]</span>
-print<span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
-motorcycles.remove<span class="token punctuation">(</span><span class="token string">'ducati'</span><span class="token punctuation">)</span>
-print<span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
-
-<span class="token comment"># 使用 remove() 删除时，可以接着使用它的值</span>
-motorcycles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'honda'</span>, <span class="token string">'yamaha'</span>, <span class="token string">'suzuki'</span>, <span class="token string">'ducati'</span><span class="token punctuation">]</span>
-print<span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
-
-too_expensive <span class="token operator">=</span> <span class="token string">'ducati'</span>
-motorcycles.remove<span class="token punctuation">(</span>too_expensive<span class="token punctuation">)</span>
-print<span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
-print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>A "</span> + too_expensive.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">" is too expensive for me."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="3-3-组织列表"><a href="#3-3-组织列表" class="headerlink" title="3.3 组织列表"></a>3.3 组织列表</h2><h3 id="3-3-1-使用方法sort-对列表进行永久性排序"><a href="#3-3-1-使用方法sort-对列表进行永久性排序" class="headerlink" title="3.3.1 使用方法sort()对列表进行永久性排序"></a>3.3.1 使用方法sort()对列表进行永久性排序</h3><p>cars.py</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cars <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'bmw'</span>, <span class="token string">'audi'</span>, <span class="token string">'toyota'</span>, <span class="token string">'subaru'</span><span class="token punctuation">]</span>
-print<span class="token punctuation">(</span>cars<span class="token punctuation">)</span>
-cars.sort<span class="token punctuation">(</span><span class="token punctuation">)</span>
-print<span class="token punctuation">(</span>cars<span class="token punctuation">)</span>
-
-<span class="token comment"># 使用方法 sort() 对列表进行永久倒序（元素倒序）排序</span>
-cars <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'bmw'</span>, <span class="token string">'audi'</span>, <span class="token string">'toyota'</span>, <span class="token string">'subaru'</span><span class="token punctuation">]</span>
-cars.sort<span class="token punctuation">(</span>reverse<span class="token operator">=</span>True<span class="token punctuation">)</span>
-print<span class="token punctuation">(</span>cars<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-3-2-使用函数sorted-对列表进行临时排序"><a href="#3-3-2-使用函数sorted-对列表进行临时排序" class="headerlink" title="3.3.2 使用函数sorted()对列表进行临时排序"></a>3.3.2 使用函数sorted()对列表进行临时排序</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cars <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'bmw'</span>, <span class="token string">'audi'</span>, <span class="token string">'toyota'</span>, <span class="token string">'subaru'</span><span class="token punctuation">]</span>
-print<span class="token punctuation">(</span><span class="token string">"Here is the orginal list:"</span><span class="token punctuation">)</span>
-print<span class="token punctuation">(</span>cars<span class="token punctuation">)</span>
-
-print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>Here is the sorted list:"</span><span class="token punctuation">)</span>
-print<span class="token punctuation">(</span>sorted<span class="token punctuation">(</span>cars<span class="token punctuation">))</span>
-
-print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>Here is the original list again:"</span><span class="token punctuation">)</span>
-print<span class="token punctuation">(</span>cars<span class="token punctuation">)</span>
-
-<span class="token comment"># 使用方法 sorted() 对列表进行临时倒序排序</span>
-cars <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'bmw'</span>, <span class="token string">'audi'</span>, <span class="token string">'toyota'</span>, <span class="token string">'subaru'</span><span class="token punctuation">]</span>
-print<span class="token punctuation">(</span><span class="token string">"Here is the orginal list:"</span><span class="token punctuation">)</span>
-print<span class="token punctuation">(</span>cars<span class="token punctuation">)</span>
-
-print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>Here is the sorted list:"</span><span class="token punctuation">)</span>
-print<span class="token punctuation">(</span>sorted<span class="token punctuation">(</span>cars<span class="token punctuation">))</span>
-
-print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>Here is the original list again:"</span><span class="token punctuation">)</span>
-print<span class="token punctuation">(</span>cars<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-3-3-倒着打印列表"><a href="#3-3-3-倒着打印列表" class="headerlink" title="3.3.3 倒着打印列表"></a>3.3.3 倒着打印列表</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cars <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'bmw'</span>, <span class="token string">'audi'</span>, <span class="token string">'toyota'</span>, <span class="token string">'subaru'</span><span class="token punctuation">]</span>
-print<span class="token punctuation">(</span>cars<span class="token punctuation">)</span>
-
-cars.reverse<span class="token punctuation">(</span><span class="token punctuation">)</span>
-print<span class="token punctuation">(</span>cars<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-3-4-确定列表的长度"><a href="#3-3-4-确定列表的长度" class="headerlink" title="3.3.4 确定列表的长度"></a>3.3.4 确定列表的长度</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cars <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'bmw'</span>, <span class="token string">'audi'</span>, <span class="token string">'toyota'</span>, <span class="token string">'subaru'</span><span class="token punctuation">]</span>
-print<span class="token punctuation">(</span>len<span class="token punctuation">(</span>cars<span class="token punctuation">))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="3-4-使用列表时避免索引错误"><a href="#3-4-使用列表时避免索引错误" class="headerlink" title="3.4 使用列表时避免索引错误"></a>3.4 使用列表时避免索引错误</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 使用列表时避免索引错误</span>
-motorcycles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'honda'</span>, <span class="token string">'yamaha'</span>, <span class="token string">'suzuki'</span><span class="token punctuation">]</span>
-<span class="token comment"># 这将导致索引错误</span>
-<span class="token comment"># print(motorcycles[3])</span>
-
-<span class="token comment"># 索引 -1 总是返回最后一个列表元素</span>
-motorcycles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'honda'</span>, <span class="token string">'yamaha'</span>, <span class="token string">'suzuki'</span><span class="token punctuation">]</span>
-print<span class="token punctuation">(</span>motorcycles<span class="token punctuation">[</span>-1<span class="token punctuation">]</span><span class="token punctuation">)</span>
-
-<span class="token comment"># 设置列表为空</span>
-motorcycles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token comment"># 当列表为空时，这种访问最后一个元素的方式会出错</span>
-<span class="token comment"># print(motorcycles[-1])</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h2 id="编程工具"><a href="#编程工具" class="headerlink" title="编程工具"></a>编程工具</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">- <span class="token punctuation">[</span>python官方<span class="token punctuation">]</span><span class="token punctuation">(</span>https://www.python.org/downloads/<span class="token punctuation">)</span>
+- <span class="token punctuation">[</span>pycharm 社区版<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+- <span class="token punctuation">[</span>anaconda<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -549,7 +416,7 @@ motorcycles <span class="token operator">=</span> <span class="token punctuation
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://wearecio.github.io/wearecio.github.io/2021/02/07/programminglanguage/python/chapter3-lie-biao-jian-jie/">https://wearecio.github.io/wearecio.github.io/2021/02/07/programminglanguage/python/chapter3-lie-biao-jian-jie/</a>
+                    <a href="https://wearecio.github.io/wearecio.github.io/2021/01/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter7-yong-hu-shu-ru-he-while-xun-huan/">https://wearecio.github.io/wearecio.github.io/2021/01/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter7-yong-hu-shu-ru-he-while-xun-huan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -632,30 +499,29 @@ motorcycles <span class="token operator">=</span> <span class="token punctuation
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/wearecio.github.io/2021/02/07/programminglanguage/python/chapter3-lie-biao-jian-jie/">
+                <a href="/wearecio.github.io/2021/01/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter11-ce-shi-dai-ma/">
                     <div class="card-image">
                         
                         
-                        <img src="/wearecio.github.io/medias/featureimages/10.jpg" class="responsive-img" alt="chapter3 列表简介">
+                        <img src="/wearecio.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="python基础教程：">
                         
-                        <span class="card-title">chapter3 列表简介</span>
+                        <span class="card-title">python基础教程：</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在本章和下一章中，你将学习列表是什么以及如何使用列表元素。列表让你能够在一个地方存储成组的信息，其中可以只包含几个元素，也可以包含数百万个元素。列表是新手可直接使用的最Python功能之一，它融合了众多重要的编程概念。
+                            
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-07
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-08
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -668,7 +534,6 @@ motorcycles <span class="token operator">=</span> <span class="token punctuation
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -687,24 +552,24 @@ motorcycles <span class="token operator">=</span> <span class="token punctuation
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/wearecio.github.io/2021/02/07/programminglanguage/python/chapter4-cao-zuo-lie-biao/">
+                <a href="/wearecio.github.io/2021/01/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter8-han-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/wearecio.github.io/medias/featureimages/23.jpg" class="responsive-img" alt="chapter4 操作列表">
+                        <img src="/wearecio.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="python基础教程：">
                         
-                        <span class="card-title">chapter4 操作列表</span>
+                        <span class="card-title">python基础教程：</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在第3章，你学习了如何创建简单的列表，还学习了如何操作列表元素。在本章中，你将学习如何遍历整个列表，这只需要几行代码，无论列表有多长。循环让你能够对列表的每个元素都采取一个或一系列相同的措施，从而高效地处理任何长度的列表，包括包含数千乃至数百万个元素的列表。
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-08
                             </span>
                         <span class="publish-author">
                             
@@ -868,7 +733,7 @@ motorcycles <span class="token operator">=</span> <span class="token punctuation
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13.8k</span>&nbsp;字
+                class="white-color">14.6k</span>&nbsp;字
             
             
             

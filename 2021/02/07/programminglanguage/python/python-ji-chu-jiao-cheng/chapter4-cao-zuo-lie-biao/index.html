@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python基础教程：, Taylor">
+    <meta name="keywords" content="chapter4 操作列表, Taylor">
     <meta name="description" content="何も捨弃てることができない人には、何もかえことができない。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>python基础教程： | Taylor</title>
+    <title>chapter4 操作列表 | Taylor</title>
     <link rel="icon" type="image/png" href="/wearecio.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/wearecio.github.io/libs/awesome/css/all.css">
@@ -301,12 +301,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/wearecio.github.io/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/wearecio.github.io/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python基础教程：</h1>
+                    <h1 class="description center-align post-title">chapter4 操作列表</h1>
                 </div>
             </div>
         </div>
@@ -353,21 +353,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-01-08
+                    2021-02-07
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-01-09
+                    2021-02-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    26
+                    840
                 </div>
                 
 
@@ -387,10 +387,125 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="编程工具"><a href="#编程工具" class="headerlink" title="编程工具"></a>编程工具</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">- <span class="token punctuation">[</span>python官方<span class="token punctuation">]</span><span class="token punctuation">(</span>https://www.python.org/downloads/<span class="token punctuation">)</span>
-- <span class="token punctuation">[</span>pycharm 社区版<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-- <span class="token punctuation">[</span>anaconda<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h2 id="4-1-遍历整个列表"><a href="#4-1-遍历整个列表" class="headerlink" title="4.1 遍历整个列表"></a>4.1 遍历整个列表</h2><p>magicians.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">magicians <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'alice'</span>, <span class="token string">'david'</span>, <span class="token string">'carolina'</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">magician</span> <span class="token keyword">in</span> magicians:
+    print<span class="token punctuation">(</span>magician<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-1-2-在for-循环中执行更多的操作"><a href="#4-1-2-在for-循环中执行更多的操作" class="headerlink" title="4.1.2 在for 循环中执行更多的操作"></a>4.1.2 在for 循环中执行更多的操作</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">magicians <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'alice'</span>, <span class="token string">'david'</span>, <span class="token string">'carolina'</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">magician</span> <span class="token keyword">in</span> magicians:
+    print<span class="token punctuation">(</span>magician.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">", that was a great trick!"</span><span class="token punctuation">)</span>
+
+
+magicians <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'alice'</span>, <span class="token string">'david'</span>, <span class="token string">'carolina'</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">magician</span> <span class="token keyword">in</span> magicians:
+    print<span class="token punctuation">(</span>magician.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">", that was a great trick!"</span><span class="token punctuation">)</span>
+    print<span class="token punctuation">(</span><span class="token string">"I can't wait to see your next trick, "</span> + magician.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">'.<span class="token entity" title="\n">\n</span>'</span> <span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-1-3-在for-循环结束后执行一些操作"><a href="#4-1-3-在for-循环结束后执行一些操作" class="headerlink" title="4.1.3 在for 循环结束后执行一些操作"></a>4.1.3 在for 循环结束后执行一些操作</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">magicians <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'alice'</span>, <span class="token string">'david'</span>, <span class="token string">'carolina'</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">magician</span> <span class="token keyword">in</span> magicians:
+    print<span class="token punctuation">(</span>magician.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">", that was a great trick!"</span><span class="token punctuation">)</span>
+    print<span class="token punctuation">(</span><span class="token string">"I can't wait to see your next trick, "</span> + magician.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">'.<span class="token entity" title="\n">\n</span>'</span><span class="token punctuation">)</span>
+
+print<span class="token punctuation">(</span><span class="token string">"Thank you,everyone. That was a great magic show!"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-2-避免缩进错误"><a href="#4-2-避免缩进错误" class="headerlink" title="4.2 避免缩进错误"></a>4.2 避免缩进错误</h2><h3 id="4-2-1-忘记缩进"><a href="#4-2-1-忘记缩进" class="headerlink" title="4.2.1 忘记缩进"></a>4.2.1 忘记缩进</h3><p>magicians.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">magicians <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'alice'</span>, <span class="token string">'david'</span>, <span class="token string">'carolina'</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">magician</span> <span class="token keyword">in</span> magicians:
+print<span class="token punctuation">(</span>magician<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-2-2-忘记缩进额外的代码行"><a href="#4-2-2-忘记缩进额外的代码行" class="headerlink" title="4.2.2 忘记缩进额外的代码行"></a>4.2.2 忘记缩进额外的代码行</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">magicians <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'alice'</span>, <span class="token string">'david'</span>, <span class="token string">'carolina'</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">magician</span> <span class="token keyword">in</span> magicians:
+    print<span class="token punctuation">(</span>magician.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">", that was a great trick!"</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span><span class="token string">"I can't wait to see your next trick, "</span> + magician.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">'.<span class="token entity" title="\n">\n</span>'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="4-2-3-不必要的缩进"><a href="#4-2-3-不必要的缩进" class="headerlink" title="4.2.3 不必要的缩进"></a>4.2.3 不必要的缩进</h3><p>hello_world.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">message <span class="token operator">=</span> <span class="token string">"Hello Python world!"</span>
+    print<span class="token punctuation">(</span>message<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="4-2-4-循环后不必要的缩进"><a href="#4-2-4-循环后不必要的缩进" class="headerlink" title="4.2.4 循环后不必要的缩进"></a>4.2.4 循环后不必要的缩进</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">magicians <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'alice'</span>, <span class="token string">'david'</span>, <span class="token string">'carolina'</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">magician</span> <span class="token keyword">in</span> magicians:
+    print<span class="token punctuation">(</span>magician.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">", that was a great trick!"</span><span class="token punctuation">)</span>
+    print<span class="token punctuation">(</span><span class="token string">"I can't wait to see your next trick, "</span> + magician.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">'.<span class="token entity" title="\n">\n</span>'</span><span class="token punctuation">)</span>
+    
+    print<span class="token punctuation">(</span><span class="token string">"Thank you everyone, that was a great magic show!"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-2-5-遗漏了冒号"><a href="#4-2-5-遗漏了冒号" class="headerlink" title="4.2.5 遗漏了冒号"></a>4.2.5 遗漏了冒号</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">magicians <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'alice'</span>, <span class="token string">'david'</span>, <span class="token string">'carolina'</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">magician</span> <span class="token keyword">in</span> magicians
+    print<span class="token punctuation">(</span>magician<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-3-创建数值列表"><a href="#4-3-创建数值列表" class="headerlink" title="4.3 创建数值列表"></a>4.3 创建数值列表</h2><h3 id="4-3-1-使用函数range"><a href="#4-3-1-使用函数range" class="headerlink" title="4.3.1 使用函数range()"></a>4.3.1 使用函数range()</h3><p>numbers.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">value</span> <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span>, <span class="token number">5</span><span class="token punctuation">)</span>:
+    print<span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> <span class="token for-or-select variable">value</span> <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span>, <span class="token number">6</span><span class="token punctuation">)</span>:
+    print<span class="token punctuation">(</span>value<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-3-2-使用range-创建数字列表"><a href="#4-3-2-使用range-创建数字列表" class="headerlink" title="4.3.2 使用range()创建数字列表"></a>4.3.2 使用range()创建数字列表</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">numbers <span class="token operator">=</span> list<span class="token punctuation">(</span>range<span class="token punctuation">(</span><span class="token number">1</span>, <span class="token number">6</span><span class="token punctuation">))</span>
+print<span class="token punctuation">(</span>numbers<span class="token punctuation">)</span>
+
+<span class="token comment"># 使用函数range()时，还可指定步长。例如，下面的代码打印1~10内的偶数</span>
+<span class="token comment"># even_numbers.py</span>
+even_numbers <span class="token operator">=</span> list<span class="token punctuation">(</span>range<span class="token punctuation">(</span><span class="token number">2</span>, <span class="token number">11</span>, <span class="token number">2</span><span class="token punctuation">))</span>
+print<span class="token punctuation">(</span>even_numbers<span class="token punctuation">)</span>
+
+<span class="token comment"># 将前10个整数的平方加入到一个列表中</span>
+<span class="token comment"># squares.py</span>
+squares <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">value</span> <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span>, <span class="token number">11</span><span class="token punctuation">)</span>:
+    square <span class="token operator">=</span> value ** <span class="token number">2</span>
+    squares.append<span class="token punctuation">(</span>square<span class="token punctuation">)</span>
+
+print<span class="token punctuation">(</span>squares<span class="token punctuation">)</span>
+
+
+squares <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">value</span> <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span>, <span class="token number">11</span><span class="token punctuation">)</span>:
+    squares.append<span class="token punctuation">(</span>value ** <span class="token number">2</span><span class="token punctuation">)</span>
+
+print<span class="token punctuation">(</span>squares<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-3-3-对数字列表执行简单的统计计算"><a href="#4-3-3-对数字列表执行简单的统计计算" class="headerlink" title="4.3.3 对数字列表执行简单的统计计算"></a>4.3.3 对数字列表执行简单的统计计算</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">digits <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span>, <span class="token number">2</span>, <span class="token number">3</span>, <span class="token number">4</span>, <span class="token number">5</span>, <span class="token number">6</span>, <span class="token number">7</span>, <span class="token number">8</span>, <span class="token number">9</span>, <span class="token number">0</span><span class="token punctuation">]</span>
+print<span class="token punctuation">(</span>min<span class="token punctuation">(</span>digits<span class="token punctuation">))</span>
+print<span class="token punctuation">(</span>max<span class="token punctuation">(</span>digits<span class="token punctuation">))</span>
+print<span class="token punctuation">(</span>sum<span class="token punctuation">(</span>digits<span class="token punctuation">))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-3-4-列表解析"><a href="#4-3-4-列表解析" class="headerlink" title="4.3.4 列表解析"></a>4.3.4 列表解析</h3><p>squares.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">squares <span class="token operator">=</span> <span class="token punctuation">[</span>value ** <span class="token number">2</span> <span class="token keyword">for</span> <span class="token for-or-select variable">value</span> <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span>, <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+print<span class="token punctuation">(</span>squares<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="4-4-使用列表的一部分"><a href="#4-4-使用列表的一部分" class="headerlink" title="4.4 使用列表的一部分"></a>4.4 使用列表的一部分</h2><h3 id="4-4-1-切片"><a href="#4-4-1-切片" class="headerlink" title="4.4.1 切片"></a>4.4.1 切片</h3><p>players.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">players <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'charles'</span>, <span class="token string">'martina'</span>, <span class="token string">'michael'</span>, <span class="token string">'florence'</span>, <span class="token string">'eli'</span><span class="token punctuation">]</span>
+print<span class="token punctuation">(</span>players<span class="token punctuation">[</span><span class="token number">0</span>:3<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 前三名成员</span>
+print<span class="token punctuation">(</span>players<span class="token punctuation">[</span><span class="token number">1</span>:4<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 提取列表的第2~4个元素</span>
+print<span class="token punctuation">(</span>players<span class="token punctuation">[</span>:4<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 如果你没有指定第一个索引，Python将自动从列表开头开始</span>
+print<span class="token punctuation">(</span>players<span class="token punctuation">[</span><span class="token number">2</span>:<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 提取从第3个元素到列表末尾的所有元素</span>
+print<span class="token punctuation">(</span>players<span class="token punctuation">[</span>-3:<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 输出名单上的最后三名队员</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-4-2-遍历切片"><a href="#4-4-2-遍历切片" class="headerlink" title="4.4.2 遍历切片"></a>4.4.2 遍历切片</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">print<span class="token punctuation">(</span><span class="token string">"Here are the first three players on my team:"</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">player</span> <span class="token keyword">in</span> players<span class="token punctuation">[</span>:3<span class="token punctuation">]</span>:
+    print<span class="token punctuation">(</span>player.title<span class="token punctuation">(</span><span class="token punctuation">))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>foods.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">my_foods <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'pizza'</span>, <span class="token string">'falafel'</span>, <span class="token string">'carrot cake'</span><span class="token punctuation">]</span>
+friend_foods <span class="token operator">=</span> my_foods<span class="token punctuation">[</span>:<span class="token punctuation">]</span>
+<span class="token comment"># friend_foods = my_foods 是错误的复制方法；friend_foods = my_foods 表示指向同一个列表</span>
+my_foods.append<span class="token punctuation">(</span><span class="token string">'cannoli'</span><span class="token punctuation">)</span>
+friend_foods.append<span class="token punctuation">(</span><span class="token string">'ice cream'</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span><span class="token string">"My favorite foods are:"</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>my_foods<span class="token punctuation">)</span>
+
+print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span> My friend's favorite foods are:"</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>friend_foods<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-5-元组"><a href="#4-5-元组" class="headerlink" title="4.5 元组"></a>4.5 元组</h2><p>元组看起来犹如列表，但使用圆括号而不是方括号来标识。定义元组后，就可以使用索引来访问其元素，就像访问列表元素一样。</p>
+<h3 id="4-5-1-定义元组"><a href="#4-5-1-定义元组" class="headerlink" title="4.5.1 定义元组"></a>4.5.1 定义元组</h3><p>dimensions.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dimensions <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">200</span>, <span class="token number">50</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>dimensions<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>dimensions<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>元素值无法被直接修改</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dimensions <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">200</span>, <span class="token number">50</span><span class="token punctuation">)</span>
+dimensions<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">250</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="4-5-2-遍历元组中的所有值"><a href="#4-5-2-遍历元组中的所有值" class="headerlink" title="4.5.2 遍历元组中的所有值"></a>4.5.2 遍历元组中的所有值</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dimensions <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">200</span>, <span class="token number">50</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">dimension</span> <span class="token keyword">in</span> dimensions:
+    print<span class="token punctuation">(</span>dimension<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-5-3-修改元组变量"><a href="#4-5-3-修改元组变量" class="headerlink" title="4.5.3 修改元组变量"></a>4.5.3 修改元组变量</h3><p>虽然不能修改元组的元素，但可以给存储元组的变量赋值。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dimensions <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">200</span>, <span class="token number">50</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span><span class="token string">"Original dimensions:"</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">dimension</span> <span class="token keyword">in</span> dimensions:
+    print<span class="token punctuation">(</span>dimension<span class="token punctuation">)</span>
+
+dimensions <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">400</span>, <span class="token number">100</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span><span class="token string">"Modified dimensions:"</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">dimension</span> <span class="token keyword">in</span> dimensions:
+    print<span class="token punctuation">(</span>dimension<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -416,7 +531,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://wearecio.github.io/wearecio.github.io/2021/01/08/programminglanguage/python/chapter7-yong-hu-shu-ru-he-while-xun-huan/">https://wearecio.github.io/wearecio.github.io/2021/01/08/programminglanguage/python/chapter7-yong-hu-shu-ru-he-while-xun-huan/</a>
+                    <a href="https://wearecio.github.io/wearecio.github.io/2021/02/07/programminglanguage/python/python-ji-chu-jiao-cheng/chapter4-cao-zuo-lie-biao/">https://wearecio.github.io/wearecio.github.io/2021/02/07/programminglanguage/python/python-ji-chu-jiao-cheng/chapter4-cao-zuo-lie-biao/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -503,24 +618,24 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/wearecio.github.io/2021/01/08/programminglanguage/python/chapter11-ce-shi-dai-ma/">
+                <a href="/wearecio.github.io/2021/02/07/programminglanguage/python/python-ji-chu-jiao-cheng/chapter3-lie-biao-jian-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/wearecio.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="python基础教程：">
+                        <img src="/wearecio.github.io/medias/featureimages/10.jpg" class="responsive-img" alt="chapter3 列表简介">
                         
-                        <span class="card-title">python基础教程：</span>
+                        <span class="card-title">chapter3 列表简介</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            在本章和下一章中，你将学习列表是什么以及如何使用列表元素。列表让你能够在一个地方存储成组的信息，其中可以只包含几个元素，也可以包含数百万个元素。列表是新手可直接使用的最Python功能之一，它融合了众多重要的编程概念。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-08
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-07
                         </span>
                         <span class="publish-author">
                             
@@ -552,24 +667,24 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/wearecio.github.io/2021/01/08/programminglanguage/python/chapter5-if-yu-ju/">
+                <a href="/wearecio.github.io/2021/02/06/programminglanguage/python/python-ji-chu-jiao-cheng/chapter2-bian-liang-he-jian-dan-shu-ju-lei-xing/">
                     <div class="card-image">
                         
                         
-                        <img src="/wearecio.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="python基础教程：">
+                        <img src="/wearecio.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="chapter2 变量和简单数据类型">
                         
-                        <span class="card-title">python基础教程：</span>
+                        <span class="card-title">chapter2 变量和简单数据类型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            在本章中，你将学习可在Python程序中使用的各种数据，还将学习如何将数据储到变量中，以及如何在程序中使用这些变量。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-06
                             </span>
                         <span class="publish-author">
                             
@@ -733,7 +848,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13.8k</span>&nbsp;字
+                class="white-color">14.6k</span>&nbsp;字
             
             
             
