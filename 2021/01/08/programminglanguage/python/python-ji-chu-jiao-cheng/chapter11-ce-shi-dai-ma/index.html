@@ -367,7 +367,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    0
+                    1.1k
                 </div>
                 
 
@@ -387,16 +387,170 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id=""><a href="#" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-3"><a href="#-3" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-4"><a href="#-4" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-5"><a href="#-5" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-6"><a href="#-6" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-7"><a href="#-7" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-8"><a href="#-8" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-9"><a href="#-9" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h2 id="11-1-测试函数"><a href="#11-1-测试函数" class="headerlink" title="11.1 测试函数"></a>11.1 测试函数</h2><p>name_function.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">def get_formatted_name<span class="token punctuation">(</span>first, last<span class="token punctuation">)</span>:
+<span class="token string">""</span><span class="token string">"Generate a neatly formatted full name."</span><span class="token string">""</span>
+full_name <span class="token operator">=</span> first + <span class="token string">' '</span> + last
+<span class="token builtin class-name">return</span> full_name.title<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>names.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">from name_function <span class="token function">import</span> get_formatted_name
+
+print<span class="token punctuation">(</span><span class="token string">"Enter 'q' at any time to quit."</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> True:
+    first <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>Please give me a first name: "</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> first <span class="token operator">==</span> <span class="token string">'q'</span><span class="token builtin class-name">:</span>
+        <span class="token builtin class-name">break</span>
+    last <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"Please give me a last name: "</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> last <span class="token operator">==</span> <span class="token string">'q'</span><span class="token builtin class-name">:</span>
+        <span class="token builtin class-name">break</span>
+
+    formatted_name <span class="token operator">=</span> get_formatted_name<span class="token punctuation">(</span>first, last<span class="token punctuation">)</span>
+    print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\t">\t</span>Neatly formatted name: "</span> + formatted_name + <span class="token string">'.'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="11-1-1-单元测试和测试用例"><a href="#11-1-1-单元测试和测试用例" class="headerlink" title="11.1.1 单元测试和测试用例"></a>11.1.1 单元测试和测试用例</h3><pre class="line-numbers language-none"><code class="language-none">  Python标准库中的模块unittest提供了代码测试工具。单元测试用于核实函数的某个方面没
+有问题；测试用例是一组单元测试，这些单元测试一起核实函数在各种情形下的行为都符合要求。
+良好的测试用例考虑到了函数可能收到的各种输入，包含针对所有这些情形的测试。全覆盖式测
+试用例包含一整套单元测试，涵盖了各种可能的函数使用方式。对于大型项目，要实现全覆盖可
+能很难。通常，最初只要针对代码的重要行为编写测试即可，等项目被广泛使用时再考虑全覆盖。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="11-1-2-可通过的测试"><a href="#11-1-2-可通过的测试" class="headerlink" title="11.1.2 可通过的测试"></a>11.1.2 可通过的测试</h3><p>test_name_ function.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">import</span> unittest
+from name_functionThree <span class="token function">import</span> get_formatted_name
+
+class NamesTestCase<span class="token punctuation">(</span>unittest.TestCase<span class="token punctuation">)</span>:
+    <span class="token string">""</span><span class="token string">"测试name_function.py"</span><span class="token string">""</span>
+    def test_first_last_name<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"能够正确地处理像Janis Joplin这样的姓名吗？"</span><span class="token string">""</span>
+        formatted_name <span class="token operator">=</span> get_formatted_name<span class="token punctuation">(</span><span class="token string">'janis'</span>, <span class="token string">'joplin'</span><span class="token punctuation">)</span>
+        self.assertEqual<span class="token punctuation">(</span>formatted_name, <span class="token string">'Janis Joplin'</span><span class="token punctuation">)</span>
+
+unittest.main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="11-1-3-不能通过的测试"><a href="#11-1-3-不能通过的测试" class="headerlink" title="11.1.3 不能通过的测试"></a>11.1.3 不能通过的测试</h3><p>name_ function.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">def get_formatted_name<span class="token punctuation">(</span>first, middle, last<span class="token punctuation">)</span>:
+    <span class="token string">""</span><span class="token string">"生成整洁的姓名"</span><span class="token string">""</span>
+    full_name <span class="token operator">=</span> first + <span class="token string">' '</span> + middle + <span class="token string">' '</span> + last
+    <span class="token builtin class-name">return</span> full_name.title<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="11-1-4-测试未通过时怎么办"><a href="#11-1-4-测试未通过时怎么办" class="headerlink" title="11.1.4 测试未通过时怎么办"></a>11.1.4 测试未通过时怎么办</h3><p>name_ function.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">def get_formatted_name<span class="token punctuation">(</span>first, last, <span class="token assign-left variable">middle</span><span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span><span class="token string">"生成整洁的姓名"</span><span class="token string">""</span>
+    <span class="token keyword">if</span> middle:
+        full_name <span class="token operator">=</span> first + <span class="token string">' '</span> + middle + <span class="token string">' '</span> + last
+    else:
+        full_name <span class="token operator">=</span> first + <span class="token string">' '</span> + last
+    <span class="token builtin class-name">return</span> full_name.title<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="11-1-5-添加新测试"><a href="#11-1-5-添加新测试" class="headerlink" title="11.1.5 添加新测试"></a>11.1.5 添加新测试</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">import</span> unittest
+from name_functionThree <span class="token function">import</span> get_formatted_name
+
+class NamesTestCase<span class="token punctuation">(</span>unittest.TestCase<span class="token punctuation">)</span>:
+    <span class="token string">""</span>"测试name_function.py<span class="token string">""</span>"
+    def test_first_last_name<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"能够正确地处理像Janis Joplin这样的姓名吗？<span class="token string">""</span>"
+        formatted_name <span class="token operator">=</span> get_formatted_name<span class="token punctuation">(</span><span class="token string">'janis'</span>, <span class="token string">'joplin'</span><span class="token punctuation">)</span>
+        self.assertEqual<span class="token punctuation">(</span>formatted_name, <span class="token string">'Janis Joplin'</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 添加新测试</span>
+    def test_first_last_middle_name<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"能够正确地处理像Wolfgang Amadeus Mozart这样的姓名吗？"</span><span class="token string">""</span>
+
+        formatted_name <span class="token operator">=</span> get_formatted_name<span class="token punctuation">(</span><span class="token string">'wolfgang'</span>, <span class="token string">'mozart'</span>, <span class="token string">'amadeus'</span><span class="token punctuation">)</span>
+        self.assertEqual<span class="token punctuation">(</span>formatted_name, <span class="token string">'Wolfgang Amadeus Mozart'</span><span class="token punctuation">)</span>
+
+unittest.main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="11-2-测试类"><a href="#11-2-测试类" class="headerlink" title="11.2 测试类"></a>11.2 测试类</h2><h3 id="11-2-1-各种断言方法"><a href="#11-2-1-各种断言方法" class="headerlink" title="11.2.1 各种断言方法"></a>11.2.1 各种断言方法</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="11-2-2-一个要测试的类"><a href="#11-2-2-一个要测试的类" class="headerlink" title="11.2.2 一个要测试的类"></a>11.2.2 一个要测试的类</h3><p>survey.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">class AnonymousSurvey<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span>"收集匿名调查问卷的答案<span class="token string">""</span>"
+
+    def __init__<span class="token punctuation">(</span>self, question<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"存储一个问题，并为存储答案做准备<span class="token string">""</span>"
+        self.question <span class="token operator">=</span> question
+        self.responses <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    def show_question<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"显示调查问卷<span class="token string">""</span>"
+        print<span class="token punctuation">(</span>self.question<span class="token punctuation">)</span>
+
+    def store_response<span class="token punctuation">(</span>self, new_response<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"存储单份调查答卷<span class="token string">""</span>"
+        self.responses.append<span class="token punctuation">(</span>new_response<span class="token punctuation">)</span>
+
+    def show_results<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"显示收集到的所有答卷<span class="token string">""</span>"
+        print<span class="token punctuation">(</span><span class="token string">"Survey results:"</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> <span class="token for-or-select variable">response</span> <span class="token keyword">in</span> self.responses:
+            print<span class="token punctuation">(</span><span class="token string">'- '</span> + response<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>为证明AnonymousSurvey类能够正确地工作，我们来编写一个使用它的程序</p>
+<p>language_survey.py</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">from survey <span class="token function">import</span> AnonymousSurvey
+
+<span class="token comment"># 定义一个问题，并创建一个表示调查的AnonymousSurvey对象</span>
+question <span class="token operator">=</span> <span class="token string">"What language did you first learn to speak?"</span>
+my_survey <span class="token operator">=</span> AnonymousSurvey<span class="token punctuation">(</span>question<span class="token punctuation">)</span>
+
+<span class="token comment"># 显示问题并存储答案</span>
+my_survey.show_question<span class="token punctuation">(</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span><span class="token string">"Enter 'q' at any time to quit.<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> True:
+    response <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"Language: "</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> response <span class="token operator">==</span> <span class="token string">'q'</span><span class="token builtin class-name">:</span>
+        <span class="token builtin class-name">break</span>
+    my_survey.store_response<span class="token punctuation">(</span>response<span class="token punctuation">)</span>
+
+<span class="token comment"># 显示调查结果</span>
+print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>Thank you to everyone who participated in the survey!"</span><span class="token punctuation">)</span>
+my_survey.show_results<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="11-2-3-测试AnonymousSurvey-类"><a href="#11-2-3-测试AnonymousSurvey-类" class="headerlink" title="11.2.3 测试AnonymousSurvey 类"></a>11.2.3 测试AnonymousSurvey 类</h3><p>test_survey.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">import</span> unittest
+from survey <span class="token function">import</span> AnonymousSurvey
+class TestAnonmyousSurvey<span class="token punctuation">(</span>unittest.TestCase<span class="token punctuation">)</span>:
+    <span class="token string">""</span>"针对AnonymousSurvey类的测试<span class="token string">""</span>"
+
+    def test_store_single_response<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"测试单个答案会被妥善地存储<span class="token string">""</span>"
+        question <span class="token operator">=</span> <span class="token string">"What language did you first learn to speak?"</span>
+        my_survey <span class="token operator">=</span> AnonymousSurvey<span class="token punctuation">(</span>question<span class="token punctuation">)</span>
+        my_survey.store_response<span class="token punctuation">(</span><span class="token string">'English'</span><span class="token punctuation">)</span>
+        self.assertIn<span class="token punctuation">(</span><span class="token string">'English'</span>, my_survey.responses<span class="token punctuation">)</span>
+
+    def test_store_three_responses<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"测试三个答案会被妥善地存储<span class="token string">""</span>"
+
+        question <span class="token operator">=</span> <span class="token string">"What language did you first learn to speak?"</span>
+        my_survey <span class="token operator">=</span> AnonymousSurvey<span class="token punctuation">(</span>question<span class="token punctuation">)</span>
+        responses <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'English'</span>, <span class="token string">'Spanish'</span>, <span class="token string">'Mandarin'</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> <span class="token for-or-select variable">response</span> <span class="token keyword">in</span> responses:
+            my_survey.store_response<span class="token punctuation">(</span>response<span class="token punctuation">)</span>
+
+        <span class="token keyword">for</span> <span class="token for-or-select variable">response</span> <span class="token keyword">in</span> responses:
+            self.assertIn<span class="token punctuation">(</span>response, my_survey.responses<span class="token punctuation">)</span>
+
+unittest.main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="11-2-4-方法setUp"><a href="#11-2-4-方法setUp" class="headerlink" title="11.2.4 方法setUp()"></a>11.2.4 方法setUp()</h3><p>  在前面的test_survey.py中，我们在每个测试方法中都创建了一个AnonymousSurvey实例，并在每个方法中都创建了答案。unittest.TestCase类包含方法setUp()，让我们只需创建这些对象一<br>次，并在每个测试方法中使用它们。如果你在TestCase类中包含了方法setUp()，Python将先运行它，再运行各个以test_打头的方法。这样，在你编写的每个测试方法中都可使用在方法setUp()<br>中创建的对象了。<br>  下面使用setUp()来创建一个调查对象和一组答案，供方法test_store_single_response()和test_store_three_responses()使用：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">import</span> unittest
+from survey <span class="token function">import</span> AnonymousSurvey
+class TestAnonmyousSurvey<span class="token punctuation">(</span>unittest.TestCase<span class="token punctuation">)</span>:
+    <span class="token string">""</span>"针对AnonymousSurvey类的测试<span class="token string">""</span>"
+
+    def setUp<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"
+        创建一个调查对象和一组答案，供使用的测试方法使用
+        <span class="token string">""</span>"
+        question <span class="token operator">=</span> <span class="token string">"What language did you first learn to speak?"</span>
+        self.my_survey <span class="token operator">=</span> AnonymousSurvey<span class="token punctuation">(</span>question<span class="token punctuation">)</span>
+        self.responses <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'English'</span>, <span class="token string">'Spanish'</span>, <span class="token string">'Mandarin'</span><span class="token punctuation">]</span>
+
+        def test_store_single_response<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+            <span class="token string">""</span>"测试单个答案会被妥善地存储<span class="token string">""</span>"
+            self.my_survey.store_response<span class="token punctuation">(</span>self.responses<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            self.assertIn<span class="token punctuation">(</span>self.responses<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>, self.my_survey.responses<span class="token punctuation">)</span>
+
+        def test_store_three_responses<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+            <span class="token string">""</span>"测试三个答案会被妥善地存储<span class="token string">""</span>"
+            <span class="token keyword">for</span> <span class="token for-or-select variable">response</span> <span class="token keyword">in</span> self.responses:
+                self.my_survey.store_response<span class="token punctuation">(</span>response<span class="token punctuation">)</span>
+            <span class="token keyword">for</span> <span class="token for-or-select variable">response</span> <span class="token keyword">in</span> self.responses:
+                self.assertIn<span class="token punctuation">(</span>response, self.my_survey.responses<span class="token punctuation">)</span>
+
+unittest.main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
                 
             </div>
             <hr/>
@@ -558,7 +712,7 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/wearecio.github.io/2021/01/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter8-han-shu/">
+                <a href="/wearecio.github.io/2021/01/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter7-yong-hu-shu-ru-he-while-xun-huan/">
                     <div class="card-image">
                         
                         
@@ -739,7 +893,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">14.4k</span>&nbsp;字
+                class="white-color">16.5k</span>&nbsp;字
             
             
             

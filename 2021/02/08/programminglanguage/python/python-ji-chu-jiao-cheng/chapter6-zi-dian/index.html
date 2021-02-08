@@ -367,7 +367,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    4
+                    914
                 </div>
                 
 
@@ -387,16 +387,204 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="编程工具"><a href="#编程工具" class="headerlink" title="编程工具"></a>编程工具</h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-3"><a href="#-3" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-4"><a href="#-4" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-5"><a href="#-5" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-6"><a href="#-6" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-7"><a href="#-7" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-8"><a href="#-8" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-9"><a href="#-9" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h2 id="6-1-一个简单的字典"><a href="#6-1-一个简单的字典" class="headerlink" title="6.1 一个简单的字典"></a>6.1 一个简单的字典</h2><h3 id="6-1-一个简单的字典-1"><a href="#6-1-一个简单的字典-1" class="headerlink" title="6.1 一个简单的字典"></a>6.1 一个简单的字典</h3><p>alien_0.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">alien_0 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'color'</span><span class="token builtin class-name">:</span> <span class="token string">'green'</span>, <span class="token string">'points'</span><span class="token builtin class-name">:</span> <span class="token number">5</span><span class="token punctuation">&#125;</span>
+
+print<span class="token punctuation">(</span>alien_0<span class="token punctuation">[</span><span class="token string">'color'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>alien_0<span class="token punctuation">[</span><span class="token string">'points'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-2-使用字典"><a href="#6-2-使用字典" class="headerlink" title="6.2 使用字典"></a>6.2 使用字典</h3><p>  在Python中，字典是一系列键—值对。每个键都与一个值相关联，你可以使用键来访问与之相关联的值。与键相关联的值可以是数字、字符串、列表乃至字典。事实上，可将任何Python对象用作字典中的值。<br>  在Python中，字典用放在花括号{}中的一系列键—值对表示</p>
+<h3 id="6-2-1-访问字典中的值"><a href="#6-2-1-访问字典中的值" class="headerlink" title="6.2.1 访问字典中的值"></a>6.2.1 访问字典中的值</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">alien_0 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'color'</span><span class="token builtin class-name">:</span> <span class="token string">'green'</span>, <span class="token string">'points'</span><span class="token builtin class-name">:</span> <span class="token number">5</span><span class="token punctuation">&#125;</span>
+new_points <span class="token operator">=</span> alien_0<span class="token punctuation">[</span><span class="token string">'points'</span><span class="token punctuation">]</span>
+print<span class="token punctuation">(</span><span class="token string">"You just earned "</span> + str<span class="token punctuation">(</span>new_points<span class="token punctuation">)</span> + <span class="token string">" points!"</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-2-2-添加键—值对"><a href="#6-2-2-添加键—值对" class="headerlink" title="6.2.2 添加键—值对"></a>6.2.2 添加键—值对</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">alien_0 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'color'</span><span class="token builtin class-name">:</span> <span class="token string">'green'</span>, <span class="token string">'points'</span><span class="token builtin class-name">:</span> <span class="token number">5</span><span class="token punctuation">&#125;</span>
+print<span class="token punctuation">(</span>alien_0<span class="token punctuation">)</span>
+
+alien_0<span class="token punctuation">[</span><span class="token string">'x_position'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+alien_0<span class="token punctuation">[</span><span class="token string">'y_position'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">25</span>
+print<span class="token punctuation">(</span>alien_0<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-2-3-先创建一个空字典"><a href="#6-2-3-先创建一个空字典" class="headerlink" title="6.2.3 先创建一个空字典"></a>6.2.3 先创建一个空字典</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">alien_0 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+
+alien_0<span class="token punctuation">[</span><span class="token string">'color'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'green'</span>
+alien_0<span class="token punctuation">[</span><span class="token string">'points'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">5</span>
+print<span class="token punctuation">(</span>alien_0<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-2-4-修改字典中的值"><a href="#6-2-4-修改字典中的值" class="headerlink" title="6.2.4 修改字典中的值"></a>6.2.4 修改字典中的值</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">alien_0 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'color'</span><span class="token builtin class-name">:</span> <span class="token string">'green'</span><span class="token punctuation">&#125;</span>
+print<span class="token punctuation">(</span><span class="token string">"The alien is "</span> + alien_0<span class="token punctuation">[</span><span class="token string">'color'</span><span class="token punctuation">]</span> + <span class="token string">"."</span><span class="token punctuation">)</span>
+
+alien_0 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'color'</span><span class="token builtin class-name">:</span> <span class="token string">'yellow'</span><span class="token punctuation">&#125;</span>
+print<span class="token punctuation">(</span><span class="token string">"The alien is now "</span> + alien_0<span class="token punctuation">[</span><span class="token string">'color'</span><span class="token punctuation">]</span> + <span class="token string">"."</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">alien_0 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'x_position'</span><span class="token builtin class-name">:</span> <span class="token number">0</span>, <span class="token string">'y_position'</span><span class="token builtin class-name">:</span> <span class="token number">25</span>, <span class="token string">'speed'</span><span class="token builtin class-name">:</span> <span class="token string">'medium'</span><span class="token punctuation">&#125;</span>
+print<span class="token punctuation">(</span><span class="token string">"Original x_position: "</span> + str<span class="token punctuation">(</span>alien_0<span class="token punctuation">[</span><span class="token string">'x_position'</span><span class="token punctuation">]</span><span class="token punctuation">))</span>
+
+<span class="token keyword">if</span> alien_0<span class="token punctuation">[</span><span class="token string">'speed'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'slow'</span><span class="token builtin class-name">:</span>
+    x_increment <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">elif</span> alien_0<span class="token punctuation">[</span><span class="token string">'speed'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'medium'</span><span class="token builtin class-name">:</span>
+    x_increment <span class="token operator">=</span> <span class="token number">2</span>
+else:
+    x_increment <span class="token operator">=</span> <span class="token number">3</span>
+
+alien_0<span class="token punctuation">[</span><span class="token string">'x_position'</span><span class="token punctuation">]</span> <span class="token operator">=</span> alien_0<span class="token punctuation">[</span><span class="token string">'x_position'</span><span class="token punctuation">]</span> + x_increment
+print<span class="token punctuation">(</span><span class="token string">"New x-position: "</span> + str<span class="token punctuation">(</span>alien_0<span class="token punctuation">[</span><span class="token string">'x_position'</span><span class="token punctuation">]</span><span class="token punctuation">))</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-2-5-删除键—值对"><a href="#6-2-5-删除键—值对" class="headerlink" title="6.2.5 删除键—值对"></a>6.2.5 删除键—值对</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">alien_0 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'color'</span><span class="token builtin class-name">:</span> <span class="token string">'green'</span>, <span class="token string">'points'</span><span class="token builtin class-name">:</span> <span class="token number">5</span><span class="token punctuation">&#125;</span>
+print<span class="token punctuation">(</span>alien_0<span class="token punctuation">)</span>
+
+del alien_0<span class="token punctuation">[</span><span class="token string">'points'</span><span class="token punctuation">]</span>
+print<span class="token punctuation">(</span>alien_0<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-2-6-由类似对象组成的字典"><a href="#6-2-6-由类似对象组成的字典" class="headerlink" title="6.2.6 由类似对象组成的字典"></a>6.2.6 由类似对象组成的字典</h3><p>favorite_languages.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">favorite_languages <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'jen'</span><span class="token builtin class-name">:</span> <span class="token string">'python'</span>,
+    <span class="token string">'sarah'</span><span class="token builtin class-name">:</span> <span class="token string">'c'</span>,
+    <span class="token string">'edward'</span><span class="token builtin class-name">:</span> <span class="token string">'ruby'</span>,
+    <span class="token string">'phil'</span><span class="token builtin class-name">:</span> <span class="token string">'python'</span>,
+<span class="token punctuation">&#125;</span>
+print<span class="token punctuation">(</span><span class="token string">"Sarah's favorite language is "</span> + favorite_languages<span class="token punctuation">[</span><span class="token string">'sarah'</span><span class="token punctuation">]</span>.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">"."</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="6-3-遍历字典"><a href="#6-3-遍历字典" class="headerlink" title="6.3 遍历字典"></a>6.3 遍历字典</h2><h3 id="6-3-1-遍历所有的键—值对"><a href="#6-3-1-遍历所有的键—值对" class="headerlink" title="6.3.1 遍历所有的键—值对"></a>6.3.1 遍历所有的键—值对</h3><p>user.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">user_0 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'username'</span><span class="token builtin class-name">:</span> <span class="token string">'efermi'</span>,
+    <span class="token string">'first'</span><span class="token builtin class-name">:</span> <span class="token string">'enrico'</span>,
+    <span class="token string">'last'</span><span class="token builtin class-name">:</span> <span class="token string">'fermi'</span>,
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">for</span> key, value <span class="token keyword">in</span> user_0.items<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>Key: "</span> + key<span class="token punctuation">)</span>
+    print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>Value: "</span> + value<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>favorite_languages.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">favorite_languages <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'jen'</span><span class="token builtin class-name">:</span> <span class="token string">'python'</span>,
+    <span class="token string">'sarah'</span><span class="token builtin class-name">:</span> <span class="token string">'c'</span>,
+    <span class="token string">'edward'</span><span class="token builtin class-name">:</span> <span class="token string">'ruby'</span>,
+    <span class="token string">'phil'</span><span class="token builtin class-name">:</span> <span class="token string">'python'</span>,
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">for</span> name, language <span class="token keyword">in</span> favorite_languages.items<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    print<span class="token punctuation">(</span>name.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">"'s favorite language is "</span> + language.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">"."</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-3-2-遍历字典中的所有键"><a href="#6-3-2-遍历字典中的所有键" class="headerlink" title="6.3.2 遍历字典中的所有键"></a>6.3.2 遍历字典中的所有键</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">favorite_languages <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'jen'</span><span class="token builtin class-name">:</span> <span class="token string">'python'</span>,
+    <span class="token string">'sarah'</span><span class="token builtin class-name">:</span> <span class="token string">'c'</span>,
+    <span class="token string">'edward'</span><span class="token builtin class-name">:</span> <span class="token string">'ruby'</span>,
+    <span class="token string">'phil'</span><span class="token builtin class-name">:</span> <span class="token string">'python'</span>,
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">for</span> <span class="token for-or-select variable">name</span> <span class="token keyword">in</span> favorite_languages.keys<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    print<span class="token punctuation">(</span>name.title<span class="token punctuation">(</span><span class="token punctuation">))</span>
+
+friends <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'phil'</span>, <span class="token string">'sarah'</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">name</span> <span class="token keyword">in</span> favorite_languages.keys<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    print<span class="token punctuation">(</span>name.title<span class="token punctuation">(</span><span class="token punctuation">))</span>
+
+    <span class="token keyword">if</span> name <span class="token keyword">in</span> friends:
+        print<span class="token punctuation">(</span><span class="token string">" Hi "</span> + name.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">", I see your favorite language is "</span> +
+              favorite_languages<span class="token punctuation">[</span>name<span class="token punctuation">]</span>.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">"!"</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token string">'erin'</span> not <span class="token keyword">in</span> favorite_languages.keys<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+        print<span class="token punctuation">(</span><span class="token string">"Erin, please take out poll!"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-3-3-按顺序遍历字典中的所有键"><a href="#6-3-3-按顺序遍历字典中的所有键" class="headerlink" title="6.3.3 按顺序遍历字典中的所有键"></a>6.3.3 按顺序遍历字典中的所有键</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">favorite_languages <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'jen'</span><span class="token builtin class-name">:</span> <span class="token string">'python'</span>,
+    <span class="token string">'sarah'</span><span class="token builtin class-name">:</span> <span class="token string">'c'</span>,
+    <span class="token string">'edward'</span><span class="token builtin class-name">:</span> <span class="token string">'ruby'</span>,
+    <span class="token string">'phil'</span><span class="token builtin class-name">:</span> <span class="token string">'python'</span>,
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">for</span> <span class="token for-or-select variable">name</span> <span class="token keyword">in</span> sorted<span class="token punctuation">(</span>favorite_languages.keys<span class="token punctuation">(</span><span class="token punctuation">))</span>:
+    print<span class="token punctuation">(</span>name.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">", thank you fot taking the poll."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-3-4-遍历字典中的所有值"><a href="#6-3-4-遍历字典中的所有值" class="headerlink" title="6.3.4 遍历字典中的所有值"></a>6.3.4 遍历字典中的所有值</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">favorite_languages <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'jen'</span><span class="token builtin class-name">:</span> <span class="token string">'python'</span>,
+    <span class="token string">'sarah'</span><span class="token builtin class-name">:</span> <span class="token string">'c'</span>,
+    <span class="token string">'edward'</span><span class="token builtin class-name">:</span> <span class="token string">'ruby'</span>,
+    <span class="token string">'phil'</span><span class="token builtin class-name">:</span> <span class="token string">'python'</span>,
+<span class="token punctuation">&#125;</span>
+
+print<span class="token punctuation">(</span><span class="token string">"The following languages have been metioned:"</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">language</span> <span class="token keyword">in</span> favorite_languages.values<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    print<span class="token punctuation">(</span>language.title<span class="token punctuation">(</span><span class="token punctuation">))</span>
+
+<span class="token comment"># 使用 set() 方法剔除字典中重复的值</span>
+print<span class="token punctuation">(</span><span class="token string">"The following languages have been metioned:"</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">language</span> <span class="token keyword">in</span> set<span class="token punctuation">(</span>favorite_languages.values<span class="token punctuation">(</span><span class="token punctuation">))</span>:
+    print<span class="token punctuation">(</span>language.title<span class="token punctuation">(</span><span class="token punctuation">))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="6-4-嵌套"><a href="#6-4-嵌套" class="headerlink" title="6.4 嵌套"></a>6.4 嵌套</h2><h3 id="6-4-1-字典列表"><a href="#6-4-1-字典列表" class="headerlink" title="6.4.1 字典列表"></a>6.4.1 字典列表</h3><p>aliens.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">alien_0 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'color'</span><span class="token builtin class-name">:</span> <span class="token string">'green'</span>, <span class="token string">'points'</span><span class="token builtin class-name">:</span> <span class="token number">5</span><span class="token punctuation">&#125;</span>
+alien_1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'color'</span><span class="token builtin class-name">:</span> <span class="token string">'yellow'</span>, <span class="token string">'points'</span><span class="token builtin class-name">:</span> <span class="token number">10</span><span class="token punctuation">&#125;</span>
+alien_2 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'color'</span><span class="token builtin class-name">:</span> <span class="token string">'red'</span>, <span class="token string">'points'</span><span class="token builtin class-name">:</span> <span class="token number">15</span><span class="token punctuation">&#125;</span>
+
+aliens <span class="token operator">=</span> <span class="token punctuation">[</span>alien_0, alien_1, alien_2<span class="token punctuation">]</span>
+
+<span class="token keyword">for</span> <span class="token for-or-select variable">alien</span> <span class="token keyword">in</span> aliens:
+    print<span class="token punctuation">(</span>alien<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用range()生成了30个外星人：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 创建一个用于存储外星人的空列表</span>
+aliens <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+<span class="token comment"># 创建30个绿色的外星人</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">alien_number</span> <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">30</span><span class="token punctuation">)</span>:
+    new_alien <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'color'</span><span class="token builtin class-name">:</span> <span class="token string">'green'</span>, <span class="token string">'points'</span><span class="token builtin class-name">:</span> <span class="token number">5</span>, <span class="token string">'speed'</span><span class="token builtin class-name">:</span> <span class="token string">'slow'</span><span class="token punctuation">&#125;</span>
+    aliens.append<span class="token punctuation">(</span>new_alien<span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> <span class="token for-or-select variable">alien</span> <span class="token keyword">in</span> aliens<span class="token punctuation">[</span><span class="token number">0</span>:3<span class="token punctuation">]</span>:
+    <span class="token keyword">if</span> alien<span class="token punctuation">[</span><span class="token string">'color'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'green'</span><span class="token builtin class-name">:</span>
+        alien<span class="token punctuation">[</span><span class="token string">'color'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'yellow'</span>
+        alien<span class="token punctuation">[</span><span class="token string">'speed'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'medium'</span>
+        alien<span class="token punctuation">[</span><span class="token string">'points'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token keyword">elif</span> alien<span class="token punctuation">[</span><span class="token string">'color'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'yellow'</span><span class="token builtin class-name">:</span>
+        alien<span class="token punctuation">[</span><span class="token string">'color'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'red'</span>
+        alien<span class="token punctuation">[</span><span class="token string">'speed'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'fast'</span>
+        alien<span class="token punctuation">[</span><span class="token string">'points'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">15</span>
+
+<span class="token comment"># 显示前五个外星人</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">alien</span> <span class="token keyword">in</span> aliens<span class="token punctuation">[</span><span class="token number">0</span>:5<span class="token punctuation">]</span>:
+    print<span class="token punctuation">(</span>alien<span class="token punctuation">)</span>
+print<span class="token punctuation">(</span><span class="token string">"..."</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 显示创建了多少个外星人</span>
+print<span class="token punctuation">(</span><span class="token string">"Total number of aliens: "</span> + str<span class="token punctuation">(</span>len<span class="token punctuation">(</span>aliens<span class="token punctuation">))</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-4-2-在字典中存储列表"><a href="#6-4-2-在字典中存储列表" class="headerlink" title="6.4.2 在字典中存储列表"></a>6.4.2 在字典中存储列表</h3><p>pizza.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 存储所点比萨的信息</span>
+pizza <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'crust'</span><span class="token builtin class-name">:</span> <span class="token string">'thick'</span>,
+    <span class="token string">'toppings'</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">'mushrooms'</span>, <span class="token string">'extra cheese'</span><span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment"># 概述所点的比萨</span>
+print<span class="token punctuation">(</span><span class="token string">"You ordered a "</span> + pizza<span class="token punctuation">[</span><span class="token string">'crust'</span><span class="token punctuation">]</span> + <span class="token string">"-crust pizza"</span> +
+      <span class="token string">"with the following toppings:"</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">topping</span> <span class="token keyword">in</span> pizza<span class="token punctuation">[</span><span class="token string">'toppings'</span><span class="token punctuation">]</span>:
+    print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\t">\t</span>"</span> + topping<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>favorite_languages.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">favorite_lanuages <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'jen'</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">'python'</span>, <span class="token string">'ruby'</span><span class="token punctuation">]</span>,
+    <span class="token string">'sarah'</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">'c'</span><span class="token punctuation">]</span>,
+    <span class="token string">'edward'</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">'ruby'</span>, <span class="token string">'go'</span><span class="token punctuation">]</span>,
+    <span class="token string">'phil'</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">'python'</span>, <span class="token string">'haskell'</span><span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">for</span> name, languages <span class="token keyword">in</span> favorite_lanuages.items<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>"</span> + name.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">"'s favorite languages are:"</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> <span class="token for-or-select variable">language</span> <span class="token keyword">in</span> languages:
+        print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\t">\t</span>"</span> + language.title<span class="token punctuation">(</span><span class="token punctuation">))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-4-3-在字典中存储字典"><a href="#6-4-3-在字典中存储字典" class="headerlink" title="6.4.3 在字典中存储字典"></a>6.4.3 在字典中存储字典</h3><p>many_users.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">users</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'aeinstein'</span><span class="token builtin class-name">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token string">'first'</span><span class="token builtin class-name">:</span> <span class="token string">'albert'</span>,
+        <span class="token string">'last'</span><span class="token builtin class-name">:</span> <span class="token string">'einstein'</span>,
+        <span class="token string">'location'</span><span class="token builtin class-name">:</span> <span class="token string">'princeton'</span>
+    <span class="token punctuation">&#125;</span>,
+
+    <span class="token string">'mcurie'</span><span class="token builtin class-name">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token string">'first'</span><span class="token builtin class-name">:</span> <span class="token string">'marie'</span>,
+        <span class="token string">'last'</span><span class="token builtin class-name">:</span> <span class="token string">'curie'</span>,
+        <span class="token string">'location'</span><span class="token builtin class-name">:</span> <span class="token string">'Paris'</span>
+    <span class="token punctuation">&#125;</span>,
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">for</span> username, user_info <span class="token keyword">in</span> users.items<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>Username: "</span> + username<span class="token punctuation">)</span>
+    full_name <span class="token operator">=</span> user_info<span class="token punctuation">[</span><span class="token string">'first'</span><span class="token punctuation">]</span> + <span class="token string">" "</span> + user_info<span class="token punctuation">[</span><span class="token string">'last'</span><span class="token punctuation">]</span>
+    location <span class="token operator">=</span> user_info<span class="token punctuation">[</span><span class="token string">'location'</span><span class="token punctuation">]</span>
+
+    print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\t">\t</span>Full name: "</span> + full_name.title<span class="token punctuation">(</span><span class="token punctuation">))</span>
+    print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\t">\t</span>Location: "</span> + location.title<span class="token punctuation">(</span><span class="token punctuation">))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -740,7 +928,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">14.4k</span>&nbsp;字
+                class="white-color">16.5k</span>&nbsp;字
             
             
             
