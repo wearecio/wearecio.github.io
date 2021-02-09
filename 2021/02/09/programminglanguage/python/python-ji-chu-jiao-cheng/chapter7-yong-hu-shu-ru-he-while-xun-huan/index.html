@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python基础教程：, Taylor">
+    <meta name="keywords" content="chapter7 用户输入和while循环, Taylor">
     <meta name="description" content="何も捨弃てることができない人には、何もかえことができない。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>python基础教程： | Taylor</title>
+    <title>chapter7 用户输入和while循环 | Taylor</title>
     <link rel="icon" type="image/png" href="/wearecio.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/wearecio.github.io/libs/awesome/css/all.css">
@@ -301,12 +301,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/wearecio.github.io/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/wearecio.github.io/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python基础教程：</h1>
+                    <h1 class="description center-align post-title">chapter7 用户输入和while循环</h1>
                 </div>
             </div>
         </div>
@@ -353,21 +353,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-01-08
+                    2021-02-09
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-02-08
+                    2021-02-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    0
+                    644
                 </div>
                 
 
@@ -387,16 +387,113 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id=""><a href="#" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-3"><a href="#-3" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-4"><a href="#-4" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-5"><a href="#-5" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-6"><a href="#-6" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-7"><a href="#-7" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-8"><a href="#-8" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-9"><a href="#-9" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h2 id="7-1-函数input-的工作原理"><a href="#7-1-函数input-的工作原理" class="headerlink" title="7.1 函数input()的工作原理"></a>7.1 函数input()的工作原理</h2><p>parrot.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">message <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"Tell me something, and I will repeat it back to you:"</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>message<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="7-1-1-编写清晰的程序"><a href="#7-1-1-编写清晰的程序" class="headerlink" title="7.1.1 编写清晰的程序"></a>7.1.1 编写清晰的程序</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">prompt <span class="token operator">=</span> <span class="token string">"If you tell us who you are, we can personalize the messages you see."</span>
+prompt <span class="token operator">+=</span> <span class="token string">"<span class="token entity" title="\n">\n</span>What is your first name? "</span>
+name <span class="token operator">=</span> input<span class="token punctuation">(</span>prompt<span class="token punctuation">)</span>
+print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>Hello, "</span> + name + <span class="token string">"!"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="7-1-2-使用int-来获取数值输入"><a href="#7-1-2-使用int-来获取数值输入" class="headerlink" title="7.1.2 使用int()来获取数值输入"></a>7.1.2 使用int()来获取数值输入</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">height <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"How tall are you, in inches? "</span><span class="token punctuation">)</span>
+height <span class="token operator">=</span> int<span class="token punctuation">(</span>height<span class="token punctuation">)</span>
+<span class="token keyword">if</span> height <span class="token operator">></span><span class="token operator">=</span> <span class="token number">36</span>:
+    print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>You're tall enough to ride!"</span><span class="token punctuation">)</span>
+else:
+    print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>You'll be able to ride when you're a little older."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="7-1-3-求模运算符"><a href="#7-1-3-求模运算符" class="headerlink" title="7.1.3 求模运算符"></a>7.1.3 求模运算符</h3><p>even_or_odd.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">number <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"Enter a number, and I'll tell you if it's even or odd: "</span><span class="token punctuation">)</span>
+number <span class="token operator">=</span> int<span class="token punctuation">(</span>number<span class="token punctuation">)</span>
+<span class="token keyword">if</span> number % <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span>:
+    print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>The number "</span> + str<span class="token punctuation">(</span>number<span class="token punctuation">)</span> + <span class="token string">" is even."</span><span class="token punctuation">)</span>
+else:
+    print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>The number "</span> + str<span class="token punctuation">(</span>number<span class="token punctuation">)</span> + <span class="token string">" is odd."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="7-2-while-循环简介"><a href="#7-2-while-循环简介" class="headerlink" title="7.2 while 循环简介"></a>7.2 while 循环简介</h2><h3 id="7-2-1-使用while-循环"><a href="#7-2-1-使用while-循环" class="headerlink" title="7.2.1 使用while 循环"></a>7.2.1 使用while 循环</h3><p>counting.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">current_number <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">while</span> current_number <span class="token operator">&lt;</span><span class="token operator">=</span> <span class="token number">5</span>:
+    print<span class="token punctuation">(</span>current_number<span class="token punctuation">)</span>
+    current_number <span class="token operator">+=</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="7-2-2-让用户选择何时退出"><a href="#7-2-2-让用户选择何时退出" class="headerlink" title="7.2.2 让用户选择何时退出"></a>7.2.2 让用户选择何时退出</h3><p>parrot.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">prompt <span class="token operator">=</span> <span class="token string">"<span class="token entity" title="\n">\n</span>Tell me something, and I will repeat it back to you:"</span>
+prompt <span class="token operator">+=</span> <span class="token string">"<span class="token entity" title="\n">\n</span>Enter 'quit' to end the program. "</span>
+message <span class="token operator">=</span> <span class="token string">""</span>
+<span class="token keyword">while</span> message <span class="token operator">!=</span> <span class="token string">'quit'</span><span class="token builtin class-name">:</span>
+    message <span class="token operator">=</span> input<span class="token punctuation">(</span>prompt<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这个程序很好，唯一美中不足的是，它将单词’quit’也作为一条消息打印了出来。为修复这种问题，只需使用一个简单的if测试：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">prompt <span class="token operator">=</span> <span class="token string">"<span class="token entity" title="\n">\n</span>Tell me something, and I will repeat it back to you:"</span>
+prompt <span class="token operator">+=</span> <span class="token string">"<span class="token entity" title="\n">\n</span>Enter 'quit' to end the program. "</span>
+
+message <span class="token operator">=</span> <span class="token string">""</span>
+<span class="token keyword">while</span> message <span class="token operator">!=</span> <span class="token string">'quit'</span><span class="token builtin class-name">:</span>
+    message <span class="token operator">=</span> input<span class="token punctuation">(</span>prompt<span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> message <span class="token operator">!=</span> <span class="token string">'quit'</span><span class="token builtin class-name">:</span>
+        print<span class="token punctuation">(</span>message<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="7-2-3-使用标志"><a href="#7-2-3-使用标志" class="headerlink" title="7.2.3 使用标志"></a>7.2.3 使用标志</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">prompt <span class="token operator">=</span> <span class="token string">"<span class="token entity" title="\n">\n</span>Tell me something, and I will repeat it back to you:"</span>
+prompt <span class="token operator">+=</span> <span class="token string">"<span class="token entity" title="\n">\n</span>Enter 'quit' to end the program. "</span>
+
+active <span class="token operator">=</span> True
+<span class="token keyword">while</span> active:
+    message <span class="token operator">=</span> input<span class="token punctuation">(</span>prompt<span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> message <span class="token operator">==</span> <span class="token string">'quit'</span><span class="token builtin class-name">:</span>
+        active <span class="token operator">=</span> False
+    else:
+        print<span class="token punctuation">(</span>message<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="7-2-4-使用break-退出循环"><a href="#7-2-4-使用break-退出循环" class="headerlink" title="7.2.4 使用break 退出循环"></a>7.2.4 使用break 退出循环</h3><p>cities.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">prompt <span class="token operator">=</span> <span class="token string">"<span class="token entity" title="\n">\n</span>Please enter the name of a city you have visited:"</span>
+prompt <span class="token operator">+=</span> <span class="token string">"<span class="token entity" title="\n">\n</span>(Enter 'quit' when you are finished.) "</span>
+
+<span class="token keyword">while</span> True:
+    city <span class="token operator">=</span> input<span class="token punctuation">(</span>prompt<span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> city <span class="token operator">==</span> <span class="token string">'quit'</span><span class="token builtin class-name">:</span>
+        <span class="token builtin class-name">break</span>
+    else:
+        print<span class="token punctuation">(</span><span class="token string">"I'd love to go to "</span> + city.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">"!"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="7-2-5-在循环中使用continue"><a href="#7-2-5-在循环中使用continue" class="headerlink" title="7.2.5 在循环中使用continue"></a>7.2.5 在循环中使用continue</h3><p>counting.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">current_number <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">while</span> current_number <span class="token operator">&lt;</span> <span class="token number">10</span>:
+    current_number <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">if</span> current_number % <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span>:
+        <span class="token builtin class-name">continue</span>
+
+    print<span class="token punctuation">(</span>current_number<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="7-2-6-避免无限循环"><a href="#7-2-6-避免无限循环" class="headerlink" title="7.2.6 避免无限循环"></a>7.2.6 避免无限循环</h3><p>counting.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">x <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">while</span> x <span class="token operator">&lt;</span><span class="token operator">=</span> <span class="token number">5</span>:
+    print<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="7-3-使用while-循环来处理列表和字典"><a href="#7-3-使用while-循环来处理列表和字典" class="headerlink" title="7.3 使用while 循环来处理列表和字典"></a>7.3 使用while 循环来处理列表和字典</h2><h3 id="7-3-1-在列表之间移动元素"><a href="#7-3-1-在列表之间移动元素" class="headerlink" title="7.3.1 在列表之间移动元素"></a>7.3.1 在列表之间移动元素</h3><p>confirmed_users.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="7-3-2-删除包含特定值的所有列表元素"><a href="#7-3-2-删除包含特定值的所有列表元素" class="headerlink" title="7.3.2 删除包含特定值的所有列表元素"></a>7.3.2 删除包含特定值的所有列表元素</h3><p>pets.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pets <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'dog'</span>, <span class="token string">'cat'</span>, <span class="token string">'dog'</span>, <span class="token string">'goldfish'</span>, <span class="token string">'cat'</span>, <span class="token string">'rabbit'</span>, <span class="token string">'cat'</span><span class="token punctuation">]</span>
+print<span class="token punctuation">(</span>pets<span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token string">'cat'</span> <span class="token keyword">in</span> pets:
+    pets.remove<span class="token punctuation">(</span><span class="token string">'cat'</span><span class="token punctuation">)</span>
+
+print<span class="token punctuation">(</span>pets<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="7-3-3-使用用户输入来填充字典"><a href="#7-3-3-使用用户输入来填充字典" class="headerlink" title="7.3.3 使用用户输入来填充字典"></a>7.3.3 使用用户输入来填充字典</h3><p>mountain_poll.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">responses <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+
+<span class="token comment"># 设置一个标志，指出调查是否继续</span>
+polling_active <span class="token operator">=</span> True
+
+<span class="token keyword">while</span> polling_active:
+    <span class="token comment"># 提示输入被调查者的名字和回答</span>
+    name <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>What is your name? "</span><span class="token punctuation">)</span>
+    response <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"Which mountain would you like to climb someday? "</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 将答卷存储在字典中</span>
+    responses<span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> response
+
+    <span class="token comment"># 看看是否还有人要参与调查</span>
+    repeat <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"Would you like to let another person respond? (yes/ no) "</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> repeat <span class="token operator">==</span> <span class="token string">'no'</span><span class="token builtin class-name">:</span>
+        polling_active <span class="token operator">=</span> False
+<span class="token comment"># 调查结束，显示结果</span>
+print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>--- Poll Results ---"</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> name, response <span class="token keyword">in</span> responses.items<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    print<span class="token punctuation">(</span>name + <span class="token string">" would like to climb "</span> + response + <span class="token string">"."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
                 
             </div>
             <hr/>
@@ -422,7 +519,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://wearecio.github.io/wearecio.github.io/2021/01/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter7-yong-hu-shu-ru-he-while-xun-huan/">https://wearecio.github.io/wearecio.github.io/2021/01/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter7-yong-hu-shu-ru-he-while-xun-huan/</a>
+                    <a href="https://wearecio.github.io/wearecio.github.io/2021/02/09/programminglanguage/python/python-ji-chu-jiao-cheng/chapter7-yong-hu-shu-ru-he-while-xun-huan/">https://wearecio.github.io/wearecio.github.io/2021/02/09/programminglanguage/python/python-ji-chu-jiao-cheng/chapter7-yong-hu-shu-ru-he-while-xun-huan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -505,29 +602,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/wearecio.github.io/2021/01/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter11-ce-shi-dai-ma/">
+                <a href="/wearecio.github.io/2021/02/09/programminglanguage/python/python-ji-chu-jiao-cheng/chapter7-yong-hu-shu-ru-he-while-xun-huan/">
                     <div class="card-image">
                         
                         
-                        <img src="/wearecio.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="python基础教程：">
+                        <img src="/wearecio.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="chapter7 用户输入和while循环">
                         
-                        <span class="card-title">python基础教程：</span>
+                        <span class="card-title">chapter7 用户输入和while循环</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在本章中，你将学习如何使用Python模块unittest中的工具来测试代码。你将学习编写测试用例，核实一系列输入都将得到预期的输出。你将看到测试通过了是什么样子，测试未通过又是什么样子，还将知道测试未通过如何有助于改进代码。你将学习如何测试函数和类，并将知道该为项目编写多少个测试。
+                            在本章中，你将学习如何接受用户输入，让程序能够对其进行处理。在程序需要一个名字时，你需要提示用户输入该名字；程序需要一个名单时，你需要提示用户输入一系列名字。为此，你需要使用函数input()。你还将学习如何让程序不断地运行，让用户能够根据需要输入信息，并在程序中使用这些信息。为此，你需要使用while循环让程序不断地运行，直到指定的条件不满足为止。通过获取用户输入并学会控制程序的运行时间，可编写出交互式程序。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -540,6 +638,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -558,24 +657,24 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/wearecio.github.io/2021/01/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter8-han-shu/">
+                <a href="/wearecio.github.io/2021/02/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter5-if-yu-ju/">
                     <div class="card-image">
                         
                         
-                        <img src="/wearecio.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="python基础教程：">
+                        <img src="/wearecio.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="chapter5 if语句">
                         
-                        <span class="card-title">python基础教程：</span>
+                        <span class="card-title">chapter5 if语句</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            在本章中，你将学习条件测试，以检查感兴趣的任何条件。你将学习简单的if语句，以及创建一系列复杂的if语句来确定当前到底处于什么情形。接下来，你将把学到的知识应用于列表，以编写for循环，以一种方式处理列表中的大多数元素，并以另一种不同的方式处理包含特定值的元素。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-08
                             </span>
                         <span class="publish-author">
                             
@@ -739,7 +838,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">16.5k</span>&nbsp;字
+                class="white-color">17.1k</span>&nbsp;字
             
             
             

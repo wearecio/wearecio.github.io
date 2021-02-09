@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>chapter7 用户输入和while循环</title>
+      <link href="/wearecio.github.io/2021/02/09/programminglanguage/python/python-ji-chu-jiao-cheng/chapter7-yong-hu-shu-ru-he-while-xun-huan/"/>
+      <url>/wearecio.github.io/2021/02/09/programminglanguage/python/python-ji-chu-jiao-cheng/chapter7-yong-hu-shu-ru-he-while-xun-huan/</url>
+      
+        <content type="html"><![CDATA[<h2 id="7-1-函数input-的工作原理"><a href="#7-1-函数input-的工作原理" class="headerlink" title="7.1 函数input()的工作原理"></a>7.1 函数input()的工作原理</h2><p>parrot.py</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">message <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"Tell me something, and I will repeat it back to you:"</span><span class="token punctuation">)</span>print<span class="token punctuation">(</span>message<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="7-1-1-编写清晰的程序"><a href="#7-1-1-编写清晰的程序" class="headerlink" title="7.1.1 编写清晰的程序"></a>7.1.1 编写清晰的程序</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">prompt <span class="token operator">=</span> <span class="token string">"If you tell us who you are, we can personalize the messages you see."</span>prompt <span class="token operator">+=</span> <span class="token string">"<span class="token entity" title="\n">\n</span>What is your first name? "</span>name <span class="token operator">=</span> input<span class="token punctuation">(</span>prompt<span class="token punctuation">)</span>print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>Hello, "</span> + name + <span class="token string">"!"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h3 id="7-1-2-使用int-来获取数值输入"><a href="#7-1-2-使用int-来获取数值输入" class="headerlink" title="7.1.2 使用int()来获取数值输入"></a>7.1.2 使用int()来获取数值输入</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">height <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"How tall are you, in inches? "</span><span class="token punctuation">)</span>height <span class="token operator">=</span> int<span class="token punctuation">(</span>height<span class="token punctuation">)</span><span class="token keyword">if</span> height <span class="token operator">></span><span class="token operator">=</span> <span class="token number">36</span>:    print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>You're tall enough to ride!"</span><span class="token punctuation">)</span>else:    print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>You'll be able to ride when you're a little older."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="7-1-3-求模运算符"><a href="#7-1-3-求模运算符" class="headerlink" title="7.1.3 求模运算符"></a>7.1.3 求模运算符</h3><p>even_or_odd.py</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">number <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"Enter a number, and I'll tell you if it's even or odd: "</span><span class="token punctuation">)</span>number <span class="token operator">=</span> int<span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token keyword">if</span> number % <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span>:    print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>The number "</span> + str<span class="token punctuation">(</span>number<span class="token punctuation">)</span> + <span class="token string">" is even."</span><span class="token punctuation">)</span>else:    print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>The number "</span> + str<span class="token punctuation">(</span>number<span class="token punctuation">)</span> + <span class="token string">" is odd."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="7-2-while-循环简介"><a href="#7-2-while-循环简介" class="headerlink" title="7.2 while 循环简介"></a>7.2 while 循环简介</h2><h3 id="7-2-1-使用while-循环"><a href="#7-2-1-使用while-循环" class="headerlink" title="7.2.1 使用while 循环"></a>7.2.1 使用while 循环</h3><p>counting.py</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">current_number <span class="token operator">=</span> <span class="token number">1</span><span class="token keyword">while</span> current_number <span class="token operator">&lt;</span><span class="token operator">=</span> <span class="token number">5</span>:    print<span class="token punctuation">(</span>current_number<span class="token punctuation">)</span>    current_number <span class="token operator">+=</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h3 id="7-2-2-让用户选择何时退出"><a href="#7-2-2-让用户选择何时退出" class="headerlink" title="7.2.2 让用户选择何时退出"></a>7.2.2 让用户选择何时退出</h3><p>parrot.py</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">prompt <span class="token operator">=</span> <span class="token string">"<span class="token entity" title="\n">\n</span>Tell me something, and I will repeat it back to you:"</span>prompt <span class="token operator">+=</span> <span class="token string">"<span class="token entity" title="\n">\n</span>Enter 'quit' to end the program. "</span>message <span class="token operator">=</span> <span class="token string">""</span><span class="token keyword">while</span> message <span class="token operator">!=</span> <span class="token string">'quit'</span><span class="token builtin class-name">:</span>    message <span class="token operator">=</span> input<span class="token punctuation">(</span>prompt<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>这个程序很好，唯一美中不足的是，它将单词’quit’也作为一条消息打印了出来。为修复这种问题，只需使用一个简单的if测试：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">prompt <span class="token operator">=</span> <span class="token string">"<span class="token entity" title="\n">\n</span>Tell me something, and I will repeat it back to you:"</span>prompt <span class="token operator">+=</span> <span class="token string">"<span class="token entity" title="\n">\n</span>Enter 'quit' to end the program. "</span>message <span class="token operator">=</span> <span class="token string">""</span><span class="token keyword">while</span> message <span class="token operator">!=</span> <span class="token string">'quit'</span><span class="token builtin class-name">:</span>    message <span class="token operator">=</span> input<span class="token punctuation">(</span>prompt<span class="token punctuation">)</span>    <span class="token keyword">if</span> message <span class="token operator">!=</span> <span class="token string">'quit'</span><span class="token builtin class-name">:</span>        print<span class="token punctuation">(</span>message<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="7-2-3-使用标志"><a href="#7-2-3-使用标志" class="headerlink" title="7.2.3 使用标志"></a>7.2.3 使用标志</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">prompt <span class="token operator">=</span> <span class="token string">"<span class="token entity" title="\n">\n</span>Tell me something, and I will repeat it back to you:"</span>prompt <span class="token operator">+=</span> <span class="token string">"<span class="token entity" title="\n">\n</span>Enter 'quit' to end the program. "</span>active <span class="token operator">=</span> True<span class="token keyword">while</span> active:    message <span class="token operator">=</span> input<span class="token punctuation">(</span>prompt<span class="token punctuation">)</span>    <span class="token keyword">if</span> message <span class="token operator">==</span> <span class="token string">'quit'</span><span class="token builtin class-name">:</span>        active <span class="token operator">=</span> False    else:        print<span class="token punctuation">(</span>message<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="7-2-4-使用break-退出循环"><a href="#7-2-4-使用break-退出循环" class="headerlink" title="7.2.4 使用break 退出循环"></a>7.2.4 使用break 退出循环</h3><p>cities.py</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">prompt <span class="token operator">=</span> <span class="token string">"<span class="token entity" title="\n">\n</span>Please enter the name of a city you have visited:"</span>prompt <span class="token operator">+=</span> <span class="token string">"<span class="token entity" title="\n">\n</span>(Enter 'quit' when you are finished.) "</span><span class="token keyword">while</span> True:    city <span class="token operator">=</span> input<span class="token punctuation">(</span>prompt<span class="token punctuation">)</span>    <span class="token keyword">if</span> city <span class="token operator">==</span> <span class="token string">'quit'</span><span class="token builtin class-name">:</span>        <span class="token builtin class-name">break</span>    else:        print<span class="token punctuation">(</span><span class="token string">"I'd love to go to "</span> + city.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">"!"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="7-2-5-在循环中使用continue"><a href="#7-2-5-在循环中使用continue" class="headerlink" title="7.2.5 在循环中使用continue"></a>7.2.5 在循环中使用continue</h3><p>counting.py</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">current_number <span class="token operator">=</span> <span class="token number">0</span><span class="token keyword">while</span> current_number <span class="token operator">&lt;</span> <span class="token number">10</span>:    current_number <span class="token operator">+=</span> <span class="token number">1</span>    <span class="token keyword">if</span> current_number % <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span>:        <span class="token builtin class-name">continue</span>    print<span class="token punctuation">(</span>current_number<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="7-2-6-避免无限循环"><a href="#7-2-6-避免无限循环" class="headerlink" title="7.2.6 避免无限循环"></a>7.2.6 避免无限循环</h3><p>counting.py</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">x <span class="token operator">=</span> <span class="token number">1</span><span class="token keyword">while</span> x <span class="token operator">&lt;</span><span class="token operator">=</span> <span class="token number">5</span>:    print<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h2 id="7-3-使用while-循环来处理列表和字典"><a href="#7-3-使用while-循环来处理列表和字典" class="headerlink" title="7.3 使用while 循环来处理列表和字典"></a>7.3 使用while 循环来处理列表和字典</h2><h3 id="7-3-1-在列表之间移动元素"><a href="#7-3-1-在列表之间移动元素" class="headerlink" title="7.3.1 在列表之间移动元素"></a>7.3.1 在列表之间移动元素</h3><p>confirmed_users.py</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="7-3-2-删除包含特定值的所有列表元素"><a href="#7-3-2-删除包含特定值的所有列表元素" class="headerlink" title="7.3.2 删除包含特定值的所有列表元素"></a>7.3.2 删除包含特定值的所有列表元素</h3><p>pets.py</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pets <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'dog'</span>, <span class="token string">'cat'</span>, <span class="token string">'dog'</span>, <span class="token string">'goldfish'</span>, <span class="token string">'cat'</span>, <span class="token string">'rabbit'</span>, <span class="token string">'cat'</span><span class="token punctuation">]</span>print<span class="token punctuation">(</span>pets<span class="token punctuation">)</span><span class="token keyword">while</span> <span class="token string">'cat'</span> <span class="token keyword">in</span> pets:    pets.remove<span class="token punctuation">(</span><span class="token string">'cat'</span><span class="token punctuation">)</span>print<span class="token punctuation">(</span>pets<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="7-3-3-使用用户输入来填充字典"><a href="#7-3-3-使用用户输入来填充字典" class="headerlink" title="7.3.3 使用用户输入来填充字典"></a>7.3.3 使用用户输入来填充字典</h3><p>mountain_poll.py</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">responses <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token comment"># 设置一个标志，指出调查是否继续</span>polling_active <span class="token operator">=</span> True<span class="token keyword">while</span> polling_active:    <span class="token comment"># 提示输入被调查者的名字和回答</span>    name <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>What is your name? "</span><span class="token punctuation">)</span>    response <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"Which mountain would you like to climb someday? "</span><span class="token punctuation">)</span>    <span class="token comment"># 将答卷存储在字典中</span>    responses<span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> response    <span class="token comment"># 看看是否还有人要参与调查</span>    repeat <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"Would you like to let another person respond? (yes/ no) "</span><span class="token punctuation">)</span>    <span class="token keyword">if</span> repeat <span class="token operator">==</span> <span class="token string">'no'</span><span class="token builtin class-name">:</span>        polling_active <span class="token operator">=</span> False<span class="token comment"># 调查结束，显示结果</span>print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>--- Poll Results ---"</span><span class="token punctuation">)</span><span class="token keyword">for</span> name, response <span class="token keyword">in</span> responses.items<span class="token punctuation">(</span><span class="token punctuation">)</span>:    print<span class="token punctuation">(</span>name + <span class="token string">" would like to climb "</span> + response + <span class="token string">"."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python基础教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>chapter5 if语句</title>
       <link href="/wearecio.github.io/2021/02/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter5-if-yu-ju/"/>
       <url>/wearecio.github.io/2021/02/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter5-if-yu-ju/</url>
@@ -29,7 +54,7 @@
     
     
     <entry>
-      <title>python基础教程：</title>
+      <title>chapter6 字典</title>
       <link href="/wearecio.github.io/2021/02/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter6-zi-dian/"/>
       <url>/wearecio.github.io/2021/02/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter6-zi-dian/</url>
       
@@ -180,58 +205,8 @@
     
     <entry>
       <title>python基础教程：</title>
-      <link href="/wearecio.github.io/2021/01/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter7-yong-hu-shu-ru-he-while-xun-huan/"/>
-      <url>/wearecio.github.io/2021/01/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter7-yong-hu-shu-ru-he-while-xun-huan/</url>
-      
-        <content type="html"><![CDATA[<h3 id=""><a href="#" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-3"><a href="#-3" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-4"><a href="#-4" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-5"><a href="#-5" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-6"><a href="#-6" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-7"><a href="#-7" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-8"><a href="#-8" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-9"><a href="#-9" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> python </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> python基础教程 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>python基础教程：</title>
       <link href="/wearecio.github.io/2021/01/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter8-han-shu/"/>
       <url>/wearecio.github.io/2021/01/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter8-han-shu/</url>
-      
-        <content type="html"><![CDATA[<h3 id=""><a href="#" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-3"><a href="#-3" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-4"><a href="#-4" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-5"><a href="#-5" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-6"><a href="#-6" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-7"><a href="#-7" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-8"><a href="#-8" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-9"><a href="#-9" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> python </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> python基础教程 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>python基础教程：</title>
-      <link href="/wearecio.github.io/2021/01/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter9-lei/"/>
-      <url>/wearecio.github.io/2021/01/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter9-lei/</url>
       
         <content type="html"><![CDATA[<h3 id=""><a href="#" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-3"><a href="#-3" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-4"><a href="#-4" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-5"><a href="#-5" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-6"><a href="#-6" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-7"><a href="#-7" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-8"><a href="#-8" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-9"><a href="#-9" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
       
@@ -259,6 +234,31 @@
       <url>/wearecio.github.io/2021/01/08/programminglanguage/python/python-ji-chu-jiao-cheng/hello-world-fu-ben-11/</url>
       
         <content type="html"><![CDATA[<h2 id="编程工具"><a href="#编程工具" class="headerlink" title="编程工具"></a>编程工具</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">- <span class="token punctuation">[</span>python官方<span class="token punctuation">]</span><span class="token punctuation">(</span>https://www.python.org/downloads/<span class="token punctuation">)</span>- <span class="token punctuation">[</span>pycharm 社区版<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span>- <span class="token punctuation">[</span>anaconda<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python基础教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>python基础教程：</title>
+      <link href="/wearecio.github.io/2021/01/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter9-lei/"/>
+      <url>/wearecio.github.io/2021/01/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter9-lei/</url>
+      
+        <content type="html"><![CDATA[<h3 id=""><a href="#" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-3"><a href="#-3" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-4"><a href="#-4" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-5"><a href="#-5" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-6"><a href="#-6" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-7"><a href="#-7" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-8"><a href="#-8" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="-9"><a href="#-9" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
       
       
       <categories>
@@ -440,31 +440,6 @@
     
     
     <entry>
-      <title>计算机二级公共基础-程序设计</title>
-      <link href="/wearecio.github.io/2020/08/04/computertest2/cheng-xu-she-ji/"/>
-      <url>/wearecio.github.io/2020/08/04/computertest2/cheng-xu-she-ji/</url>
-      
-        <content type="html"><![CDATA[<h1 id="程序设计基础"><a href="#程序设计基础" class="headerlink" title="程序设计基础"></a>程序设计基础</h1><h2 id="程序设计方法与风格"><a href="#程序设计方法与风格" class="headerlink" title="程序设计方法与风格"></a>程序设计方法与风格</h2><ol><li><p>形成良好的程序设计风格需注意：<br>①源程序文档化；<br>②数据说明的方法；<br>③语句的结构；<br>④输入和输出。<br>⑤模块设计要保证低耦合、高内聚。<br>(内聚：每个模块尽可能独立完成自己的功能，不依赖于模块外部的代码。<br>耦合：模块与模块之间接口的复杂程度，模块之间联系越复杂耦合度越高，牵一发<strong>而动全身。)</strong></p><p><strong>清晰第一，效率第二。</strong></p></li></ol><h2 id="结构化程序设计"><a href="#结构化程序设计" class="headerlink" title="结构化程序设计"></a>结构化程序设计</h2><ol><li><p>结构化程序设计方法的四条原则：<br>①自顶向下；<br>②逐步求精；<br>③模块化；<br>④限制使用goto语句。</p></li><li><p>两类循环语句：先判断后执行的循环体称为<strong>当型循环</strong>结构；先执行循环体后判断的称为<strong>直到型循环</strong>结构。</p></li><li><p>结构化程序的基本结构：<strong>顺序结构、选择结构（分支结构）、重复结构（循环结构）</strong></p></li></ol><h2 id="面向对象的程序设计"><a href="#面向对象的程序设计" class="headerlink" title="面向对象的程序设计"></a>面向对象的程序设计</h2><ol><li>面向对象的程序设计以对象为核心，强调对象的<strong>抽象性</strong>，<strong>封装性</strong>，<strong>继承性</strong>、<strong>多态性</strong>、（依赖性）。</li><li>对象的基本特点：<br>（1）标识惟一性；<br>（2）分类性；<br>（3）多态性；<br>（4）封装性；<br>（5）模块独立性好。</li><li><strong>属性</strong>：即对象所包含的信息，它在设计对象时确定，一般只能通过执行对象的操作来改变。<strong>类</strong>：<strong>是具有相似属性与操作的一组对象</strong>。类是关于对象性质的描述。类是对象的抽象，对象是其对应类的一个实例。</li><li><strong>消息</strong>：是一个实例与另一个实例之间传递的信息。<strong>对象间的通信靠消息传递</strong>。它请求对象执行某一处理或回答某一要求的信息，它统一了数据流和控制流。消息的<strong>组成</strong>包括：<br>（1）接收消息的对象的名称；<br>（2）消息标识符，也称消息名；<br>（3）零个或多个参数。</li><li><strong>多态性</strong>：是指同样的消息被不同的对象接受时可导致完全不同的行动的现象。</li><li>在<strong>软件设计</strong>过程中，必须遵循软件工程的基本原则：这些原则包括<strong>抽象</strong>、<strong>信息隐蔽</strong>、<strong>模块化</strong>、<strong>局部化</strong>、<strong>确定性</strong>、<strong>一致性</strong>、<strong>完备性</strong>和<strong>可靠性</strong>。</li><li><strong>面向对象</strong>的设计方法与传统的的面向过程的方法有本质不同，它的<strong>基本原理是，使用现实世界的概念抽象地思考问题从而自然地解决问题。</strong>它强调模拟现实世界中的概念而不强调算法，它鼓励开发者在软件开发的绝大部分中都用应用领域的概念去思考。</li><li>字符常量是单引号括起来的一个字符，例如’a’，也可以通过转义序列表示方法表示一些不可显示字符或无法通过键盘输入的字符，例如’\n’的含义是换行。</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> 计算机二级 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 程序设计 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>计算机二级公共基础-软件工程</title>
       <link href="/wearecio.github.io/2020/08/04/computertest2/ruan-jian-gong-cheng/"/>
       <url>/wearecio.github.io/2020/08/04/computertest2/ruan-jian-gong-cheng/</url>
@@ -482,6 +457,31 @@
         <tags>
             
             <tag> 软件工程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机二级公共基础-程序设计</title>
+      <link href="/wearecio.github.io/2020/08/04/computertest2/cheng-xu-she-ji/"/>
+      <url>/wearecio.github.io/2020/08/04/computertest2/cheng-xu-she-ji/</url>
+      
+        <content type="html"><![CDATA[<h1 id="程序设计基础"><a href="#程序设计基础" class="headerlink" title="程序设计基础"></a>程序设计基础</h1><h2 id="程序设计方法与风格"><a href="#程序设计方法与风格" class="headerlink" title="程序设计方法与风格"></a>程序设计方法与风格</h2><ol><li><p>形成良好的程序设计风格需注意：<br>①源程序文档化；<br>②数据说明的方法；<br>③语句的结构；<br>④输入和输出。<br>⑤模块设计要保证低耦合、高内聚。<br>(内聚：每个模块尽可能独立完成自己的功能，不依赖于模块外部的代码。<br>耦合：模块与模块之间接口的复杂程度，模块之间联系越复杂耦合度越高，牵一发<strong>而动全身。)</strong></p><p><strong>清晰第一，效率第二。</strong></p></li></ol><h2 id="结构化程序设计"><a href="#结构化程序设计" class="headerlink" title="结构化程序设计"></a>结构化程序设计</h2><ol><li><p>结构化程序设计方法的四条原则：<br>①自顶向下；<br>②逐步求精；<br>③模块化；<br>④限制使用goto语句。</p></li><li><p>两类循环语句：先判断后执行的循环体称为<strong>当型循环</strong>结构；先执行循环体后判断的称为<strong>直到型循环</strong>结构。</p></li><li><p>结构化程序的基本结构：<strong>顺序结构、选择结构（分支结构）、重复结构（循环结构）</strong></p></li></ol><h2 id="面向对象的程序设计"><a href="#面向对象的程序设计" class="headerlink" title="面向对象的程序设计"></a>面向对象的程序设计</h2><ol><li>面向对象的程序设计以对象为核心，强调对象的<strong>抽象性</strong>，<strong>封装性</strong>，<strong>继承性</strong>、<strong>多态性</strong>、（依赖性）。</li><li>对象的基本特点：<br>（1）标识惟一性；<br>（2）分类性；<br>（3）多态性；<br>（4）封装性；<br>（5）模块独立性好。</li><li><strong>属性</strong>：即对象所包含的信息，它在设计对象时确定，一般只能通过执行对象的操作来改变。<strong>类</strong>：<strong>是具有相似属性与操作的一组对象</strong>。类是关于对象性质的描述。类是对象的抽象，对象是其对应类的一个实例。</li><li><strong>消息</strong>：是一个实例与另一个实例之间传递的信息。<strong>对象间的通信靠消息传递</strong>。它请求对象执行某一处理或回答某一要求的信息，它统一了数据流和控制流。消息的<strong>组成</strong>包括：<br>（1）接收消息的对象的名称；<br>（2）消息标识符，也称消息名；<br>（3）零个或多个参数。</li><li><strong>多态性</strong>：是指同样的消息被不同的对象接受时可导致完全不同的行动的现象。</li><li>在<strong>软件设计</strong>过程中，必须遵循软件工程的基本原则：这些原则包括<strong>抽象</strong>、<strong>信息隐蔽</strong>、<strong>模块化</strong>、<strong>局部化</strong>、<strong>确定性</strong>、<strong>一致性</strong>、<strong>完备性</strong>和<strong>可靠性</strong>。</li><li><strong>面向对象</strong>的设计方法与传统的的面向过程的方法有本质不同，它的<strong>基本原理是，使用现实世界的概念抽象地思考问题从而自然地解决问题。</strong>它强调模拟现实世界中的概念而不强调算法，它鼓励开发者在软件开发的绝大部分中都用应用领域的概念去思考。</li><li>字符常量是单引号括起来的一个字符，例如’a’，也可以通过转义序列表示方法表示一些不可显示字符或无法通过键盘输入的字符，例如’\n’的含义是换行。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机二级 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 程序设计 </tag>
             
         </tags>
       
