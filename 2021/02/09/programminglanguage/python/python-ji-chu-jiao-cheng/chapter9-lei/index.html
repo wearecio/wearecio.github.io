@@ -367,7 +367,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    0
+                    5k
                 </div>
                 
 
@@ -387,16 +387,704 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id=""><a href="#" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-3"><a href="#-3" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-4"><a href="#-4" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-5"><a href="#-5" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-6"><a href="#-6" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-7"><a href="#-7" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-8"><a href="#-8" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="-9"><a href="#-9" class="headerlink" title=""></a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h2 id="9-1-创建和使用类"><a href="#9-1-创建和使用类" class="headerlink" title="9.1 创建和使用类"></a>9.1 创建和使用类</h2><blockquote>
+<p>方法<strong>init</strong>()<br>  类中的函数称为方法；你前面学到的有关函数的一切都适用于方法，就目前而言，唯一重要的差别是调用方法的方式。方法<strong>init</strong>()是一个特殊的方法，每当你根据Dog类创建新实例时，Python都会自动运行它。在这个方法的名称中，开头和末尾各有两个下划线，这是一种约定，旨在避免Python默认方法与普通方法发生名称冲突。</p>
+</blockquote>
+<blockquote>
+<p>以self为前缀的变量都可供类中的所有方法使用，我们还可以通过类的任何实例来访问这些变量。self.name = name获取存储在形参name中的值，并将其存储到变量name中，然后该变量被关联到当前创建的实例。self.age = age的作用与此类似。像这样可通过实例访问的变量称为属性。</p>
+</blockquote>
+<blockquote>
+<p>Dog类还定义了另外两个方法：sit()和roll_over()。由于这些方法不需要额外的信息，如名字或年龄，因此它们只有一个形参self。</p>
+</blockquote>
+<h3 id="9-1-1-创建Dog-类"><a href="#9-1-1-创建Dog-类" class="headerlink" title="9.1.1 创建Dog 类"></a>9.1.1 创建Dog 类</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">class Dog<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span><span class="token string">"一次模拟小狗的简单尝试"</span><span class="token string">""</span>
+
+    def __init__<span class="token punctuation">(</span>self, name, age<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"初始化属性name和age"</span><span class="token string">""</span>
+        self.name <span class="token operator">=</span> name
+        self.age <span class="token operator">=</span> age
+
+    def sit<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"模拟小狗被命令时蹲下"</span><span class="token string">""</span>
+        print<span class="token punctuation">(</span>self.name.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">" is now sitting."</span><span class="token punctuation">)</span>
+
+    def roll_over<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"模拟小狗被命令时打滚"</span><span class="token string">""</span>
+        print<span class="token punctuation">(</span>self.name.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">" rolled over!"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="9-1-2-根据类创建实例"><a href="#9-1-2-根据类创建实例" class="headerlink" title="9.1.2 根据类创建实例"></a>9.1.2 根据类创建实例</h3><p>dog.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">class Dog<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span>"一次模拟小狗的简单尝试<span class="token string">""</span>"
+
+    def __init__<span class="token punctuation">(</span>self, name, age<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"初始化属性name和age<span class="token string">""</span>"
+        self.name <span class="token operator">=</span> name
+        self.age <span class="token operator">=</span> age
+
+    def sit<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"模拟小狗被命令时蹲下<span class="token string">""</span>"
+        print<span class="token punctuation">(</span>self.name.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">" is now sitting."</span><span class="token punctuation">)</span>
+
+    def roll_over<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"模拟小狗被命令时打滚<span class="token string">""</span>"
+        print<span class="token punctuation">(</span>self.name.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">" rolled over!"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 根据类来创建实例</span>
+my_dog <span class="token operator">=</span> Dog<span class="token punctuation">(</span><span class="token string">'willie'</span>, <span class="token number">6</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 访问属性</span>
+print<span class="token punctuation">(</span><span class="token string">"My dog's name is "</span> + my_dog.name.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">"."</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span><span class="token string">"My dog is "</span> + str<span class="token punctuation">(</span>my_dog.age<span class="token punctuation">)</span> + <span class="token string">" years old."</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 调用方法</span>
+my_dog.sit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+my_dog.roll_over<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 创建多个实例</span>
+your_dog <span class="token operator">=</span> Dog<span class="token punctuation">(</span><span class="token string">'lucy'</span>, <span class="token number">3</span><span class="token punctuation">)</span>
+
+print<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>Your dog's name is "</span> + your_dog.name.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">"."</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span><span class="token string">"Your dog is "</span> + str<span class="token punctuation">(</span>your_dog.age<span class="token punctuation">)</span> + <span class="token string">"years old."</span><span class="token punctuation">)</span>
+your_dog.sit<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="9-2-使用类和实例"><a href="#9-2-使用类和实例" class="headerlink" title="9.2 使用类和实例"></a>9.2 使用类和实例</h2><h3 id="Car-类"><a href="#Car-类" class="headerlink" title="Car 类"></a>Car 类</h3><p>car.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">class Car<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span><span class="token string">"一次模拟汽车的简单尝试"</span><span class="token string">""</span>
+
+    def __init__<span class="token punctuation">(</span>self, make, model, year<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"初始化描述汽车的属性"</span><span class="token string">""</span>
+        self.make <span class="token operator">=</span> <span class="token function">make</span>
+        self.model <span class="token operator">=</span> model
+        self.year <span class="token operator">=</span> year
+
+    def get_descriptive_name<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"返回整洁的描述性信息"</span><span class="token string">""</span>
+        long_name <span class="token operator">=</span> str<span class="token punctuation">(</span>self.year<span class="token punctuation">)</span> + <span class="token string">' '</span> + self.make + <span class="token string">' '</span> + self.model
+        <span class="token builtin class-name">return</span> long_name.title<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  
+my_new_car <span class="token operator">=</span> Car<span class="token punctuation">(</span><span class="token string">'audi'</span>, <span class="token string">'a4'</span>, <span class="token number">2016</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>my_new_car.get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="9-2-2-给属性指定默认值"><a href="#9-2-2-给属性指定默认值" class="headerlink" title="9.2.2 给属性指定默认值"></a>9.2.2 给属性指定默认值</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">class Car<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span>"一次模拟汽车的简单尝试<span class="token string">""</span>"
+
+    def __init__<span class="token punctuation">(</span>self, make, model, year<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"初始化描述汽车的属性<span class="token string">""</span>"
+        self.make <span class="token operator">=</span> <span class="token function">make</span>
+        self.model <span class="token operator">=</span> model
+        self.year <span class="token operator">=</span> year
+        <span class="token comment"># 给属性指定默认值</span>
+        self.odometer_reading <span class="token operator">=</span> <span class="token number">0</span>
+
+    def get_descriptive_name<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"返回整洁的描述性信息"</span><span class="token string">""</span>
+        long_name <span class="token operator">=</span> str<span class="token punctuation">(</span>self.year<span class="token punctuation">)</span> + <span class="token string">' '</span> + self.make + <span class="token string">' '</span> + self.model
+        <span class="token builtin class-name">return</span> long_name.title<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    def read_odometer<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"打印一条指出汽车里程的信息"</span><span class="token string">""</span>
+        print<span class="token punctuation">(</span><span class="token string">"This car has "</span> + str<span class="token punctuation">(</span>self.odometer_reading<span class="token punctuation">)</span> + <span class="token string">" miles on it."</span><span class="token punctuation">)</span>
+
+my_new_car <span class="token operator">=</span> Car<span class="token punctuation">(</span><span class="token string">'audi'</span>, <span class="token string">'a4'</span>, <span class="token number">2016</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>my_new_car.get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">))</span>
+my_new_car.read_odometer<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="9-2-3-修改属性的值"><a href="#9-2-3-修改属性的值" class="headerlink" title="9.2.3 修改属性的值"></a>9.2.3 修改属性的值</h3><blockquote>
+<p>可以以三种不同的方式修改属性的值：直接通过实例进行修改；通过方法进行设置；通过方法进行递增（增加特定的值）。</p>
+</blockquote>
+<p>直接修改属性的值</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">class Car<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span>"一次模拟汽车的简单尝试<span class="token string">""</span>"
+
+    def __init__<span class="token punctuation">(</span>self, make, model, year<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"初始化描述汽车的属性<span class="token string">""</span>"
+        self.make <span class="token operator">=</span> <span class="token function">make</span>
+        self.model <span class="token operator">=</span> model
+        self.year <span class="token operator">=</span> year
+        <span class="token comment"># 给属性指定默认值</span>
+        self.odometer_reading <span class="token operator">=</span> <span class="token number">0</span>
+
+    def get_descriptive_name<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"返回整洁的描述性信息<span class="token string">""</span>"
+        long_name <span class="token operator">=</span> str<span class="token punctuation">(</span>self.year<span class="token punctuation">)</span> + <span class="token string">' '</span> + self.make + <span class="token string">' '</span> + self.model
+        <span class="token builtin class-name">return</span> long_name.title<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    def read_odometer<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"打印一条指出汽车里程的信息<span class="token string">""</span>"
+        print<span class="token punctuation">(</span><span class="token string">"This car has "</span> + str<span class="token punctuation">(</span>self.odometer_reading<span class="token punctuation">)</span> + <span class="token string">" miles on it."</span><span class="token punctuation">)</span>
+
+my_new_car <span class="token operator">=</span> Car<span class="token punctuation">(</span><span class="token string">'audi'</span>, <span class="token string">'a4'</span>, <span class="token number">2016</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>my_new_car.get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">))</span>
+
+<span class="token comment"># 直接修改属性的值</span>
+my_new_car.odometer_reading <span class="token operator">=</span> <span class="token number">23</span>
+my_new_car.read_odometer<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>通过方法修改属性的值</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">class Car<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span>"一次模拟汽车的简单尝试<span class="token string">""</span>"
+
+    def __init__<span class="token punctuation">(</span>self, make, model, year<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"初始化描述汽车的属性<span class="token string">""</span>"
+        self.make <span class="token operator">=</span> <span class="token function">make</span>
+        self.model <span class="token operator">=</span> model
+        self.year <span class="token operator">=</span> year
+        <span class="token comment"># 给属性指定默认值</span>
+        self.odometer_reading <span class="token operator">=</span> <span class="token number">0</span>
+
+    def get_descriptive_name<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"返回整洁的描述性信息<span class="token string">""</span>"
+        long_name <span class="token operator">=</span> str<span class="token punctuation">(</span>self.year<span class="token punctuation">)</span> + <span class="token string">' '</span> + self.make + <span class="token string">' '</span> + self.model
+        <span class="token builtin class-name">return</span> long_name.title<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    def read_odometer<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"打印一条指出汽车里程的信息<span class="token string">""</span>"
+        print<span class="token punctuation">(</span><span class="token string">"This car has "</span> + str<span class="token punctuation">(</span>self.odometer_reading<span class="token punctuation">)</span> + <span class="token string">" miles on it."</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 通过方法修改属性的值</span>
+    def update_odometer<span class="token punctuation">(</span>self, mileage<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"将里程表读数设置为指定的值<span class="token string">""</span>"
+        self.odometer_reading <span class="token operator">=</span> mileage
+
+my_new_car <span class="token operator">=</span> Car<span class="token punctuation">(</span><span class="token string">'audi'</span>, <span class="token string">'a4'</span>, <span class="token number">2016</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>my_new_car.get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">))</span>
+
+<span class="token comment"># 通过方法修改属性的值</span>
+my_new_car.update_odometer<span class="token punctuation">(</span><span class="token number">23</span><span class="token punctuation">)</span>
+my_new_car.read_odometer<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可对方法update_odometer()进行扩展，使其在修改里程表读数时做些额外的工作。下面来添加一些逻辑，禁止任何人将里程表读数往回调：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">class Car<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span>"一次模拟汽车的简单尝试<span class="token string">""</span>"
+
+    def __init__<span class="token punctuation">(</span>self, make, model, year<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"初始化描述汽车的属性<span class="token string">""</span>"
+        self.make <span class="token operator">=</span> <span class="token function">make</span>
+        self.model <span class="token operator">=</span> model
+        self.year <span class="token operator">=</span> year
+        <span class="token comment"># 给属性指定默认值</span>
+        self.odometer_reading <span class="token operator">=</span> <span class="token number">0</span>
+
+    def get_descriptive_name<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"返回整洁的描述性信息<span class="token string">""</span>"
+        long_name <span class="token operator">=</span> str<span class="token punctuation">(</span>self.year<span class="token punctuation">)</span> + <span class="token string">' '</span> + self.make + <span class="token string">' '</span> + self.model
+        <span class="token builtin class-name">return</span> long_name.title<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    def read_odometer<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"打印一条指出汽车里程的信息<span class="token string">""</span>"
+        print<span class="token punctuation">(</span><span class="token string">"This car has "</span> + str<span class="token punctuation">(</span>self.odometer_reading<span class="token punctuation">)</span> + <span class="token string">" miles on it."</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 通过方法修改属性的值</span>
+    def update_odometer<span class="token punctuation">(</span>self, mileage<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"
+          将里程表读数设置为指定的值
+          禁止将里程表读数往回调
+        <span class="token string">""</span>"
+
+        <span class="token keyword">if</span> mileage <span class="token operator">></span><span class="token operator">=</span> self.odometer_reading:
+            self.odometer_reading <span class="token operator">=</span> mileage
+        else:
+            print<span class="token punctuation">(</span><span class="token string">"You can't roll back an odometer."</span><span class="token punctuation">)</span>
+my_new_car <span class="token operator">=</span> Car<span class="token punctuation">(</span><span class="token string">'audi'</span>, <span class="token string">'a4'</span>, <span class="token number">2016</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>my_new_car.get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">))</span>
+
+<span class="token comment"># 通过方法修改属性的值</span>
+my_new_car.update_odometer<span class="token punctuation">(</span><span class="token number">23</span><span class="token punctuation">)</span>
+my_new_car.read_odometer<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>通过方法对属性的值进行递增</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">class Car<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span>"一次模拟汽车的简单尝试<span class="token string">""</span>"
+
+    def __init__<span class="token punctuation">(</span>self, make, model, year<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"初始化描述汽车的属性<span class="token string">""</span>"
+        self.make <span class="token operator">=</span> <span class="token function">make</span>
+        self.model <span class="token operator">=</span> model
+        self.year <span class="token operator">=</span> year
+        <span class="token comment"># 给属性指定默认值</span>
+        self.odometer_reading <span class="token operator">=</span> <span class="token number">0</span>
+
+    def get_descriptive_name<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"返回整洁的描述性信息<span class="token string">""</span>"
+        long_name <span class="token operator">=</span> str<span class="token punctuation">(</span>self.year<span class="token punctuation">)</span> + <span class="token string">' '</span> + self.make + <span class="token string">' '</span> + self.model
+        <span class="token builtin class-name">return</span> long_name.title<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    def read_odometer<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"打印一条指出汽车里程的信息<span class="token string">""</span>"
+        print<span class="token punctuation">(</span><span class="token string">"This car has "</span> + str<span class="token punctuation">(</span>self.odometer_reading<span class="token punctuation">)</span> + <span class="token string">" miles on it."</span><span class="token punctuation">)</span>
+
+    def update_odometer<span class="token punctuation">(</span>self, mileage<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"将里程表读数设置为指定的值<span class="token string">""</span>"
+        self.odometer_reading <span class="token operator">=</span> mileage    
+
+      <span class="token comment"># 通过方法对属性的值进行递增</span>
+    def increment_odometer<span class="token punctuation">(</span>self, miles<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"将里程表读数增加指定的量<span class="token string">""</span>"
+        self.odometer_reading <span class="token operator">+=</span> miles
+
+<span class="token comment"># 通过方法对属性的值进行递增</span>
+my_used_car <span class="token operator">=</span> Car<span class="token punctuation">(</span><span class="token string">'subaru'</span>, <span class="token string">'outback'</span>, <span class="token number">2013</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>my_used_car.get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">))</span>
+
+my_used_car.update_odometer<span class="token punctuation">(</span><span class="token number">23500</span><span class="token punctuation">)</span>
+my_used_car.read_odometer<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+my_used_car.increment_odometer<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
+my_used_car.read_odometer<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="9-3-继承"><a href="#9-3-继承" class="headerlink" title="9.3 继承"></a>9.3 继承</h2><blockquote>
+<p>编写类时，并非总是要从空白开始。如果你要编写的类是另一个现成类的特殊版本，可使用继承。一个类继承另一个类时，它将自动获得另一个类的所有属性和方法；原有的类称为父类，而新类称为子类。子类继承了其父类的所有属性和方法，同时还可以定义自己的属性和方法。</p>
+</blockquote>
+<h3 id="9-3-1-子类的方法init"><a href="#9-3-1-子类的方法init" class="headerlink" title="9.3.1 子类的方法init()"></a>9.3.1 子类的方法<strong>init</strong>()</h3><p>electric_car.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">class Car<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span><span class="token string">"一次模拟汽车的简单尝试"</span><span class="token string">""</span>
+
+    def __init__<span class="token punctuation">(</span>self, make, model, year<span class="token punctuation">)</span>:
+        self.make <span class="token operator">=</span> <span class="token function">make</span>
+        self.model <span class="token operator">=</span> model
+        self.year <span class="token operator">=</span> year
+        self.odometer_reading <span class="token operator">=</span> <span class="token number">0</span>
+
+    def get_descriptive_name<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        long_name <span class="token operator">=</span> str<span class="token punctuation">(</span>self.year<span class="token punctuation">)</span> + <span class="token string">' '</span> + self.make + <span class="token string">' '</span> + self.model
+        <span class="token builtin class-name">return</span> long_name.title<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    def read_odometer<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        print<span class="token punctuation">(</span><span class="token string">"This car has "</span> + str<span class="token punctuation">(</span>self.odometer_reading<span class="token punctuation">)</span> + <span class="token string">" miles on it."</span><span class="token punctuation">)</span>
+
+    def update_odometer<span class="token punctuation">(</span>self, mileage<span class="token punctuation">)</span>:
+        <span class="token keyword">if</span> mileage <span class="token operator">></span><span class="token operator">=</span> self.odometer_reading:
+            self.odometer_reading <span class="token operator">=</span> mileage
+        else:
+            print<span class="token punctuation">(</span><span class="token string">"You can't roll back an odometer!"</span><span class="token punctuation">)</span>
+
+    def increment_odometer<span class="token punctuation">(</span>self, miles<span class="token punctuation">)</span>:
+        self.odometer_reading <span class="token operator">+=</span> miles
+
+
+class ElectricCar<span class="token punctuation">(</span>Car<span class="token punctuation">)</span>:
+    <span class="token string">""</span><span class="token string">"电动汽车的独特之处"</span><span class="token string">""</span>
+
+    def __init__<span class="token punctuation">(</span>self, make, model, year<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"初始化父类的属性"</span><span class="token string">""</span>
+        super<span class="token punctuation">(</span><span class="token punctuation">)</span>.__init__<span class="token punctuation">(</span>make, model, year<span class="token punctuation">)</span>
+
+my_tesla <span class="token operator">=</span> ElectricCar<span class="token punctuation">(</span><span class="token string">'tesla'</span>, <span class="token string">'model s'</span>, <span class="token number">2016</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>my_tesla.get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>创建子类时，父类必须包含在当前文件中，且位于子类前面。<br>super()是一个特殊函数，帮助Python将父类和子类关联起来。这行代码让Python调用ElectricCar的父类的方法<strong>init</strong>()，让ElectricCar实例包含父类的所有属性。父类也称为超类（superclass），名称super因此而得名。</p>
+</blockquote>
+<h3 id="9-3-3-给子类定义属性和方法"><a href="#9-3-3-给子类定义属性和方法" class="headerlink" title="9.3.3 给子类定义属性和方法"></a>9.3.3 给子类定义属性和方法</h3><p>让一个类继承另一个类后，可添加区分子类和父类所需的新属性和方法。</p>
+<p>下面来添加一个电动汽车特有的属性（电瓶），以及一个描述该属性的方法。我们将存储电<br>瓶容量，并编写一个打印电瓶描述的方法：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">class Car<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span>"一次模拟汽车的简单尝试<span class="token string">""</span>"
+
+    def __init__<span class="token punctuation">(</span>self, make, model, year<span class="token punctuation">)</span>:
+        self.make <span class="token operator">=</span> <span class="token function">make</span>
+        self.model <span class="token operator">=</span> model
+        self.year <span class="token operator">=</span> year
+        self.odometer_reading <span class="token operator">=</span> <span class="token number">0</span>
+
+    def get_descriptive_name<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        long_name <span class="token operator">=</span> str<span class="token punctuation">(</span>self.year<span class="token punctuation">)</span> + <span class="token string">' '</span> + self.make + <span class="token string">' '</span> + self.model
+        <span class="token builtin class-name">return</span> long_name.title<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    def read_odometer<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        print<span class="token punctuation">(</span><span class="token string">"This car has "</span> + str<span class="token punctuation">(</span>self.odometer_reading<span class="token punctuation">)</span> + <span class="token string">" miles on it."</span><span class="token punctuation">)</span>
+
+    def update_odometer<span class="token punctuation">(</span>self, mileage<span class="token punctuation">)</span>:
+        <span class="token keyword">if</span> mileage <span class="token operator">></span><span class="token operator">=</span> self.odometer_reading:
+            self.odometer_reading <span class="token operator">=</span> mileage
+        else:
+            print<span class="token punctuation">(</span><span class="token string">"You can't roll back an odometer!"</span><span class="token punctuation">)</span>
+
+    def increment_odometer<span class="token punctuation">(</span>self, miles<span class="token punctuation">)</span>:
+        self.odometer_reading <span class="token operator">+=</span> miles
+
+class ElectricCar<span class="token punctuation">(</span>Car<span class="token punctuation">)</span>:
+    <span class="token string">""</span>"电动汽车的独特之处<span class="token string">""</span>"
+
+    def __init__<span class="token punctuation">(</span>self, make, model, year<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"初始化父类的属性<span class="token string">""</span>"
+        super<span class="token punctuation">(</span><span class="token punctuation">)</span>.__init__<span class="token punctuation">(</span>make, model, year<span class="token punctuation">)</span>
+        <span class="token comment"># 给子类定义属性和方法</span>
+        <span class="token string">""</span>"初始化电动汽车特有的属性<span class="token string">""</span>"
+        self.battery_size <span class="token operator">=</span> <span class="token number">70</span>
+
+    def describe_battery<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"打印一条描述电瓶容量的信息<span class="token string">""</span>"
+        print<span class="token punctuation">(</span><span class="token string">"This car has a "</span> + str<span class="token punctuation">(</span>self.battery_size<span class="token punctuation">)</span> + <span class="token string">"-kWh battery."</span><span class="token punctuation">)</span>
+
+my_tesla <span class="token operator">=</span> ElectricCar<span class="token punctuation">(</span><span class="token string">'tesla'</span>, <span class="token string">'model s'</span>, <span class="token number">2016</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>my_tesla.get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">))</span>
+
+<span class="token comment"># 调用给子类定义属性和方法</span>
+my_tesla.describe_battery<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="9-3-4-重写父类的方法"><a href="#9-3-4-重写父类的方法" class="headerlink" title="9.3.4 重写父类的方法"></a>9.3.4 重写父类的方法</h3><p>对于父类的方法，只要它不符合子类模拟的实物的行为，都可对其进行重写。为此，可在子类中定义一个这样的方法，即它与要重写的父类方法同名。这样，Python将不会考虑这个父类方法，而只关注你在子类中定义的相应方法。</p>
+<p>假设Car类有一个名为fill_gas_tank()的方法，它对全电动汽车来说毫无意义，因此你可能想重写它。下面演示了一种重写方式：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">class Car<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span>"一次模拟汽车的简单尝试<span class="token string">""</span>"
+
+    def __init__<span class="token punctuation">(</span>self, make, model, year<span class="token punctuation">)</span>:
+        self.make <span class="token operator">=</span> <span class="token function">make</span>
+        self.model <span class="token operator">=</span> model
+        self.year <span class="token operator">=</span> year
+        self.odometer_reading <span class="token operator">=</span> <span class="token number">0</span>
+
+    def get_descriptive_name<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        long_name <span class="token operator">=</span> str<span class="token punctuation">(</span>self.year<span class="token punctuation">)</span> + <span class="token string">' '</span> + self.make + <span class="token string">' '</span> + self.model
+        <span class="token builtin class-name">return</span> long_name.title<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    def read_odometer<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        print<span class="token punctuation">(</span><span class="token string">"This car has "</span> + str<span class="token punctuation">(</span>self.odometer_reading<span class="token punctuation">)</span> + <span class="token string">" miles on it."</span><span class="token punctuation">)</span>
+
+    def update_odometer<span class="token punctuation">(</span>self, mileage<span class="token punctuation">)</span>:
+        <span class="token keyword">if</span> mileage <span class="token operator">></span><span class="token operator">=</span> self.odometer_reading:
+            self.odometer_reading <span class="token operator">=</span> mileage
+        else:
+            print<span class="token punctuation">(</span><span class="token string">"You can't roll back an odometer!"</span><span class="token punctuation">)</span>
+
+    def increment_odometer<span class="token punctuation">(</span>self, miles<span class="token punctuation">)</span>:
+        self.odometer_reading <span class="token operator">+=</span> miles
+
+
+class ElectricCar<span class="token punctuation">(</span>Car<span class="token punctuation">)</span>:
+    <span class="token string">""</span>"电动汽车的独特之处<span class="token string">""</span>"
+
+    def __init__<span class="token punctuation">(</span>self, make, model, year<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"初始化父类的属性<span class="token string">""</span>"
+        super<span class="token punctuation">(</span><span class="token punctuation">)</span>.__init__<span class="token punctuation">(</span>make, model, year<span class="token punctuation">)</span>
+        <span class="token comment"># 给子类定义属性和方法</span>
+        <span class="token string">""</span>"初始化电动汽车特有的属性<span class="token string">""</span>"
+        self.battery_size <span class="token operator">=</span> <span class="token number">70</span>
+
+    def describe_battery<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"打印一条描述电瓶容量的信息<span class="token string">""</span>"
+        print<span class="token punctuation">(</span><span class="token string">"This car has a "</span> + str<span class="token punctuation">(</span>self.battery_size<span class="token punctuation">)</span> + <span class="token string">"-kWh battery."</span><span class="token punctuation">)</span>
+
+    def fill_gas_tank<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"电动汽车没有油箱<span class="token string">""</span>"
+        print<span class="token punctuation">(</span><span class="token string">"This car doesn't need a gas tank!"</span><span class="token punctuation">)</span>
+
+my_tesla <span class="token operator">=</span> ElectricCar<span class="token punctuation">(</span><span class="token string">'tesla'</span>, <span class="token string">'model s'</span>, <span class="token number">2016</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>my_tesla.get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">))</span>
+
+<span class="token comment"># 调用给子类定义属性和方法</span>
+my_tesla.describe_battery<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 调用重写父类的方法</span>
+my_tesla.fill_gas_tank<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="9-3-5-将实例用作属性"><a href="#9-3-5-将实例用作属性" class="headerlink" title="9.3.5 将实例用作属性"></a>9.3.5 将实例用作属性</h3><p>使用代码模拟实物时，你可能会发现自己给类添加的细节越来越多：属性和方法清单以及文件都越来越长。在这种情况下，可能需要将类的一部分作为一个独立的类提取出来。你可以将大型类拆分成多个协同工作的小类。</p>
+<p>例如，不断给ElectricCar类添加细节时，我们可能会发现其中包含很多专门针对汽车电瓶的属性和方法。在这种情况下，我们可将这些属性和方法提取出来，放到另一个名为Battery的类中，并将一个Battery实例用作ElectricCar类的一个属性：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">class Car<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span>"一次模拟汽车的简单尝试<span class="token string">""</span>"
+
+    def __init__<span class="token punctuation">(</span>self, make, model, year<span class="token punctuation">)</span>:
+        self.make <span class="token operator">=</span> <span class="token function">make</span>
+        self.model <span class="token operator">=</span> model
+        self.year <span class="token operator">=</span> year
+        self.odometer_reading <span class="token operator">=</span> <span class="token number">0</span>
+
+    def get_descriptive_name<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        long_name <span class="token operator">=</span> str<span class="token punctuation">(</span>self.year<span class="token punctuation">)</span> + <span class="token string">' '</span> + self.make + <span class="token string">' '</span> + self.model
+        <span class="token builtin class-name">return</span> long_name.title<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    def read_odometer<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        print<span class="token punctuation">(</span><span class="token string">"This car has "</span> + str<span class="token punctuation">(</span>self.odometer_reading<span class="token punctuation">)</span> + <span class="token string">" miles on it."</span><span class="token punctuation">)</span>
+
+    def update_odometer<span class="token punctuation">(</span>self, mileage<span class="token punctuation">)</span>:
+        <span class="token keyword">if</span> mileage <span class="token operator">></span><span class="token operator">=</span> self.odometer_reading:
+            self.odometer_reading <span class="token operator">=</span> mileage
+        else:
+            print<span class="token punctuation">(</span><span class="token string">"You can't roll back an odometer!"</span><span class="token punctuation">)</span>
+
+    def increment_odometer<span class="token punctuation">(</span>self, miles<span class="token punctuation">)</span>:
+        self.odometer_reading <span class="token operator">+=</span> miles
+
+<span class="token comment"># 将实例用作属性</span>
+class Battery<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span>"一次模拟电动汽车电瓶的简单尝试<span class="token string">""</span>"
+
+    def __init__<span class="token punctuation">(</span>self, <span class="token assign-left variable">battery_size</span><span class="token operator">=</span><span class="token number">70</span><span class="token punctuation">)</span>:
+        <span class="token string">""</span>"初始化电瓶的属性<span class="token string">""</span>"
+        self.battery_size <span class="token operator">=</span> battery_size
+
+    def describe_battery<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"打印一条描述电瓶容量的消息<span class="token string">""</span>"
+        print<span class="token punctuation">(</span><span class="token string">"This car has a "</span> + str<span class="token punctuation">(</span>self.battery_size<span class="token punctuation">)</span> + <span class="token string">"-kWh battery."</span><span class="token punctuation">)</span>
+
+    def get_range<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"打印一条消息，指出电瓶的续航里程<span class="token string">""</span>"
+        <span class="token keyword">if</span> self.battery_size <span class="token operator">==</span> <span class="token number">70</span>:
+            range <span class="token operator">=</span> <span class="token number">240</span>
+        <span class="token keyword">elif</span> self.battery_size <span class="token operator">==</span> <span class="token number">85</span>:
+            range <span class="token operator">=</span> <span class="token number">270</span>
+
+        message <span class="token operator">=</span> <span class="token string">"This car can go approximately "</span> + str<span class="token punctuation">(</span>range<span class="token punctuation">)</span>
+        message <span class="token operator">+=</span> <span class="token string">" miles on a full cherge"</span>
+        print<span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+
+
+class ElectricCar<span class="token punctuation">(</span>Car<span class="token punctuation">)</span>:
+    <span class="token string">""</span>"电动汽车的独特之处<span class="token string">""</span>"
+
+    def __init__<span class="token punctuation">(</span>self, make, model, year<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"初始化父类的属性<span class="token string">""</span>"
+        super<span class="token punctuation">(</span><span class="token punctuation">)</span>.__init__<span class="token punctuation">(</span>make, model, year<span class="token punctuation">)</span>
+        <span class="token string">""</span>"初始化电动汽车特有的属性<span class="token string">""</span>"
+        self.battery <span class="token operator">=</span> Battery<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+my_tesla <span class="token operator">=</span> ElectricCar<span class="token punctuation">(</span><span class="token string">'tesla'</span>, <span class="token string">'model s'</span>, <span class="token number">2016</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>my_tesla.get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">))</span>
+
+<span class="token comment"># 将实例用作属性</span>
+my_tesla.battery.describe_battery<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+my_tesla.battery.get_range<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="9-4-导入类"><a href="#9-4-导入类" class="headerlink" title="9.4 导入类"></a>9.4 导入类</h2><h3 id="9-4-1-导入单个类"><a href="#9-4-1-导入单个类" class="headerlink" title="9.4.1 导入单个类"></a>9.4.1 导入单个类</h3><p>car.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token string">""</span><span class="token string">"一个可用于表示汽车的类"</span><span class="token string">""</span>
+
+class Car<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span><span class="token string">"一次模拟汽车的简单尝试"</span><span class="token string">""</span>
+
+    def __init__<span class="token punctuation">(</span>self, make, model, year<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"初始化描述汽车的属性"</span><span class="token string">""</span>
+        self.make <span class="token operator">=</span> <span class="token function">make</span>
+        self.model <span class="token operator">=</span> model
+        self.year <span class="token operator">=</span> year
+        self.odometer_reading <span class="token operator">=</span> <span class="token number">0</span>
+
+    def get_descriptive_name<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"返回整洁的描述性名称"</span><span class="token string">""</span>
+        long_name <span class="token operator">=</span> str<span class="token punctuation">(</span>self.year<span class="token punctuation">)</span> + <span class="token string">' '</span> + self.make + <span class="token string">' '</span> + self.model
+        <span class="token builtin class-name">return</span> long_name.title<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    def read_odometer<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"打印一条消息，指出汽车的里程"</span><span class="token string">""</span>
+        print<span class="token punctuation">(</span><span class="token string">"This car has "</span> + str<span class="token punctuation">(</span>self.odometer_reading<span class="token punctuation">)</span> + <span class="token string">" miles on it."</span><span class="token punctuation">)</span>
+
+    def update_odometer<span class="token punctuation">(</span>self, mileage<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"
+        将里程表读数设置为指定的值
+        拒绝将里程表往回拨
+        "</span><span class="token string">""</span>
+        <span class="token keyword">if</span> mileage <span class="token operator">></span><span class="token operator">=</span> self.odometer_reading:
+            self.odometer_reading <span class="token operator">=</span> mileage
+        else:
+            print<span class="token punctuation">(</span><span class="token string">"You can't roll back an odometer!"</span><span class="token punctuation">)</span>
+
+    def increment_odometer<span class="token punctuation">(</span>self, miles<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"将里程表读数增加指定的量"</span><span class="token string">""</span>
+        self.odometer_reading <span class="token operator">+=</span> miles<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>下面来创建另一个文件——my_car.py，在其中导入Car类并创建其实例：</p>
+<p>my_car.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">from car <span class="token function">import</span> Car
+
+my_new_car <span class="token operator">=</span> Car<span class="token punctuation">(</span><span class="token string">'audi'</span>, <span class="token string">'a4'</span>, <span class="token number">2016</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>my_new_car.get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">))</span>
+
+my_new_car.odometer_reading <span class="token operator">=</span> <span class="token number">23</span>
+my_new_car.read_odometer<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="9-4-2-在一个模块中存储多个类"><a href="#9-4-2-在一个模块中存储多个类" class="headerlink" title="9.4.2 在一个模块中存储多个类"></a>9.4.2 在一个模块中存储多个类</h3><p>虽然同一个模块中的类之间应存在某种相关性，但可根据需要在一个模块中存储任意数量的类。类Battery和ElectricCar都可帮助模拟汽车，因此下面将它们都加入模块car.py中：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token string">""</span>"一个可用于表示汽车的类<span class="token string">""</span>"
+
+class Car<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span>"一次模拟汽车的简单尝试<span class="token string">""</span>"
+
+    def __init__<span class="token punctuation">(</span>self, make, model, year<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"初始化描述汽车的属性<span class="token string">""</span>"
+        self.make <span class="token operator">=</span> <span class="token function">make</span>
+        self.model <span class="token operator">=</span> model
+        self.year <span class="token operator">=</span> year
+        self.odometer_reading <span class="token operator">=</span> <span class="token number">0</span>
+
+    def get_descriptive_name<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"返回整洁的描述性名称<span class="token string">""</span>"
+        long_name <span class="token operator">=</span> str<span class="token punctuation">(</span>self.year<span class="token punctuation">)</span> + <span class="token string">' '</span> + self.make + <span class="token string">' '</span> + self.model
+        <span class="token builtin class-name">return</span> long_name.title<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    def read_odometer<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"打印一条消息，指出汽车的里程<span class="token string">""</span>"
+        print<span class="token punctuation">(</span><span class="token string">"This car has "</span> + str<span class="token punctuation">(</span>self.odometer_reading<span class="token punctuation">)</span> + <span class="token string">" miles on it."</span><span class="token punctuation">)</span>
+
+    def update_odometer<span class="token punctuation">(</span>self, mileage<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"
+        将里程表读数设置为指定的值
+        拒绝将里程表往回拨
+        <span class="token string">""</span>"
+        <span class="token keyword">if</span> mileage <span class="token operator">></span><span class="token operator">=</span> self.odometer_reading:
+            self.odometer_reading <span class="token operator">=</span> mileage
+        else:
+            print<span class="token punctuation">(</span><span class="token string">"You can't roll back an odometer!"</span><span class="token punctuation">)</span>
+
+    def increment_odometer<span class="token punctuation">(</span>self, miles<span class="token punctuation">)</span>:
+        <span class="token string">""</span>"将里程表读数增加指定的量<span class="token string">""</span>"
+        self.odometer_reading <span class="token operator">+=</span> miles
+
+<span class="token comment"># 在一个模块中存储多个类</span>
+    <span class="token string">""</span>"一组用于表示燃油汽车和电动汽车的类<span class="token string">""</span>"
+
+class Battery<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span>"一次模拟电动汽车电瓶的简单尝试<span class="token string">""</span>"
+    <span class="token comment"># 源代码错误:battery_size = 60, 改为：70</span>
+    def __init__<span class="token punctuation">(</span>self, <span class="token assign-left variable">battery_size</span><span class="token operator">=</span><span class="token number">70</span><span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"初始化电瓶的属性"</span><span class="token string">""</span>
+        self.battery_size <span class="token operator">=</span> battery_size
+
+    def describe_battery<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"打印一条描述电瓶容量的消息"</span><span class="token string">""</span>
+        print<span class="token punctuation">(</span><span class="token string">"This car has a "</span> + str<span class="token punctuation">(</span>self.battery_size<span class="token punctuation">)</span> + <span class="token string">"-kWh battery."</span><span class="token punctuation">)</span>
+
+    def get_range<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"打印一条描述电瓶续航里程的消息"</span><span class="token string">""</span>
+        <span class="token keyword">if</span> self.battery_size <span class="token operator">==</span> <span class="token number">70</span>:
+            range <span class="token operator">=</span> <span class="token number">240</span>
+        <span class="token keyword">elif</span> self.battery_size <span class="token operator">==</span> <span class="token number">85</span>:
+            range <span class="token operator">=</span> <span class="token number">270</span>
+
+        message <span class="token operator">=</span> <span class="token string">"This car can go approximately "</span> + str<span class="token punctuation">(</span>range<span class="token punctuation">)</span>
+        message <span class="token operator">+=</span> <span class="token string">" miles on a full charge."</span>
+        print<span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+
+
+class ElectricCar<span class="token punctuation">(</span>Car<span class="token punctuation">)</span>:
+    <span class="token string">""</span><span class="token string">"模拟电动汽车的独特之处"</span><span class="token string">""</span>
+
+    def __init__<span class="token punctuation">(</span>self, make, model, year<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"
+        初始化父类的属性，再初始化电动汽车特有的属性
+        "</span><span class="token string">""</span>
+        super<span class="token punctuation">(</span><span class="token punctuation">)</span>.__init__<span class="token punctuation">(</span>make, model, year<span class="token punctuation">)</span>
+        self.battery <span class="token operator">=</span> Battery<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>现在，可以新建一个名为my_electric_car.py的文件，导入ElectricCar类，并创建一辆电动汽车了：</p>
+<p>my_electric_car.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">from car <span class="token function">import</span> ElectricCar
+
+my_tesla <span class="token operator">=</span> ElectricCar<span class="token punctuation">(</span><span class="token string">'tesla'</span>, <span class="token string">'model s'</span>, <span class="token number">2016</span><span class="token punctuation">)</span>
+
+print<span class="token punctuation">(</span>my_tesla.get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">))</span>
+my_tesla.battery.describe_battery<span class="token punctuation">(</span><span class="token punctuation">)</span>
+my_tesla.battery.get_range<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="9-4-3-从一个模块中导入多个类"><a href="#9-4-3-从一个模块中导入多个类" class="headerlink" title="9.4.3 从一个模块中导入多个类"></a>9.4.3 从一个模块中导入多个类</h3><p>可根据需要在程序文件中导入任意数量的类。如果我们要在同一个程序中创建普通汽车和电动汽车，就需要将Car和ElectricCar类都导入：</p>
+<p>my_cars.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">from car <span class="token function">import</span> Car, ElectricCar
+
+my_beetle <span class="token operator">=</span> Car<span class="token punctuation">(</span><span class="token string">'volkswagen'</span>, <span class="token string">'beetle'</span>, <span class="token number">2016</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>my_beetle.get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">))</span>
+
+my_tesla <span class="token operator">=</span> ElectricCar<span class="token punctuation">(</span><span class="token string">'tesla'</span>, <span class="token string">'roadster'</span>, <span class="token number">2016</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>my_tesla.get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="9-4-4-导入整个模块"><a href="#9-4-4-导入整个模块" class="headerlink" title="9.4.4 导入整个模块"></a>9.4.4 导入整个模块</h3><p>你还可以导入整个模块，再使用句点表示法访问需要的类。这种导入方法很简单，代码也易于阅读。由于创建类实例的代码都包含模块名，因此不会与当前文件使用的任何名称发生冲突。</p>
+<p>my_cars.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">import</span> car
+
+my_beetle <span class="token operator">=</span> car.Car<span class="token punctuation">(</span><span class="token string">'volkswagen'</span>, <span class="token string">'beetle'</span>, <span class="token number">2016</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>my_beetle.get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">))</span>
+
+my_tesla <span class="token operator">=</span> car.ElectricCar<span class="token punctuation">(</span><span class="token string">'tesla'</span>, <span class="token string">'roadster'</span>, <span class="token number">2016</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>my_tesla.get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="9-4-5-导入模块中的所有类"><a href="#9-4-5-导入模块中的所有类" class="headerlink" title="9.4.5 导入模块中的所有类"></a>9.4.5 导入模块中的所有类</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">from module_name <span class="token function">import</span> *
+
+
+    不推荐使用这种导入方式，其原因有二。首先，如果只要看一下文件开头的import语句，就能清楚地知道程序使用了哪些类，将大有裨益；但这种导入方式没有明确地指出你使用了模块中的哪些类。这种导入方式还可能引发名称方面的困惑。如果你不小心导入了一个与程序文件中其他东西同名的类，将引发难以诊断的错误。这里之所以介绍这种导入方式，是因为虽然不推荐使用这种方式，但你可能会在别人编写的代码中见到它。
+
+    需要从一个模块中导入很多类时，最好导入整个模块，并使用module_name.class_name语法来访问类。这样做时，虽然文件开头并没有列出用到的所有类，但你清楚地知道在程序的哪些地方使用了导入的模块；你还避免了导入模块中的每个类可能引发的名称冲突。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="9-4-6-在一个模块中导入另一个模块"><a href="#9-4-6-在一个模块中导入另一个模块" class="headerlink" title="9.4.6 在一个模块中导入另一个模块"></a>9.4.6 在一个模块中导入另一个模块</h3><p>有时候，需要将类分散到多个模块中，以免模块太大，或在同一个模块中存储不相关的类。将类存储在多个模块中时，你可能会发现一个模块中的类依赖于另一个模块中的类。在这种情况下，可在前一个模块中导入必要的类。</p>
+<p>例如，下面将Car类存储在一个模块中，并将ElectricCar和Battery类存储在另一个模块中。我们将第二个模块命名为electric_car.py（这将覆盖前面创建的文件electric_car.py），并将<br>Battery和ElectricCar类复制到这个模块中：</p>
+<p>electric_car.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 在一个模块中存储多个类</span>
+<span class="token string">""</span>"一组用于表示电动汽车的类<span class="token string">""</span>"
+
+from car <span class="token function">import</span> Car
+
+class Battery<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span>"一次模拟电动汽车电瓶的简单尝试<span class="token string">""</span>"
+    <span class="token comment"># 书中源代码错误:battery_size = 60, 改为：70</span>
+    def __init__<span class="token punctuation">(</span>self, <span class="token assign-left variable">battery_size</span><span class="token operator">=</span><span class="token number">70</span><span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"初始化电瓶的属性"</span><span class="token string">""</span>
+        self.battery_size <span class="token operator">=</span> battery_size
+
+    def describe_battery<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"打印一条描述电瓶容量的消息"</span><span class="token string">""</span>
+        print<span class="token punctuation">(</span><span class="token string">"This car has a "</span> + str<span class="token punctuation">(</span>self.battery_size<span class="token punctuation">)</span> + <span class="token string">"-kWh battery."</span><span class="token punctuation">)</span>
+
+    def get_range<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"打印一条描述电瓶续航里程的消息"</span><span class="token string">""</span>
+        <span class="token keyword">if</span> self.battery_size <span class="token operator">==</span> <span class="token number">70</span>:
+            range <span class="token operator">=</span> <span class="token number">240</span>
+        <span class="token keyword">elif</span> self.battery_size <span class="token operator">==</span> <span class="token number">85</span>:
+            range <span class="token operator">=</span> <span class="token number">270</span>
+
+        message <span class="token operator">=</span> <span class="token string">"This car can go approximately "</span> + str<span class="token punctuation">(</span>range<span class="token punctuation">)</span>
+        message <span class="token operator">+=</span> <span class="token string">" miles on a full charge."</span>
+        print<span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+
+
+class ElectricCar<span class="token punctuation">(</span>Car<span class="token punctuation">)</span>:
+    <span class="token string">""</span><span class="token string">"模拟电动汽车的独特之处"</span><span class="token string">""</span>
+
+    def __init__<span class="token punctuation">(</span>self, make, model, year<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"
+        初始化父类的属性，再初始化电动汽车特有的属性
+        "</span><span class="token string">""</span>
+        super<span class="token punctuation">(</span><span class="token punctuation">)</span>.__init__<span class="token punctuation">(</span>make, model, year<span class="token punctuation">)</span>
+        self.battery <span class="token operator">=</span> Battery<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>ElectricCar类需要访问其父类Car，我们直接将Car类导入该模块中。如果我们忘记了这行代码，Python将在我们试图创建ElectricCar实例时引发错误。我们还需要更新模块car，使其包含Car类：</p>
+<p>car.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token string">""</span><span class="token string">"一个可用于表示汽车的类"</span><span class="token string">""</span>
+
+class Car<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span><span class="token string">"一次模拟汽车的简单尝试"</span><span class="token string">""</span>
+
+    def __init__<span class="token punctuation">(</span>self, make, model, year<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"初始化描述汽车的属性"</span><span class="token string">""</span>
+        self.make <span class="token operator">=</span> <span class="token function">make</span>
+        self.model <span class="token operator">=</span> model
+        self.year <span class="token operator">=</span> year
+        self.odometer_reading <span class="token operator">=</span> <span class="token number">0</span>
+
+    def get_descriptive_name<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"返回整洁的描述性名称"</span><span class="token string">""</span>
+        long_name <span class="token operator">=</span> str<span class="token punctuation">(</span>self.year<span class="token punctuation">)</span> + <span class="token string">' '</span> + self.make + <span class="token string">' '</span> + self.model
+        <span class="token builtin class-name">return</span> long_name.title<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    def read_odometer<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"打印一条消息，指出汽车的里程"</span><span class="token string">""</span>
+        print<span class="token punctuation">(</span><span class="token string">"This car has "</span> + str<span class="token punctuation">(</span>self.odometer_reading<span class="token punctuation">)</span> + <span class="token string">" miles on it."</span><span class="token punctuation">)</span>
+
+    def update_odometer<span class="token punctuation">(</span>self, mileage<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"
+        将里程表读数设置为指定的值
+        拒绝将里程表往回拨
+        "</span><span class="token string">""</span>
+        <span class="token keyword">if</span> mileage <span class="token operator">></span><span class="token operator">=</span> self.odometer_reading:
+            self.odometer_reading <span class="token operator">=</span> mileage
+        else:
+            print<span class="token punctuation">(</span><span class="token string">"You can't roll back an odometer!"</span><span class="token punctuation">)</span>
+
+    def increment_odometer<span class="token punctuation">(</span>self, miles<span class="token punctuation">)</span>:
+        <span class="token string">""</span><span class="token string">"将里程表读数增加指定的量"</span><span class="token string">""</span>
+        self.odometer_reading <span class="token operator">+=</span> miles<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>my_cars.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">from car <span class="token function">import</span> Car
+from electric_car <span class="token function">import</span> ElectricCar
+
+my_beetle <span class="token operator">=</span> Car<span class="token punctuation">(</span><span class="token string">'volkswagen'</span>, <span class="token string">'beetle'</span>, <span class="token number">2016</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>my_beetle.get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">))</span>
+
+my_tesla <span class="token operator">=</span> ElectricCar<span class="token punctuation">(</span><span class="token string">'tesla'</span>, <span class="token string">'roadster'</span>, <span class="token number">2016</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>my_tesla.get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="9-5-Python-标准库"><a href="#9-5-Python-标准库" class="headerlink" title="9.5 Python 标准库"></a>9.5 Python 标准库</h2><p>Python标准库是一组模块，安装的Python都包含它。你现在对类的工作原理已有大致的了解，可以开始使用其他程序员编写好的模块了。可使用标准库中的任何函数和类，为此只需在程序开头包含一条简单的import语句。下面来看模块collections中的一个类——OrderedDict。</p>
+<p>字典让你能够将信息关联起来，但它们不记录你添加键—值对的顺序。要创建字典并记录其中的键—值对的添加顺序，可使用模块collections中的OrderedDict类。OrderedDict实例的行为几乎与字典相同，区别只在于记录了键—值对的添加顺序。</p>
+<p>我们再来看一看第6章的favorite_languages.py示例，但这次将记录被调查者参与调查的顺序：</p>
+<p>favorite_languages.py</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">from collections <span class="token function">import</span> OrderedDict
+
+favorite_languages <span class="token operator">=</span> OrderedDict<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+favorite_languages<span class="token punctuation">[</span><span class="token string">'jen'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'python'</span>
+favorite_languages<span class="token punctuation">[</span><span class="token string">'sarah'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'c'</span>
+favorite_languages<span class="token punctuation">[</span><span class="token string">'edward'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'ruby'</span>
+favorite_languages<span class="token punctuation">[</span><span class="token string">'phil'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'python'</span>
+
+<span class="token keyword">for</span> name, language <span class="token keyword">in</span> favorite_languages.items<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    print<span class="token punctuation">(</span>name.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">"'s favorite language is "</span> +
+        language.title<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">"."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -509,19 +1197,19 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/wearecio.github.io/2021/02/09/programminglanguage/python/python-ji-chu-jiao-cheng/chapter7-yong-hu-shu-ru-he-while-xun-huan/">
+                <a href="/wearecio.github.io/2021/02/09/programminglanguage/python/python-ji-chu-jiao-cheng/chapter8-han-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/wearecio.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="chapter7 用户输入和while循环">
+                        <img src="/wearecio.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="chapter8 函数">
                         
-                        <span class="card-title">chapter7 用户输入和while循环</span>
+                        <span class="card-title">chapter8 函数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在本章中，你将学习如何接受用户输入，让程序能够对其进行处理。在程序需要一个名字时，你需要提示用户输入该名字；程序需要一个名单时，你需要提示用户输入一系列名字。为此，你需要使用函数input()。你还将学习如何让程序不断地运行，让用户能够根据需要输入信息，并在程序中使用这些信息。为此，你需要使用while循环让程序不断地运行，直到指定的条件不满足为止。通过获取用户输入并学会控制程序的运行时间，可编写出交互式程序。
+                            在本章中，你还会学习向函数传递信息的方式。你将学习如何编写主要任务是显示信息的函数，还有用于处理数据并返回一个或一组值的函数。最后，你将学习如何将函数存储在被称为模块的独立文件中，让主程序文件的组织更为有序。
                         
                     </div>
                     <div class="publish-info">
@@ -558,24 +1246,24 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/wearecio.github.io/2021/02/09/programminglanguage/python/python-ji-chu-jiao-cheng/chapter8-han-shu/">
+                <a href="/wearecio.github.io/2021/02/08/programminglanguage/python/python-ji-chu-jiao-cheng/chapter6-zi-dian/">
                     <div class="card-image">
                         
                         
-                        <img src="/wearecio.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="chapter8 函数">
+                        <img src="/wearecio.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="chapter6 字典">
                         
-                        <span class="card-title">chapter8 函数</span>
+                        <span class="card-title">chapter6 字典</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在本章中，你还会学习向函数传递信息的方式。你将学习如何编写主要任务是显示信息的函数，还有用于处理数据并返回一个或一组值的函数。最后，你将学习如何将函数存储在被称为模块的独立文件中，让主程序文件的组织更为有序。
+                            在本章中，你将学习能够将相关信息关联起来的Python字典。你将学习如何访问和修改字典中的信息。鉴于字典可存储的信息量几乎不受限制，因此我们会演示如何遍历字典中的数据。另外，你还将学习存储字典的列表、存储列表的字典和存储字典的字典。理解字典后，你就能够更准确地为各种真实物体建模。你可以创建一个表示人的字典，然后想在其中存储多少信息就存储多少信息：姓名、年龄、地址、职业以及要描述的任何方面。你还能够存储任意两种相关的信息，如一系列单词及其含义，一系列人名及其喜欢的数字，以及一系列山脉及其海拔等。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-08
                             </span>
                         <span class="publish-author">
                             
@@ -739,7 +1427,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">20.1k</span>&nbsp;字
+                class="white-color">25.1k</span>&nbsp;字
             
             
             
