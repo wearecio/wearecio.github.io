@@ -465,31 +465,6 @@
     
     
     <entry>
-      <title>计算机二级公共基础-程序设计</title>
-      <link href="/wearecio.github.io/2020/08/04/computertest2/cheng-xu-she-ji/"/>
-      <url>/wearecio.github.io/2020/08/04/computertest2/cheng-xu-she-ji/</url>
-      
-        <content type="html"><![CDATA[<h1 id="程序设计基础"><a href="#程序设计基础" class="headerlink" title="程序设计基础"></a>程序设计基础</h1><h2 id="程序设计方法与风格"><a href="#程序设计方法与风格" class="headerlink" title="程序设计方法与风格"></a>程序设计方法与风格</h2><ol><li><p>形成良好的程序设计风格需注意：<br>①源程序文档化；<br>②数据说明的方法；<br>③语句的结构；<br>④输入和输出。<br>⑤模块设计要保证低耦合、高内聚。<br>(内聚：每个模块尽可能独立完成自己的功能，不依赖于模块外部的代码。<br>耦合：模块与模块之间接口的复杂程度，模块之间联系越复杂耦合度越高，牵一发<strong>而动全身。)</strong></p><p><strong>清晰第一，效率第二。</strong></p></li></ol><h2 id="结构化程序设计"><a href="#结构化程序设计" class="headerlink" title="结构化程序设计"></a>结构化程序设计</h2><ol><li><p>结构化程序设计方法的四条原则：<br>①自顶向下；<br>②逐步求精；<br>③模块化；<br>④限制使用goto语句。</p></li><li><p>两类循环语句：先判断后执行的循环体称为<strong>当型循环</strong>结构；先执行循环体后判断的称为<strong>直到型循环</strong>结构。</p></li><li><p>结构化程序的基本结构：<strong>顺序结构、选择结构（分支结构）、重复结构（循环结构）</strong></p></li></ol><h2 id="面向对象的程序设计"><a href="#面向对象的程序设计" class="headerlink" title="面向对象的程序设计"></a>面向对象的程序设计</h2><ol><li>面向对象的程序设计以对象为核心，强调对象的<strong>抽象性</strong>，<strong>封装性</strong>，<strong>继承性</strong>、<strong>多态性</strong>、（依赖性）。</li><li>对象的基本特点：<br>（1）标识惟一性；<br>（2）分类性；<br>（3）多态性；<br>（4）封装性；<br>（5）模块独立性好。</li><li><strong>属性</strong>：即对象所包含的信息，它在设计对象时确定，一般只能通过执行对象的操作来改变。<strong>类</strong>：<strong>是具有相似属性与操作的一组对象</strong>。类是关于对象性质的描述。类是对象的抽象，对象是其对应类的一个实例。</li><li><strong>消息</strong>：是一个实例与另一个实例之间传递的信息。<strong>对象间的通信靠消息传递</strong>。它请求对象执行某一处理或回答某一要求的信息，它统一了数据流和控制流。消息的<strong>组成</strong>包括：<br>（1）接收消息的对象的名称；<br>（2）消息标识符，也称消息名；<br>（3）零个或多个参数。</li><li><strong>多态性</strong>：是指同样的消息被不同的对象接受时可导致完全不同的行动的现象。</li><li>在<strong>软件设计</strong>过程中，必须遵循软件工程的基本原则：这些原则包括<strong>抽象</strong>、<strong>信息隐蔽</strong>、<strong>模块化</strong>、<strong>局部化</strong>、<strong>确定性</strong>、<strong>一致性</strong>、<strong>完备性</strong>和<strong>可靠性</strong>。</li><li><strong>面向对象</strong>的设计方法与传统的的面向过程的方法有本质不同，它的<strong>基本原理是，使用现实世界的概念抽象地思考问题从而自然地解决问题。</strong>它强调模拟现实世界中的概念而不强调算法，它鼓励开发者在软件开发的绝大部分中都用应用领域的概念去思考。</li><li>字符常量是单引号括起来的一个字符，例如’a’，也可以通过转义序列表示方法表示一些不可显示字符或无法通过键盘输入的字符，例如’\n’的含义是换行。</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> 计算机二级 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 程序设计 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>计算机二级公共基础-软件工程</title>
       <link href="/wearecio.github.io/2020/08/04/computertest2/ruan-jian-gong-cheng/"/>
       <url>/wearecio.github.io/2020/08/04/computertest2/ruan-jian-gong-cheng/</url>
@@ -507,6 +482,31 @@
         <tags>
             
             <tag> 软件工程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机二级公共基础-程序设计</title>
+      <link href="/wearecio.github.io/2020/08/04/computertest2/cheng-xu-she-ji/"/>
+      <url>/wearecio.github.io/2020/08/04/computertest2/cheng-xu-she-ji/</url>
+      
+        <content type="html"><![CDATA[<h1 id="程序设计基础"><a href="#程序设计基础" class="headerlink" title="程序设计基础"></a>程序设计基础</h1><h2 id="程序设计方法与风格"><a href="#程序设计方法与风格" class="headerlink" title="程序设计方法与风格"></a>程序设计方法与风格</h2><ol><li><p>形成良好的程序设计风格需注意：<br>①源程序文档化；<br>②数据说明的方法；<br>③语句的结构；<br>④输入和输出。<br>⑤模块设计要保证低耦合、高内聚。<br>(内聚：每个模块尽可能独立完成自己的功能，不依赖于模块外部的代码。<br>耦合：模块与模块之间接口的复杂程度，模块之间联系越复杂耦合度越高，牵一发<strong>而动全身。)</strong></p><p><strong>清晰第一，效率第二。</strong></p></li></ol><h2 id="结构化程序设计"><a href="#结构化程序设计" class="headerlink" title="结构化程序设计"></a>结构化程序设计</h2><ol><li><p>结构化程序设计方法的四条原则：<br>①自顶向下；<br>②逐步求精；<br>③模块化；<br>④限制使用goto语句。</p></li><li><p>两类循环语句：先判断后执行的循环体称为<strong>当型循环</strong>结构；先执行循环体后判断的称为<strong>直到型循环</strong>结构。</p></li><li><p>结构化程序的基本结构：<strong>顺序结构、选择结构（分支结构）、重复结构（循环结构）</strong></p></li></ol><h2 id="面向对象的程序设计"><a href="#面向对象的程序设计" class="headerlink" title="面向对象的程序设计"></a>面向对象的程序设计</h2><ol><li>面向对象的程序设计以对象为核心，强调对象的<strong>抽象性</strong>，<strong>封装性</strong>，<strong>继承性</strong>、<strong>多态性</strong>、（依赖性）。</li><li>对象的基本特点：<br>（1）标识惟一性；<br>（2）分类性；<br>（3）多态性；<br>（4）封装性；<br>（5）模块独立性好。</li><li><strong>属性</strong>：即对象所包含的信息，它在设计对象时确定，一般只能通过执行对象的操作来改变。<strong>类</strong>：<strong>是具有相似属性与操作的一组对象</strong>。类是关于对象性质的描述。类是对象的抽象，对象是其对应类的一个实例。</li><li><strong>消息</strong>：是一个实例与另一个实例之间传递的信息。<strong>对象间的通信靠消息传递</strong>。它请求对象执行某一处理或回答某一要求的信息，它统一了数据流和控制流。消息的<strong>组成</strong>包括：<br>（1）接收消息的对象的名称；<br>（2）消息标识符，也称消息名；<br>（3）零个或多个参数。</li><li><strong>多态性</strong>：是指同样的消息被不同的对象接受时可导致完全不同的行动的现象。</li><li>在<strong>软件设计</strong>过程中，必须遵循软件工程的基本原则：这些原则包括<strong>抽象</strong>、<strong>信息隐蔽</strong>、<strong>模块化</strong>、<strong>局部化</strong>、<strong>确定性</strong>、<strong>一致性</strong>、<strong>完备性</strong>和<strong>可靠性</strong>。</li><li><strong>面向对象</strong>的设计方法与传统的的面向过程的方法有本质不同，它的<strong>基本原理是，使用现实世界的概念抽象地思考问题从而自然地解决问题。</strong>它强调模拟现实世界中的概念而不强调算法，它鼓励开发者在软件开发的绝大部分中都用应用领域的概念去思考。</li><li>字符常量是单引号括起来的一个字符，例如’a’，也可以通过转义序列表示方法表示一些不可显示字符或无法通过键盘输入的字符，例如’\n’的含义是换行。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机二级 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 程序设计 </tag>
             
         </tags>
       
