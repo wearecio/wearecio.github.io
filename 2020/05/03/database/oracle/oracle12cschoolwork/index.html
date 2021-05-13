@@ -332,10 +332,6 @@
                                 <span class="chip bg-color">Oracle</span>
                             </a>
                         
-                            <a href="/wearecio.github.io/tags/SchoolWork/">
-                                <span class="chip bg-color">SchoolWork</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -364,14 +360,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-05-10
+                    2021-05-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    8
+                    60
                 </div>
                 
 
@@ -391,7 +387,20 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="创建与连接数据库"><a href="#创建与连接数据库" class="headerlink" title="创建与连接数据库"></a>创建与连接数据库</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+                <h2 id="实验四"><a href="#实验四" class="headerlink" title="实验四"></a>实验四</h2><h3 id="任务一：视图"><a href="#任务一：视图" class="headerlink" title="任务一：视图"></a>任务一：视图</h3><pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">create view V_Pub
+  as
+select b.b_id,b.b_name,b.p_id,b.pubdate
+from book b,publish p
+where p.pubname &#x3D; &#39;人民邮电出版社&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="任务二：索引"><a href="#任务二：索引" class="headerlink" title="任务二：索引"></a>任务二：索引</h3><pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">create unique index idx_Bname
+  on book(Bname);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">alter index idx_Bname rename to index_Bname;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">drop index index_Bname;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -457,10 +466,6 @@
                             
                                 <a href="/wearecio.github.io/tags/Oracle/">
                                     <span class="chip bg-color">Oracle</span>
-                                </a>
-                            
-                                <a href="/wearecio.github.io/tags/SchoolWork/">
-                                    <span class="chip bg-color">SchoolWork</span>
                                 </a>
                             
                         </div>
