@@ -340,8 +340,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/wearecio.github.io/categories/SQL/" class="post-category">
-                                SQL
+                            <a href="/wearecio.github.io/categories/Datebase/" class="post-category">
+                                Datebase
                             </a>
                         
                     </div>
@@ -360,14 +360,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-05-13
+                    2021-05-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    60
+                    1.5k
                 </div>
                 
 
@@ -387,20 +387,144 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="实验四"><a href="#实验四" class="headerlink" title="实验四"></a>实验四</h2><h3 id="任务一：视图"><a href="#任务一：视图" class="headerlink" title="任务一：视图"></a>任务一：视图</h3><pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">create view V_Pub
+                <h2 id="实验二"><a href="#实验二" class="headerlink" title="实验二"></a>实验二</h2><h3 id="任务一：创建数据表"><a href="#任务一：创建数据表" class="headerlink" title="任务一：创建数据表"></a>任务一：创建数据表</h3><ol>
+<li> 创建Book表（图书表）、BookType表（图书类型表）、Reader表（读者表）和ReaderType表（读者类型表）</li>
+<li> 创建Borrow表（借阅表）和Publish表（出版社表）</li>
+</ol>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">CREATE TABLE BookType (
+BT_ID CHAR(2) PRIMARY KEY,
+BT_Name VARCHAR2(20),
+BT_Info VARCHAR2(50)
+);
+
+CREATE TABLE Book (
+B_ID CHAR(10),
+B_Name VARCHAR2(40),
+Author VARCHAR2(20),
+BT_ID CHAR(2),
+P_ID CHAR(4),
+PubDate DATE,
+Price NUMBER(5,2),
+CONSTRAINT FK_book_booktype FOREIGN KEY(BT_ID) REFERENCES BookType(BT_ID)
+);
+
+CREATE TABLE Reader (
+R_ID CHAR(10) PRIMARY KEY,
+R_Name VARCHAR2(9),
+RT_ID CHAR(1),
+RDept VARCHAR2(20),
+RTel VARCHAR2(11)
+);
+
+CREATE TABLE ReaderType (
+RT_ID CHAR(1) PRIMARY KEY,
+RT_Name VARCHAR2(10),
+LimitNum NUMBER,
+LimitDays NUMBER
+);
+
+CREATE TABLE Borrow (
+R_ID CHAR(10),
+B_ID CHAR(10),
+LendDate DATE,
+ReturnDate DATE,
+LimitDays NUMBER,
+BorrowInfo VARCHAR2(3)
+);
+
+CREATE TABLE Publish (
+P_ID CHAR(4) PRIMARY KEY,
+Pubname VARCHAR2(30),
+PubTel VARCHAR2(20)
+);
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="任务二：修改数据表"><a href="#任务二：修改数据表" class="headerlink" title="任务二：修改数据表"></a>任务二：修改数据表</h3><ol>
+<li>将Reader表中的联系电话字段的数据类型修改为VARCHAR2(20)。</li>
+<li>指定Borrow表的借阅日期不允许为空。</li>
+<li>删除Borrow表中的限借天数LimitDays字段。</li>
+<li>为Book表增加ISBN字段，数据类型为VARCHAR2（13）。</li>
+</ol>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">ALTER TABLE Reader MODIFY RTel VARCHAR2(20);
+ALTER TABLE Borrow MODIFY LendDate NOT NULL;
+ALTER TABLE Borrow DROP COLUMN LimitDays;
+ALTER TABLE Book ADD ISBN VARCHAR2(13);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="任务三：建立约束"><a href="#任务三：建立约束" class="headerlink" title="任务三：建立约束"></a>任务三：建立约束</h3><ol>
+<li>为Book表添加主键，约束名为PK_Book。</li>
+<li>为Borrow表添加主键，主键是RID，B_ID，LendDate，约束名为PK_Borrow。</li>
+<li>设置Book表的出版社编号字段P_ID是外键，参照 Publish表中的 P_ID，约束名为FK_book_pub。</li>
+<li>为Book表中的价格字段Price添加检査约束，要求价格必须大于0，约束名为CHK_price。</li>
+</ol>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">ALTER TABLE Book ADD CONSTRAINT PK_Book PRIMARY KEY(B_ID);
+ALTER TABLE Borrow ADD CONSTRAINT PK_Borrow PRIMARY KEY(R_ID,B_ID,LendDate);
+ALTER TABLE Book ADD CONSTRAINT FK_book_pub FOREIGN KEY(P_ID) REFERENCES Publish(P_ID);
+ALTER TABLE Book ADD CONSTRAINT CHK_price CHECK(Price &gt; 0);
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="任务四：向表中插入数据"><a href="#任务四：向表中插入数据" class="headerlink" title="任务四：向表中插入数据"></a>任务四：向表中插入数据</h3><ol>
+<li>为Book表、Booktype表、Reader表和Reader Type表插入数据。</li>
+<li>为Borrow表和Publish表插入数据。</li>
+</ol>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">INSERT INTO BookType VALUES(&#39;01&#39;, &#39;计算机类&#39;, NULL);
+INSERT INTO BookType VALUES(&#39;02&#39;, &#39;通信类&#39;, NULL);
+INSERT INTO BookType VALUES(&#39;03&#39;, &#39;经管类&#39;, NULL);
+INSERT INTO BookType VALUES(&#39;04&#39;, &#39;数字艺术类&#39;, NULL);
+INSERT INTO BookType VALUES(&#39;05&#39;, &#39;电气自动化类&#39;, NULL);
+
+INSERT INTO Publish VALUES(&#39;P001&#39;, &#39;高等教育出版社&#39;, &#39;010-77564582&#39;);
+INSERT INTO Publish VALUES(&#39;P002&#39;, &#39;人民邮电出版社&#39;, &#39;010-25587788&#39;);
+INSERT INTO Publish VALUES(&#39;P003&#39;, &#39;清华大学出版社&#39;, &#39;010-88556616&#39;);
+INSERT INTO Publish VALUES(&#39;P004&#39;, &#39;北京大学出版社&#39;, &#39;010-78777444&#39;);
+INSERT INTO Publish VALUES(&#39;P005&#39;, &#39;中国铁道出版社&#39;, &#39;010-63560056&#39;);
+INSERT INTO Publish VALUES(&#39;P006&#39;, &#39;北京交通大学出版社&#39;, &#39;010-59646999&#39;);
+INSERT INTO Publish VALUES(&#39;P007&#39;, &#39;北京交大出版社&#39;, &#39;010-59646999&#39;);
+
+INSERT INTO Book VALUES(&#39;B000000001&#39;, &#39;数据库系统概论&#39;, &#39;萨师煊&#39;, &#39;01&#39;, &#39;P001&#39;, TO_DATE(&#39;2006-5-1&#39;, &#39;YYYY-MM-DD&#39;), 39.00, &#39;9787040195835&#39;);
+INSERT INTO Book VALUES(&#39;B000000002&#39;, &#39;数据结构&#39;, &#39;宗大华&#39;, &#39;01&#39;, &#39;P001&#39;, TO_DATE(&#39;2008-4-1&#39;, &#39;YYYY-MM-DD&#39;), 28.00, &#39;9787115169839&#39;);
+INSERT INTO Book VALUES(&#39;B000000003&#39;, &#39;SQL Server应用技术&#39;, &#39;韦鹏程&#39;, &#39;01&#39;, &#39;P005&#39;, TO_DATE(&#39;2011-5-1&#39;, &#39;YYYY-MM-DD&#39;), 26.00, &#39;9787113124830&#39;);
+INSERT INTO Book VALUES(&#39;B000000004&#39;, &#39;系统工程（修订版）&#39;, &#39;吕永波&#39;, &#39;01&#39;, &#39;P006&#39;, TO_DATE(&#39;2006-1-1&#39;, &#39;YYYY-MM-DD&#39;), 29.00, &#39;9787810821186&#39;);
+INSERT INTO Book VALUES(&#39;B000000005&#39;, &#39;财经应用文写作教程&#39;, &#39;甘佩钦&#39;, &#39;03&#39;, &#39;P002&#39;, TO_DATE(&#39;2012-3-1&#39;, &#39;YYYY-MM-DD&#39;), 33.00, &#39;9787115270207&#39;);
+INSERT INTO Book VALUES(&#39;B000000006&#39;, &#39;平面构成设计教程&#39;, &#39;姜巧玲&#39;, &#39;04&#39;, &#39;P002&#39;, TO_DATE(&#39;2011-9-1&#39;, &#39;YYYY-MM-DD&#39;), 29.00, &#39;9787115261052&#39;);
+
+INSERT INTO ReaderType VALUES(&#39;1&#39;, &#39;教师&#39;, 20, 120);
+INSERT INTO ReaderType VALUES(&#39;2&#39;, &#39;职工&#39;, 10, 90);
+INSERT INTO ReaderType VALUES(&#39;3&#39;, &#39;学生&#39;, 5, 60);
+
+INSERT INTO Reader VALUES(&#39;2004186001&#39;, &#39;张丽丽&#39;, &#39;1&#39;, &#39;信息工程学院&#39;, &#39;13526569236&#39;);
+INSERT INTO Reader VALUES(&#39;2005186002&#39;, &#39;李晓萍&#39;, &#39;2&#39;, &#39;学生处&#39;, &#39;15103762156&#39;);
+INSERT INTO Reader VALUES(&#39;2006216117&#39;, &#39;王海霞&#39;, &#39;1&#39;, &#39;工程技术学院&#39;, &#39;13343811220&#39;);
+INSERT INTO Reader VALUES(&#39;2006216018&#39;, &#39;程鹏&#39;, &#39;3&#39;, &#39;信息工程学院&#39;, &#39;13703760258&#39;);
+INSERT INTO Reader VALUES(&#39;2010211110&#39;, &#39;杨倩&#39;, &#39;3&#39;, &#39;工程技术学院&#39;, &#39;15223468978&#39;);
+INSERT INTO Reader VALUES(&#39;2012123001&#39;, &#39;张芳&#39;, &#39;2&#39;, &#39;后勤处&#39;, &#39;13700860288&#39;);
+
+INSERT INTO Borrow VALUES(&#39;2004186001&#39;, &#39;B000000001&#39;, TO_DATE(&#39;2005-8-30&#39;, &#39;YYYY-MM-DD&#39;), TO_DATE(&#39;2005-9-26&#39;, &#39;YYYY-MM-DD&#39;), &#39;否&#39;);
+INSERT INTO Borrow VALUES(&#39;2004186001&#39;, &#39;B000000003&#39;, TO_DATE(&#39;2008-9-1&#39;, &#39;YYYY-MM-DD&#39;), TO_DATE(&#39;2008-12-1&#39;, &#39;YYYY-MM-DD&#39;), &#39;否&#39;);
+INSERT INTO Borrow VALUES(&#39;2006216117&#39;, &#39;B000000006&#39;, TO_DATE(&#39;2008-9-1&#39;, &#39;YYYY-MM-DD&#39;), TO_DATE(NULL), &#39;是&#39;);
+INSERT INTO Borrow VALUES(&#39;2010211110&#39;, &#39;B000000004&#39;, TO_DATE(&#39;2012-3-5&#39;, &#39;YYYY-MM-DD&#39;), TO_DATE(NULL), NULL);
+INSERT INTO Borrow VALUES(&#39;2010211110&#39;, &#39;B000000005&#39;, TO_DATE(&#39;2012-4-11&#39;, &#39;YYYY-MM-DD&#39;), TO_DATE(NULL), NULL);
+INSERT INTO Borrow VALUES(&#39;2012123001&#39;, &#39;B000000005&#39;, TO_DATE(&#39;2012-5-12&#39;, &#39;YYYY-MM-DD&#39;), TO_DATE(NULL), NULL);
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="任务五：更新表中的数据"><a href="#任务五：更新表中的数据" class="headerlink" title="任务五：更新表中的数据"></a>任务五：更新表中的数据</h3><ol>
+<li>使用SQL语言将Book表中图书编号为“B000000002”的图书的出版社编号修改为“P002”。</li>
+<li>使用SQL语言将Reader表中杨倩的姓名修改为自己的姓名、部门修改为“信息技术学院”。</li>
+<li>使用SQL语言删除Publish表中“北京交大出版社”的记录。</li>
+</ol>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">UPDATE Book SET P_ID&#x3D;&#39;P002&#39; WHERE B_ID&#x3D;&#39;B000000002&#39;;
+UPDATE Reader SET R_Name&#x3D;&#39;卢晗&#39;, RDept&#x3D;&#39;信息技术学院&#39; WHERE R_ID&#x3D;&#39;2010211110&#39;;
+DELETE FROM Publish WHERE PubName&#x3D;&#39;北京交大出版社&#39;;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="实验四"><a href="#实验四" class="headerlink" title="实验四"></a>实验四</h2><h3 id="任务一：视图"><a href="#任务一：视图" class="headerlink" title="任务一：视图"></a>任务一：视图</h3><pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">create view V_Pub
   as
 select b.b_id,b.b_name,b.p_id,b.pubdate
 from book b,publish p
 where p.pubname &#x3D; &#39;人民邮电出版社&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="任务二：索引"><a href="#任务二：索引" class="headerlink" title="任务二：索引"></a>任务二：索引</h3><pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">create unique index idx_Bname
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="任务二：索引"><a href="#任务二：索引" class="headerlink" title="任务二：索引"></a>任务二：索引</h3><pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">create unique index idx_Bname
   on book(Bname);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">alter index idx_Bname rename to index_Bname;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">drop index index_Bname;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">alter index idx_Bname rename to index_Bname;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">drop index index_Bname;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -585,8 +709,8 @@ where p.pubname &#x3D; &#39;人民邮电出版社&#39;;<span aria-hidden="true" 
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/wearecio.github.io/categories/SQL/" class="post-category">
-                                    SQL
+                            <a href="/wearecio.github.io/categories/Datebase/" class="post-category">
+                                    Datebase
                                 </a>
                             
                             
@@ -743,7 +867,7 @@ where p.pubname &#x3D; &#39;人民邮电出版社&#39;;<span aria-hidden="true" 
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">27.5k</span>&nbsp;字
+                class="white-color">28.9k</span>&nbsp;字
             
             
             
