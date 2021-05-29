@@ -367,7 +367,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.5k
+                    2.6k
                 </div>
                 
 
@@ -511,6 +511,100 @@ INSERT INTO Borrow VALUES(&#39;2012123001&#39;, &#39;B000000005&#39;, TO_DATE(&#
 UPDATE Reader SET R_Name&#x3D;&#39;卢晗&#39;, RDept&#x3D;&#39;信息技术学院&#39; WHERE R_ID&#x3D;&#39;2010211110&#39;;
 DELETE FROM Publish WHERE PubName&#x3D;&#39;北京交大出版社&#39;;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="实验三"><a href="#实验三" class="headerlink" title="实验三"></a>实验三</h2><h3 id="任务一：检索限定与排序"><a href="#任务一：检索限定与排序" class="headerlink" title="任务一：检索限定与排序"></a>任务一：检索限定与排序</h3><ol>
+<li>   查询所有图书的基本信息。</li>
+<li>   查询所有的图书编号、名称和价格。</li>
+<li>   查询教师一次可以借多少本书以及借书期限多少天，输出的结果字段名分别用汉字“借书本数”和“借书期限”表示。</li>
+<li>   查询“人民邮电出版社”出版的图书的书名、作者、出版社编号及出版日期。</li>
+<li>   查询姓“张”读者的基本信息。</li>
+<li>   查询Borrow表中未还图书的记录。</li>
+<li>   查询2012年一年以内的借阅记录。</li>
+<li>   查询部门在“学生处”或“后勤处”的读者信息。</li>
+<li>   查询所有图书的图书编号、名称、作者、出版日期和价格，并按价格升序排序，若图书价格相同，则按出版日期降序排序。</li>
+<li>   查询“BorrowInfo”不为空的借阅记录，并对检索结果按还书日期升序排序，若还书日期为NULL，则还书日期为NULL的行排在最前面。</li>
+</ol>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="任务二：函数"><a href="#任务二：函数" class="headerlink" title="任务二：函数"></a>任务二：函数</h3><ol>
+<li>将书名为“SQL Server应用技术”对应的英文字母全部大写并显示修改后的该图书信息。</li>
+<li>查询读者借书证编号、读者姓名、姓名的长度、姓名中是否包含“丽”（显示“丽”所在的位置）。</li>
+<li>查询一个月内还书的借阅信息。</li>
+<li>查询图书信息，包括图书编号、图书名称、作者、出版日期以及价格，其中价格前置本地货币符号，小数点后保留两位, 并以Price为列标题。</li>
+<li>查询出版日期早于2008年8月8日的图书信息，包括图书编号、图书名称、作者、出版日期以及价格，给定检索日期格式为2008-08-08（YYYY-MM-DD）,显示结果的日期格式为星期X 08/08/08（DAY DD/MM/RR）。</li>
+<li>查询未归还图书的借阅信息，将还书日期全部设置为系统时间，若“BorrowInfo”为空，则改为“是”（更改后的列标题仍为“ReturnDate”和“BorrowInfo”）。</li>
+<li>查询计算机类图书的最低价格、最高价格、平均价格以及总价格。</li>
+<li>统计读者表中教师、职工以及学生的人数并将各个分组的读者姓名显示出来（使用LISTAGG函数：LISTAGG(列名,分隔符) WITHIN GROUP(ORDER BY 列名)）。</li>
+<li>查询各出版社下各类图书的平均价格、最高价格和最低价格，并按出版社顺序升序排序。</li>
+<li>查询平均价格大于30的图书类别及该类别图书的平均价格。</li>
+</ol>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">
+~~~~~~Oracle
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">
+~~~~~~Oracle
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">
+~~~~~~Oracle
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="任务三：多表查询"><a href="#任务三：多表查询" class="headerlink" title="任务三：多表查询"></a>任务三：多表查询</h3><ol>
+<li>   查询Book表中所有图书的书名、作者、出版社名称以及价格。</li>
+<li>   查询Borrow表中所有借书的读者的借书证号、姓名以及所借图书的书名、作者、出版日期和ISBN。</li>
+<li>   查询Book表中所有图书的书名、作者、图书类别名称及价格（使用USING子句）。</li>
+<li>   查询Borrow表中所有借书的读者的借书证号、姓名以及所借图书的图书编号（使用JOIN…ON子句）。</li>
+<li>   查询Book表中属于“计算机类”、“通信类”或“数字艺术类”图书的书名、作者、图书类别名称、出版社名称、出版日期、价格以及ISBN（使用JOIN…ON子句）。</li>
+<li>   查询读者的借书证编号、姓名、所在部门以及其借阅图书信息。</li>
+<li>   查询借阅记录对应的读者信息。</li>
+</ol>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">
+~~~~~~Oracle
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">
+~~~~~~Oracle
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="任务四：子查询"><a href="#任务四：子查询" class="headerlink" title="任务四：子查询"></a>任务四：子查询</h3><ol>
+<li>查询所有单价小于平均单价的图书编号、书名及价格。</li>
+<li>查询和某个出版社最低价格相同的图书的信息。</li>
+<li>查询比“北京交通大学出版社”价格高的其他任何出版社的图书信息。</li>
+<li>查询与《平面构成设计教程》同一出版社的所有图书的图书名称、作者、ISBN。</li>
+<li>查询姓名为“张丽丽”的读者的借阅记录。</li>
+</ol>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="任务五：集合运算"><a href="#任务五：集合运算" class="headerlink" title="任务五：集合运算"></a>任务五：集合运算</h3><ol>
+<li>查询借阅了书名中开头含有“财经”2个字的图书，或者借阅了书名中开头含有“系统”2个字的图书的读者姓名。</li>
+<li>查询借阅了书名中开头含有“财经”2个字的图书，并且也借阅了书名中开头含有“系统”2个字的图书的读者姓名。</li>
+<li>查询借阅了书名中开头含有“财经”2个字的图书，但是没有借阅书名中开头含有“系统”2个字的图书的读者姓名。</li>
+</ol>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="实验四"><a href="#实验四" class="headerlink" title="实验四"></a>实验四</h2><h3 id="任务一：视图"><a href="#任务一：视图" class="headerlink" title="任务一：视图"></a>任务一：视图</h3><pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">create view V_Pub
   as
 select b.b_id,b.b_name,b.p_id,b.pubdate
@@ -867,7 +961,7 @@ where p.pubname &#x3D; &#39;人民邮电出版社&#39;;<span aria-hidden="true" 
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">28.9k</span>&nbsp;字
+                class="white-color">30.1k</span>&nbsp;字
             
             
             
