@@ -367,7 +367,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    3.3k
+                    3.8k
                 </div>
                 
 
@@ -538,15 +538,37 @@ order by returndate nulls first;<span aria-hidden="true" class="line-numbers-row
 <li>将书名为“SQL Server应用技术”对应的英文字母全部大写并显示修改后的该图书信息。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">select b_id,upper(b_name),author,bt_id,isbn,p_id,price,pubdate
 from book
 where b_name&#x3D;&#39;SQL Server应用技术&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-<li>查询读者借书证编号、读者姓名、姓名的长度、姓名中是否包含“丽”（显示“丽”所在的位置）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>查询一个月内还书的借阅信息。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>查询图书信息，包括图书编号、图书名称、作者、出版日期以及价格，其中价格前置本地货币符号，小数点后保留两位, 并以Price为列标题。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>查询出版日期早于2008年8月8日的图书信息，包括图书编号、图书名称、作者、出版日期以及价格，给定检索日期格式为2008-08-08（YYYY-MM-DD）,显示结果的日期格式为星期X 08/08/08（DAY DD/MM/RR）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>查询未归还图书的借阅信息，将还书日期全部设置为系统时间，若“BorrowInfo”为空，则改为“是”（更改后的列标题仍为“ReturnDate”和“BorrowInfo”）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>查询计算机类图书的最低价格、最高价格、平均价格以及总价格。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>统计读者表中教师、职工以及学生的人数并将各个分组的读者姓名显示出来（使用LISTAGG函数：LISTAGG(列名,分隔符) WITHIN GROUP(ORDER BY 列名)）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>查询各出版社下各类图书的平均价格、最高价格和最低价格，并按出版社顺序升序排序。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>查询平均价格大于30的图书类别及该类别图书的平均价格。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<li>查询读者借书证编号、读者姓名、姓名的长度、姓名中是否包含“丽”（显示“丽”所在的位置）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">select r_id, r_name, length(r_name), instrb(r_name,&#39;丽&#39;,1，1)
+from reader;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>查询一个月内还书的借阅信息。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">select *
+from borrow
+where to_number(returndate - lenddate) &lt; 31;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>查询图书信息，包括图书编号、图书名称、作者、出版日期以及价格，其中价格前置本地货币符号，小数点后保留两位, 并以Price为列标题。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">select b_id, b_name, author, pubdate, to_char(price,&#39;L999.99&#39;) as price
+from book;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>查询出版日期早于2008年8月8日的图书信息，包括图书编号、图书名称、作者、出版日期以及价格，给定检索日期格式为2008-08-08（YYYY-MM-DD）,显示结果的日期格式为星期X 08/08/08（DAY DD/MM/RR）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">select b_id, b_name, author, to_char(pubdate,&#39;day,dd&#x2F;mm&#x2F;rr&#39;) as pubdate, price
+from book
+where pubdate &lt; to_date(&#39;2008-08-08&#39;,&#39;yyyy-mm-dd&#39;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>查询未归还图书的借阅信息，将还书日期全部设置为系统时间，若“BorrowInfo”为空，则改为“是”（更改后的列标题仍为“ReturnDate”和“BorrowInfo”）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">select r_id,b_id,lenddate,sysdate &quot;ReturnDate&quot;,nvl(borrowinfo,&#39;是&#39;) &quot;BorrowInfo&quot;
+from borrow
+where borrowinfo IS NULL OR borrowinfo &#x3D; &#39;是&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>查询计算机类图书的最低价格、最高价格、平均价格以及总价格。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">select min(b.price), max(b.price), avg(price), sum(price)
+from book b, booktype bt
+where b.bt_id &#x3D; bt.bt_id and bt.bt_name &#x3D; &#39;计算机类&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>统计读者表中教师、职工以及学生的人数并将各个分组的读者姓名显示出来（使用LISTAGG函数：LISTAGG(列名,分隔符) WITHIN GROUP(ORDER BY 列名)）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">select rt.rt_name,count(r.r_name),
+listagg (r.r_name,&#39;,&#39;) within group (order by r.r_name) names
+from reader r,readertype rt
+where r.rt_id &#x3D; rt.rt_id
+group by rt.rt_name<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>查询各出版社下各类图书的平均价格、最高价格和最低价格，并按出版社顺序升序排序。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">select p.pubname,bt.bt_name,avg(b.price) &quot;AVG_Price&quot;,maX(b.price) &quot;MAX_Price&quot;,min(b.price) &quot;MIN_Price&quot;
+from publish p,book b,booktype bt
+where p.p_id &#x3D; b.p_id and b.bt_id &#x3D; bt.bt_id
+group by p.pubname,bt.bt_name
+order by p.pubname;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>查询平均价格大于30的图书类别及该类别图书的平均价格。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">select bt.bt_name, avg(price)
+from book b, booktype bt
+where b.bt_id &#x3D; bt.bt_id
+group by bt.bt_name
+having avg(price) &gt; 30;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 </li>
 </ol>
@@ -579,7 +601,12 @@ where r.r_id &#x3D; b.r_id;<span aria-hidden="true" class="line-numbers-rows"><s
 <li>查询所有单价小于平均单价的图书编号、书名及价格。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">select b_id, b_name, price
 from book
 where price &lt; (select avg(price)from book);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-<li>查询和某个出版社最低价格相同的图书的信息。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>查询和某个出版社最低价格相同的图书的信息。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">select *
+from book
+where price in(
+            (select min(price)
+            from book
+            group by p_id));<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li>查询比“北京交通大学出版社”价格高的其他任何出版社的图书信息。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">select *
 from book
 where price &gt; (select b.price
@@ -599,9 +626,33 @@ where r_id &#x3D; ( select distinct r.r_id
 </li>
 </ol>
 <h3 id="任务五：集合运算"><a href="#任务五：集合运算" class="headerlink" title="任务五：集合运算"></a>任务五：集合运算</h3><ol>
-<li>查询借阅了书名中开头含有“财经”2个字的图书，或者借阅了书名中开头含有“系统”2个字的图书的读者姓名。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>查询借阅了书名中开头含有“财经”2个字的图书，并且也借阅了书名中开头含有“系统”2个字的图书的读者姓名。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>查询借阅了书名中开头含有“财经”2个字的图书，但是没有借阅书名中开头含有“系统”2个字的图书的读者姓名。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<li>查询借阅了书名中开头含有“财经”2个字的图书，或者借阅了书名中开头含有“系统”2个字的图书的读者姓名。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">select  r.r_name
+from book b, reader r, borrow bw
+where b.b_id &#x3D; bw.b_id and bw.r_id &#x3D; r.r_id
+and b.b_name like &#39;财经%&#39;
+union
+select r.r_name
+from book b, reader r, borrow bw
+where b.b_id &#x3D; bw.b_id and bw.r_id &#x3D; r.r_id
+and b.b_name like &#39;系统%&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>查询借阅了书名中开头含有“财经”2个字的图书，并且也借阅了书名中开头含有“系统”2个字的图书的读者姓名。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">select  r.r_name
+from book b, reader r, borrow bw
+where b.b_id &#x3D; bw.b_id and bw.r_id &#x3D; r.r_id
+and b.b_name like &#39;财经%&#39;
+intersect
+select r.r_name
+from book b, reader r, borrow bw
+where b.b_id &#x3D; bw.b_id and bw.r_id &#x3D; r.r_id
+and b.b_name like &#39;系统%&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>查询借阅了书名中开头含有“财经”2个字的图书，但是没有借阅书名中开头含有“系统”2个字的图书的读者姓名。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">select  r.r_name
+from book b, reader r, borrow bw
+where b.b_id &#x3D; bw.b_id and bw.r_id &#x3D; r.r_id
+and b.b_name like &#39;财经%&#39;
+minus
+select r.r_name
+from book b, reader r, borrow bw
+where b.b_id &#x3D; bw.b_id and bw.r_id &#x3D; r.r_id
+and b.b_name like &#39;系统%&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 </li>
 </ol>
@@ -980,7 +1031,7 @@ where b.p_id &#x3D; p.p_id and p.pubname &#x3D; &#39;人民邮电出版社&#39; 
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">30.8k</span>&nbsp;字
+                class="white-color">31.2k</span>&nbsp;字
             
             
             
