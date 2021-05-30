@@ -477,12 +477,18 @@ INSERT INTO Publish VALUES(&#39;P005&#39;, &#39;中国铁道出版社&#39;, &#39
 INSERT INTO Publish VALUES(&#39;P006&#39;, &#39;北京交通大学出版社&#39;, &#39;010-59646999&#39;);
 INSERT INTO Publish VALUES(&#39;P007&#39;, &#39;北京交大出版社&#39;, &#39;010-59646999&#39;);
 
-INSERT INTO Book VALUES(&#39;B000000001&#39;, &#39;数据库系统概论&#39;, &#39;萨师煊&#39;, &#39;01&#39;, &#39;P001&#39;, TO_DATE(&#39;2006-5-1&#39;, &#39;YYYY-MM-DD&#39;), 39.00, &#39;9787040195835&#39;);
-INSERT INTO Book VALUES(&#39;B000000002&#39;, &#39;数据结构&#39;, &#39;宗大华&#39;, &#39;01&#39;, &#39;P001&#39;, TO_DATE(&#39;2008-4-1&#39;, &#39;YYYY-MM-DD&#39;), 28.00, &#39;9787115169839&#39;);
-INSERT INTO Book VALUES(&#39;B000000003&#39;, &#39;SQL Server应用技术&#39;, &#39;韦鹏程&#39;, &#39;01&#39;, &#39;P005&#39;, TO_DATE(&#39;2011-5-1&#39;, &#39;YYYY-MM-DD&#39;), 26.00, &#39;9787113124830&#39;);
-INSERT INTO Book VALUES(&#39;B000000004&#39;, &#39;系统工程（修订版）&#39;, &#39;吕永波&#39;, &#39;01&#39;, &#39;P006&#39;, TO_DATE(&#39;2006-1-1&#39;, &#39;YYYY-MM-DD&#39;), 29.00, &#39;9787810821186&#39;);
-INSERT INTO Book VALUES(&#39;B000000005&#39;, &#39;财经应用文写作教程&#39;, &#39;甘佩钦&#39;, &#39;03&#39;, &#39;P002&#39;, TO_DATE(&#39;2012-3-1&#39;, &#39;YYYY-MM-DD&#39;), 33.00, &#39;9787115270207&#39;);
-INSERT INTO Book VALUES(&#39;B000000006&#39;, &#39;平面构成设计教程&#39;, &#39;姜巧玲&#39;, &#39;04&#39;, &#39;P002&#39;, TO_DATE(&#39;2011-9-1&#39;, &#39;YYYY-MM-DD&#39;), 29.00, &#39;9787115261052&#39;);
+INSERT INTO Book VALUES(&#39;B000000001&#39;, &#39;数据库系统概论&#39;, &#39;萨师煊&#39;, &#39;01&#39;,
+&#39;P001&#39;, TO_DATE(&#39;2006-5-1&#39;, &#39;YYYY-MM-DD&#39;), 39.00, &#39;9787040195835&#39;);
+INSERT INTO Book VALUES(&#39;B000000002&#39;, &#39;数据结构&#39;, &#39;宗大华&#39;, &#39;01&#39;,
+&#39;P001&#39;, TO_DATE(&#39;2008-4-1&#39;, &#39;YYYY-MM-DD&#39;), 28.00, &#39;9787115169839&#39;);
+INSERT INTO Book VALUES(&#39;B000000003&#39;, &#39;SQL Server应用技术&#39;, &#39;韦鹏程&#39;, &#39;01&#39;,
+ &#39;P005&#39;, TO_DATE(&#39;2011-5-1&#39;, &#39;YYYY-MM-DD&#39;), 26.00, &#39;9787113124830&#39;);
+INSERT INTO Book VALUES(&#39;B000000004&#39;, &#39;系统工程（修订版）&#39;, &#39;吕永波&#39;, &#39;01&#39;,
+&#39;P006&#39;, TO_DATE(&#39;2006-1-1&#39;, &#39;YYYY-MM-DD&#39;), 29.00, &#39;9787810821186&#39;);
+INSERT INTO Book VALUES(&#39;B000000005&#39;, &#39;财经应用文写作教程&#39;, &#39;甘佩钦&#39;, &#39;03&#39;,
+ &#39;P002&#39;, TO_DATE(&#39;2012-3-1&#39;, &#39;YYYY-MM-DD&#39;), 33.00, &#39;9787115270207&#39;);
+INSERT INTO Book VALUES(&#39;B000000006&#39;, &#39;平面构成设计教程&#39;, &#39;姜巧玲&#39;, &#39;04&#39;,
+ &#39;P002&#39;, TO_DATE(&#39;2011-9-1&#39;, &#39;YYYY-MM-DD&#39;), 29.00, &#39;9787115261052&#39;);
 
 INSERT INTO ReaderType VALUES(&#39;1&#39;, &#39;教师&#39;, 20, 120);
 INSERT INTO ReaderType VALUES(&#39;2&#39;, &#39;职工&#39;, 10, 90);
@@ -495,13 +501,19 @@ INSERT INTO Reader VALUES(&#39;2006216018&#39;, &#39;程鹏&#39;, &#39;3&#39;, &
 INSERT INTO Reader VALUES(&#39;2010211110&#39;, &#39;杨倩&#39;, &#39;3&#39;, &#39;工程技术学院&#39;, &#39;15223468978&#39;);
 INSERT INTO Reader VALUES(&#39;2012123001&#39;, &#39;张芳&#39;, &#39;2&#39;, &#39;后勤处&#39;, &#39;13700860288&#39;);
 
-INSERT INTO Borrow VALUES(&#39;2004186001&#39;, &#39;B000000001&#39;, TO_DATE(&#39;2005-8-30&#39;, &#39;YYYY-MM-DD&#39;), TO_DATE(&#39;2005-9-26&#39;, &#39;YYYY-MM-DD&#39;), &#39;否&#39;);
-INSERT INTO Borrow VALUES(&#39;2004186001&#39;, &#39;B000000003&#39;, TO_DATE(&#39;2008-9-1&#39;, &#39;YYYY-MM-DD&#39;), TO_DATE(&#39;2008-12-1&#39;, &#39;YYYY-MM-DD&#39;), &#39;否&#39;);
-INSERT INTO Borrow VALUES(&#39;2006216117&#39;, &#39;B000000006&#39;, TO_DATE(&#39;2008-9-1&#39;, &#39;YYYY-MM-DD&#39;), TO_DATE(NULL), &#39;是&#39;);
-INSERT INTO Borrow VALUES(&#39;2010211110&#39;, &#39;B000000004&#39;, TO_DATE(&#39;2012-3-5&#39;, &#39;YYYY-MM-DD&#39;), TO_DATE(NULL), NULL);
-INSERT INTO Borrow VALUES(&#39;2010211110&#39;, &#39;B000000005&#39;, TO_DATE(&#39;2012-4-11&#39;, &#39;YYYY-MM-DD&#39;), TO_DATE(NULL), NULL);
-INSERT INTO Borrow VALUES(&#39;2012123001&#39;, &#39;B000000005&#39;, TO_DATE(&#39;2012-5-12&#39;, &#39;YYYY-MM-DD&#39;), TO_DATE(NULL), NULL);
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+INSERT INTO Borrow VALUES(&#39;2004186001&#39;, &#39;B000000001&#39;,
+TO_DATE(&#39;2005-8-30&#39;, &#39;YYYY-MM-DD&#39;), TO_DATE(&#39;2005-9-26&#39;, &#39;YYYY-MM-DD&#39;), &#39;否&#39;);
+INSERT INTO Borrow VALUES(&#39;2004186001&#39;, &#39;B000000003&#39;,
+ TO_DATE(&#39;2008-9-1&#39;, &#39;YYYY-MM-DD&#39;), TO_DATE(&#39;2008-12-1&#39;, &#39;YYYY-MM-DD&#39;), &#39;否&#39;);
+INSERT INTO Borrow VALUES(&#39;2006216117&#39;, &#39;B000000006&#39;,
+ TO_DATE(&#39;2008-9-1&#39;, &#39;YYYY-MM-DD&#39;), TO_DATE(NULL), &#39;是&#39;);
+INSERT INTO Borrow VALUES(&#39;2010211110&#39;, &#39;B000000004&#39;,
+TO_DATE(&#39;2012-3-5&#39;, &#39;YYYY-MM-DD&#39;), TO_DATE(NULL), NULL);
+INSERT INTO Borrow VALUES(&#39;2010211110&#39;, &#39;B000000005&#39;,
+TO_DATE(&#39;2012-4-11&#39;, &#39;YYYY-MM-DD&#39;), TO_DATE(NULL), NULL);
+INSERT INTO Borrow VALUES(&#39;2012123001&#39;, &#39;B000000005&#39;,
+TO_DATE(&#39;2012-5-12&#39;, &#39;YYYY-MM-DD&#39;), TO_DATE(NULL), NULL);
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="任务五：更新表中的数据"><a href="#任务五：更新表中的数据" class="headerlink" title="任务五：更新表中的数据"></a>任务五：更新表中的数据</h3><ol>
 <li>使用SQL语言将Book表中图书编号为“B000000002”的图书的出版社编号修改为“P002”。</li>
 <li>使用SQL语言将Reader表中杨倩的姓名修改为自己的姓名、部门修改为“信息技术学院”。</li>
