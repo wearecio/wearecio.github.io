@@ -633,8 +633,7 @@ where b.p_id &#x3D; p.p_id and p.pubname &#x3D; &#39;人民邮电出版社&#39; 
 </li>
 </ol>
 <h3 id="任务二：索引"><a href="#任务二：索引" class="headerlink" title="任务二：索引"></a>任务二：索引</h3><ol>
-<li>为Book图书表的书名列创建唯一索引idx_Bname。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">create unique index idx_Bname
-  on book(Bname);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>为Book图书表的书名列创建唯一索引idx_Bname。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">create unique index idx_Bname on book(b_name);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li>将索引idx_Bname重命名为index_Bname（重命名索引：ALTER INDEX old_index_name RENAME TO new_index_name）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">alter index idx_Bname rename to index_Bname;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li>删除索引index_Bname。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">drop index index_Bname;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ol>
