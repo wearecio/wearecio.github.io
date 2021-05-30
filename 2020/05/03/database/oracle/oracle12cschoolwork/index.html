@@ -360,14 +360,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-05-29
+                    2021-05-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    2.9k
+                    3.3k
                 </div>
                 
 
@@ -576,11 +576,25 @@ where r.r_id &#x3D; b.r_id;<span aria-hidden="true" class="line-numbers-rows"><s
 </li>
 </ol>
 <h3 id="任务四：子查询"><a href="#任务四：子查询" class="headerlink" title="任务四：子查询"></a>任务四：子查询</h3><ol>
-<li>查询所有单价小于平均单价的图书编号、书名及价格。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>查询所有单价小于平均单价的图书编号、书名及价格。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">select b_id, b_name, price
+from book
+where price &lt; (select avg(price)from book);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li>查询和某个出版社最低价格相同的图书的信息。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>查询比“北京交通大学出版社”价格高的其他任何出版社的图书信息。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>查询与《平面构成设计教程》同一出版社的所有图书的图书名称、作者、ISBN。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>查询姓名为“张丽丽”的读者的借阅记录。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<li>查询比“北京交通大学出版社”价格高的其他任何出版社的图书信息。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">select *
+from book
+where price &gt; (select b.price
+    from book b,publish p
+    where b.p_id &#x3D; p.p_id and p.pubname &#x3D; &#39;北京交通大学出版社&#39;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>查询与《平面构成设计教程》同一出版社的所有图书的图书名称、作者、ISBN。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">select b_name, author, isbn
+from book
+where p_id &#x3D; (select p.p_id
+              from book b, publish p
+              where b.b_name &#x3D; &#39;平面构成设计教程&#39; and b.p_id &#x3D; p.p_id);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>查询姓名为“张丽丽”的读者的借阅记录。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">select *
+from borrow
+where r_id &#x3D; ( select distinct r.r_id
+                from reader r,borrow b
+                where r.r_id &#x3D; b.r_id and r.r_name &#x3D; &#39;张丽丽&#39;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 </li>
 </ol>
@@ -591,20 +605,40 @@ where r.r_id &#x3D; b.r_id;<span aria-hidden="true" class="line-numbers-rows"><s
 
 </li>
 </ol>
-<h2 id="实验四"><a href="#实验四" class="headerlink" title="实验四"></a>实验四</h2><h3 id="任务一：视图"><a href="#任务一：视图" class="headerlink" title="任务一：视图"></a>任务一：视图</h3><pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">create view V_Pub
+<h2 id="实验四"><a href="#实验四" class="headerlink" title="实验四"></a>实验四</h2><h3 id="任务一：视图"><a href="#任务一：视图" class="headerlink" title="任务一：视图"></a>任务一：视图</h3><ol>
+<li>建立“人民邮电出版社”所出版的图书视图V_Pub，视图中包含图书编号、图书名称、出版社编号及出版日期。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">create view V_Pub
   as
 select b.b_id,b.b_name,b.p_id,b.pubdate
 from book b,publish p
-where p.pubname &#x3D; &#39;人民邮电出版社&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="任务二：索引"><a href="#任务二：索引" class="headerlink" title="任务二：索引"></a>任务二：索引</h3><pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">create unique index idx_Bname
-  on book(Bname);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">alter index idx_Bname rename to index_Bname;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">drop index index_Bname;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+where p.pubname &#x3D; &#39;人民邮电出版社&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>创建一个借阅统计视图，名为V_Count_1，包含读者借书证编号和总借阅本数(列别名分别为READER_ID和NUMBERS)，要求该视图只读。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">create view V_Count_1(READER_ID,NUMBERS)
+  as
+select r_id, count(r_id)
+from borrow
+group by r_id
+with read only;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>创建一个借阅统计视图，名为V_Count_2，包含借阅总本数大于一本的读者借书证编号和总借阅本数(列别名分别为READER_ID和NUMBERS)。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">create view V_Count_2(READER_ID,NUMBERS)
+  as
+select r_id, count(r_id)
+from borrow
+group by r_id
+having count(r_id) &gt; 1;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>修改视图V_Pub，要求增加图书的单价信息且单价大于28元。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">create or replace view V_Pub
+  as
+select b.b_id,b.b_name,b.p_id,b.pubdate,b.price
+from book b,publish p
+where b.p_id &#x3D; p.p_id and p.pubname &#x3D; &#39;人民邮电出版社&#39; and b.price &gt; 28;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>删除视图V_Pub。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">drop view V_Pub;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+</li>
+</ol>
+<h3 id="任务二：索引"><a href="#任务二：索引" class="headerlink" title="任务二：索引"></a>任务二：索引</h3><ol>
+<li>为Book图书表的书名列创建唯一索引idx_Bname。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">create unique index idx_Bname
+  on book(Bname);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>将索引idx_Bname重命名为index_Bname（重命名索引：ALTER INDEX old_index_name RENAME TO new_index_name）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">alter index idx_Bname rename to index_Bname;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>删除索引index_Bname。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">drop index index_Bname;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ol>
+
                 
             </div>
             <hr/>
@@ -947,7 +981,7 @@ where p.pubname &#x3D; &#39;人民邮电出版社&#39;;<span aria-hidden="true" 
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">30.4k</span>&nbsp;字
+                class="white-color">30.8k</span>&nbsp;字
             
             
             
