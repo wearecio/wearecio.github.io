@@ -288,7 +288,7 @@
 <script src="/wearecio.github.io/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '';
+        let pwd = '610b1013c44511fc6d7bd720bab5d77ad613f835cc7d3b47d737b671e5ec4224';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -360,14 +360,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-05-30
+                    2021-06-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    3.8k
+                    4.9k
                 </div>
                 
 
@@ -698,7 +698,142 @@ where b.p_id &#x3D; p.p_id and p.pubname &#x3D; &#39;人民邮电出版社&#39; 
 <h3 id="任务二：索引"><a href="#任务二：索引" class="headerlink" title="任务二：索引"></a>任务二：索引</h3><ol>
 <li>为Book图书表的书名列创建唯一索引idx_Bname。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">create unique index idx_Bname on book(b_name);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li>将索引idx_Bname重命名为index_Bname（重命名索引：ALTER INDEX old_index_name RENAME TO new_index_name）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">alter index idx_Bname rename to index_Bname;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>删除索引index_Bname。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">drop index index_Bname;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>删除索引index_Bname。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">drop index index_Bname;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+</li>
+</ol>
+<h2 id="实验五"><a href="#实验五" class="headerlink" title="实验五"></a>实验五</h2><h3 id="【任务1】：简单PL-SQL程序"><a href="#【任务1】：简单PL-SQL程序" class="headerlink" title="【任务1】：简单PL/SQL程序"></a>【任务1】：简单PL/SQL程序</h3><ol>
+<li>编写PL/SQL程序，实现将Reader表中借书证编号（R_ID）为“2004186001”的读者姓名（R_Name）赋值给变量r_name，并输出给该变量的值。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">DECLARE
+   r_name  varchar(20);
+BEGIN
+   select R_Name into r_name
+   from reader
+   where r_id &#x3D; &#39;2004186001&#39;;
+   DBMS_OUTPUT.put_line(&#39;2004186001 读者姓名为：&#39;|| r_name );
+END;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>编写PL/SQL程序，查询并输出图书价格（Price）高于35元的图书名称（B_Name）及价格。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">declare
+v_bookname book.b_name%type;
+v_bookprice book.price%type;
+begin
+    select b_name,price into v_bookname,v_bookprice
+    from book
+    where price &gt; 35;
+    dbms_output.put_line(v_bookname||&#39;,&#39;||v_bookprice);
+end;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="【任务2】：PL-SQL控制结构"><a href="#【任务2】：PL-SQL控制结构" class="headerlink" title="【任务2】：PL/SQL控制结构"></a>【任务2】：PL/SQL控制结构</h3></li>
+<li>使用IF语句编写PL/SQL程序，查询图书“数据结构”的价格，并按价格对图书进行分类。如果价格高于35元，则输出“Book A”，否则若价格高于28元，则输出“Book B”，否则输出“Book C”。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">declare
+    v_b_name book.b_name%type:&#x3D;&#39;数据结构&#39;;
+    v_price book.price%type;
+begin
+    select b_name,price into v_b_name,v_price
+    from book
+    where b_name&#x3D;v_b_name;
+    if v_price &gt; 35 then
+    dbms_output.put_line(&#39;Book A&#39;);
+    elsif v_price &gt; 28 then
+    dbms_output.put_line(&#39;Book B&#39;);
+    else
+    dbms_output.put_line(&#39;Book C&#39;);
+    end if;
+end;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>使用CASE表达式编写PL/SQL程序，查询读者“王海霞”的职业类型（RT_ID），其中“１”为“教师”，“２”为“职工”，“３”为“学生”。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">declare
+    v_readername reader.r_name%type:&#x3D;&#39;王海霞&#39;;
+    v_rt_id reader.rt_id%type;
+    v_type varchar2(20);
+begin
+    select r_name,rt_id into v_readername,v_rt_id
+    from reader
+    where r_name&#x3D;v_readername;
+    v_type :&#x3D;case v_rt_id
+        when &#39;1&#39; then &#39;教师&#39;
+        when &#39;2&#39; then &#39;职工&#39;
+        when &#39;3&#39; then &#39;学生&#39;
+        else &#39;Out of Range!&#39;
+        end;
+    dbms_output.put_line(v_type);
+end;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>使用基本循环输出数字1到10。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">BEGIN
+    for i in 1..10 loop
+    DBMS_OUTPUT.PUT_LINE (i);
+    end loop;
+END;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>使用WHILE循环实现1到100之间的所有偶数的和。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">declare
+s number:&#x3D;0;
+i number:&#x3D;1;
+BEGIN
+    while i &lt;&#x3D; 100 loop
+        if mod(i,2)&#x3D;0 then
+        s:&#x3D;s+i;
+        end if;
+        i:&#x3D;i+1;
+    end loop;
+    DBMS_OUTPUT.PUT_LINE(s);
+END;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>使用FOR循环计算10！。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">declare
+s number:&#x3D;1;
+BEGIN
+    for i in 1..10 loop
+        s:&#x3D;s*i;
+    end loop;
+    DBMS_OUTPUT.PUT_LINE(s);
+END;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="【任务3】：游标"><a href="#【任务3】：游标" class="headerlink" title="【任务3】：游标"></a>【任务3】：游标</h3></li>
+<li>编写PL/SQL程序，输出出版社编号为“P002”的所有图书的图书编号和书名（分别使用基本循环处理游标和游标FOR循环编写）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">declare
+    cursor publish_cursor is
+        select book.b_id,book.b_name from book,publish
+        where publish.p_id&#x3D;&#39;P002&#39; and book.p_id &#x3D; publish.p_id;
+        v_bookid book.b_id%type;
+        v_bookname book.b_name%type;
+begin
+    open publish_cursor;
+    loop
+        fetch publish_cursor into v_bookid,v_bookname;
+        exit when publish_cursor%NOTFOUND;
+        dbms_output.put_line(v_bookid||&#39;,&#39;||v_bookname);
+        end loop;
+    close publish_cursor;
+end;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">declare
+    cursor book_cursor is
+        select book.b_id,book.b_name from book,publish
+        where publish.p_id&#x3D;&#39;P002&#39; and book.p_id &#x3D; publish.p_id;
+begin
+    for book_record in book_cursor loop
+        dbms_output.put_line(book_record.b_id||&#39;,&#39;||book_record.b_name);
+    end loop;
+end;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>查询各个出版社下的图书的编号和书名（使用带参数的游标编写）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="【任务4】：异常处理"><a href="#【任务4】：异常处理" class="headerlink" title="【任务4】：异常处理"></a>【任务4】：异常处理</h3></li>
+<li>Borrow表中的借阅日期（LendDate）不能为空，插入一条借阅日期为空的行（R_ID的值为“2012123001”， B_ID的值为“B000000006”，其余列的值均为NULL），捕获该异常并处理，要求该异常和Oracle错误编号-01400(不能插入空值)关联。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>修改书名，提供图书编号和修改后的书名（B_ID的值为“B000000007”，B_Name的值为“Oracle Database 12c基础教程”），若图书编号不存在，则不会更新任何行，此时抛出异常并处理，输出错误信息“无效图书编号”。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="【任务5】：过程"><a href="#【任务5】：过程" class="headerlink" title="【任务5】：过程"></a>【任务5】：过程</h3></li>
+<li>创建过程PRO_Borrow，返回未归还图书的读者借书证号（R_ID）、读者姓名（R_Name）、借阅日期（LendDate）、图书名称（B_Name）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">create or replace procedure pro_borrow
+is
+cursor pro_borrow_cur is
+select borrow.b_id,r_name,lenddate,b_name
+from borrow,book,reader
+where borrow.r_id &#x3D; reader.r_id and borrow.b_id &#x3D; book.b_id and returndate is null;
+bid borrow.b_id%type;
+shuming varchar2(20);
+borrowday date;
+duzhe varchar2(20);
+begin
+open pro_borrow_cur;
+fetch pro_borrow_cur into bid,duzhe,borrowday,shuming;
+while pro_borrow_cur%found loop
+dbms_output.put_line(bid||&#39;,&#39;||duzhe||&#39;,&#39;||borrowday||&#39;,&#39;||shuming);
+end loop;
+close pro_borrow_cur;
+end;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>调用过程PRO_Borrow，查询所有未还图书的详细信息。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>创建带参数的过程PRO_Borrow_RID，要求该过程能根据输入的借书证号返回该读者的所有借阅信息，包括借阅日期（LendDate）、还书日期（ReturnDate）、图书名称（B_Name）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>调用过程PRO_Borrow_RID，查询借书证号为“2010211110”的读者的借阅信息。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>修改过程PRO_Borrow_RID，要求修改后的过程根据输入的借书证号返回该读者的所有借阅信息，包括读者姓名（R_Name）、借阅日期（LendDate）、还书日期（ReturnDate）、图书名称（B_Name）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>删除过程PRO_Borrow_RID。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="【任务6】：函数"><a href="#【任务6】：函数" class="headerlink" title="【任务6】：函数"></a>【任务6】：函数</h3></li>
+<li>编写函数F_GetBName，该函数的功能是在图书中根据指定的ISBN号，返回该书的书名，并在匿名块中调用函数F_GETBName，找出ISBN号为“9787113124830”的图书名称。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>删除函数F_GetBName。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ol>
 
                 
@@ -1043,7 +1178,7 @@ where b.p_id &#x3D; p.p_id and p.pubname &#x3D; &#39;人民邮电出版社&#39; 
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">31.2k</span>&nbsp;字
+                class="white-color">32.4k</span>&nbsp;字
             
             
             
