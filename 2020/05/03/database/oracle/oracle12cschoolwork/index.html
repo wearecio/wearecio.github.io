@@ -360,14 +360,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-06-04
+                    2021-06-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    4.9k
+                    5.1k
                 </div>
                 
 
@@ -826,14 +826,56 @@ dbms_output.put_line(bid||&#39;,&#39;||duzhe||&#39;,&#39;||borrowday||&#39;,&#39
 end loop;
 close pro_borrow_cur;
 end;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>调用过程PRO_Borrow，查询所有未还图书的详细信息。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>创建带参数的过程PRO_Borrow_RID，要求该过程能根据输入的借书证号返回该读者的所有借阅信息，包括借阅日期（LendDate）、还书日期（ReturnDate）、图书名称（B_Name）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>调用过程PRO_Borrow_RID，查询借书证号为“2010211110”的读者的借阅信息。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>修改过程PRO_Borrow_RID，要求修改后的过程根据输入的借书证号返回该读者的所有借阅信息，包括读者姓名（R_Name）、借阅日期（LendDate）、还书日期（ReturnDate）、图书名称（B_Name）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>删除过程PRO_Borrow_RID。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<li>调用过程PRO_Borrow，查询所有未还图书的详细信息。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">exec pro_borrow
+BEGIN
+pro_borrow;
+END;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>创建带参数的过程PRO_Borrow_RID，要求该过程能根据输入的借书证号返回该读者的所有借阅信息，包括借阅日期（LendDate）、还书日期（ReturnDate）、图书名称（B_Name）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">create or replace procedure pro_borrow_rid(rid in varchar2)
+is
+cursor pro_borrow_rid_cur(rid varchar2) is
+select lenddate,returndate,b_name from borrow,book
+where borrow.b_id &#x3D; book.b_id and borrow.r_id &#x3D; rid;
+shuming varchar2(20);
+returnday date;
+borrowday date;
+begin
+    open pro_borrow_rid_cur(rid);
+    fetch pro_borrow_rid_cur into borrowday,returnday,shuming;
+    dbms_output.put_line(rid||&#39;,&#39;||borrowday||&#39;,&#39;||returnday||&#39;,&#39;||shuming);
+    close pro_borrow_rid_cur;
+end;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>调用过程PRO_Borrow_RID，查询借书证号为“2010211110”的读者的借阅信息。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">exec pro_borrow_rid(&#39;2010211110&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>修改过程PRO_Borrow_RID，要求修改后的过程根据输入的借书证号返回该读者的所有借阅信息，包括读者姓名（R_Name）、借阅日期（LendDate）、还书日期（ReturnDate）、图书名称（B_Name）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">create or replace procedure pro_borrow_rid(rid in varchar2)
+is
+cursor pro_borrow_rid_cur(rid varchar2) is
+select r_name,lenddate,returndate,b_name from reader,borrow,book
+where reader.r_id &#x3D; borrow.r_id and borrow.b_id &#x3D; book.b_id and borrow.r_id &#x3D; rid;
+xingming varchar2(20);
+shuming varchar2(20);
+returnday date;
+borrowday date;
+begin
+    open pro_borrow_rid_cur(rid);
+    fetch pro_borrow_rid_cur into xingming,borrowday,returnday,shuming;
+    dbms_output.put_line(rid||&#39;,&#39;||xingming||&#39;,&#39;||borrowday||&#39;,&#39;||returnday||&#39;,&#39;||shuming);
+    close pro_borrow_rid_cur;
+end;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>删除过程PRO_Borrow_RID。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">DROP procedure pro_borrow_rid;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="【任务6】：函数"><a href="#【任务6】：函数" class="headerlink" title="【任务6】：函数"></a>【任务6】：函数</h3></li>
-<li>编写函数F_GetBName，该函数的功能是在图书中根据指定的ISBN号，返回该书的书名，并在匿名块中调用函数F_GETBName，找出ISBN号为“9787113124830”的图书名称。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>删除函数F_GetBName。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>编写函数F_GetBName，该函数的功能是在图书中根据指定的ISBN号，返回该书的书名，并在匿名块中调用函数F_GETBName，找出ISBN号为“9787113124830”的图书名称。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">create or replace function f_GetBName
+(bookisbn in varchar2)
+return varchar2
+is
+bookname varchar2(20);
+begin
+select b_name into bookname from book where isbn &#x3D; bookisbn;
+return bookname;
+end;
+
+begin
+DBMS_OUTPUT.PUT_LINE(f_GetBName(&#39;9787113124830&#39;));
+end;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>删除函数F_GetBName。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">DROP function F_Getbname<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ol>
 
                 
@@ -1178,7 +1220,7 @@ end;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">32.4k</span>&nbsp;字
+                class="white-color">32.6k</span>&nbsp;字
             
             
             
