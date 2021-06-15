@@ -360,14 +360,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-06-05
+                    2021-06-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    5.1k
+                    5.2k
                 </div>
                 
 
@@ -803,10 +803,42 @@ begin
     end loop;
 end;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>查询各个出版社下的图书的编号和书名（使用带参数的游标编写）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<li>查询各个出版社下的图书的编号和书名（使用带参数的游标编写）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">declare
+ cursor book_cursor(pid char) is
+    select b_id,b_name from book
+    where p_id &#x3D; pid;
+begin
+    open book_cursor(&#39;P001&#39;);
+    close book_cursor;
+end;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="【任务4】：异常处理"><a href="#【任务4】：异常处理" class="headerlink" title="【任务4】：异常处理"></a>【任务4】：异常处理</h3></li>
-<li>Borrow表中的借阅日期（LendDate）不能为空，插入一条借阅日期为空的行（R_ID的值为“2012123001”， B_ID的值为“B000000006”，其余列的值均为NULL），捕获该异常并处理，要求该异常和Oracle错误编号-01400(不能插入空值)关联。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>修改书名，提供图书编号和修改后的书名（B_ID的值为“B000000007”，B_Name的值为“Oracle Database 12c基础教程”），若图书编号不存在，则不会更新任何行，此时抛出异常并处理，输出错误信息“无效图书编号”。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<li>Borrow表中的借阅日期（LendDate）不能为空，插入一条借阅日期为空的行（R_ID的值为“2012123001”， B_ID的值为“B000000006”，其余列的值均为NULL），捕获该异常并处理，要求该异常和Oracle错误编号-01400(不能插入空值)关联。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">declare
+ex_insert exception;
+pragma EXCEPTION_INIT (ex_insert, -01400);
+begin
+insert into borrow(r_id,b_id,lenddate,returndate,borrowinfo)
+values(&#39;2012123001&#39;,&#39;B000000006&#39;,null,null,null);
+exception
+    when ex_insert then
+    dbms_output.put_line(&#39;插入操作失败！&#39;);
+    dbms_output.put_line(SQLERRM);
+end;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>修改书名，提供图书编号和修改后的书名（B_ID的值为“B000000007”，B_Name的值为“Oracle Database 12c基础教程”），若图书编号不存在，则不会更新任何行，此时抛出异常并处理，输出错误信息“无效图书编号”。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">declare
+var_bookid char(10):&#x3D;&#39;B000000007&#39;;
+var_bookname varchar2(40):&#x3D;&#39;Oracle Database 12c基础教程&#39;;
+ex_invaild_book exception;
+begin
+    update book
+    set b_name &#x3D; var_bookname
+    where b_id &#x3D; var_bookid;
+    if sql %notfound then
+     raise ex_invaild_book;
+    end if;
+    commit;
+exception
+when ex_invaild_book then
+    dbms_output.put_line(SQLERRM);
+end;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="【任务5】：过程"><a href="#【任务5】：过程" class="headerlink" title="【任务5】：过程"></a>【任务5】：过程</h3></li>
 <li>创建过程PRO_Borrow，返回未归还图书的读者借书证号（R_ID）、读者姓名（R_Name）、借阅日期（LendDate）、图书名称（B_Name）。<pre class="line-numbers language-Oracle" data-language="Oracle"><code class="language-Oracle">create or replace procedure pro_borrow
 is
@@ -1220,7 +1252,7 @@ end;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">32.6k</span>&nbsp;字
+                class="white-color">32.8k</span>&nbsp;字
             
             
             
