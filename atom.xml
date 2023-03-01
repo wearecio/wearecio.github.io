@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-03-01T12:26:53.018Z</updated>
+  <updated>2023-03-01T12:43:27.054Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue项目组成逻辑文件关系和作用</title>
+    <link href="http://example.com/2023/01/02/vue/vue-xiang-mu-zu-cheng-luo-ji-wen-jian-guan-xi-he-zuo-yong/"/>
+    <id>http://example.com/2023/01/02/vue/vue-xiang-mu-zu-cheng-luo-ji-wen-jian-guan-xi-he-zuo-yong/</id>
+    <published>2023-01-01T16:00:00.000Z</published>
+    <updated>2023-03-01T12:43:27.054Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Vue项目组成逻辑文件关系和作用&quot;&gt;&lt;a href=&quot;#Vue项目组成逻辑文件关系和作用&quot; class=&quot;headerlink&quot; title=&quot;Vue项目组成逻辑文件关系和作用&quot;&gt;&lt;/a&gt;Vue项目组成逻辑文件关系和作用&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Vue" scheme="http://example.com/categories/Vue/"/>
+    
+    
+    <category term="Vue2" scheme="http://example.com/tags/Vue2/"/>
+    
+    <category term="Webpack" scheme="http://example.com/tags/Webpack/"/>
+    
+  </entry>
   
   <entry>
     <title>web前端开发环境搭建</title>

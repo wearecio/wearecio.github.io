@@ -4,11 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="web前端开发环境搭建, ききょう&#39;blog">
-    <meta name="description" content="web前端开发环境搭建代码编辑器与IDEVisual Studio Code
-下载链接
-https://code.visualstudio.com/Download
-【Visual Studio Code下载】2023年最新官方正式版Vis">
+    <meta name="keywords" content="Vue项目组成逻辑文件关系和作用, ききょう&#39;blog">
+    <meta name="description" content="Vue项目组成逻辑文件关系和作用手动创建Vue项目创建项目基础文件
+创建项目目录mkdir egg-big，切换到项目目录 cd egg-big
+
+创建index.html
+&amp;lt;html&gt;
+    &amp;lt;body&gt;
+        &amp;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +23,7 @@ https://code.visualstudio.com/Download
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>web前端开发环境搭建 | ききょう&#39;blog</title>
+    <title>Vue项目组成逻辑文件关系和作用 | ききょう&#39;blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -41,9 +44,7 @@ https://code.visualstudio.com/Download
 
 
 
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
     <link rel="stylesheet" href="/css/post.css">
-
 
 
 
@@ -229,12 +230,12 @@ https://code.visualstudio.com/Download
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">web前端开发环境搭建</h1>
+                    <h1 class="description center-align post-title">Vue项目组成逻辑文件关系和作用</h1>
                 </div>
             </div>
         </div>
@@ -244,12 +245,10 @@ https://code.visualstudio.com/Download
 
 
 
-<main class="post-container content">
+<main class="container content">
 
     
-    <div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
+    <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -258,8 +257,12 @@ https://code.visualstudio.com/Download
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Web-Development-Environment/">
-                                <span class="chip bg-color">Web Development Environment</span>
+                            <a href="/tags/Vue2/">
+                                <span class="chip bg-color">Vue2</span>
+                            </a>
+                        
+                            <a href="/tags/Webpack/">
+                                <span class="chip bg-color">Webpack</span>
                             </a>
                         
                     </div>
@@ -270,8 +273,8 @@ https://code.visualstudio.com/Download
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Software-Development-Environment/" class="post-category">
-                                Software Development Environment
+                            <a href="/categories/Vue/" class="post-category">
+                                Vue
                             </a>
                         
                     </div>
@@ -283,7 +286,7 @@ https://code.visualstudio.com/Download
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-01
+                    2023-01-02
                 </div>
                 
 
@@ -309,135 +312,153 @@ https://code.visualstudio.com/Download
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="web前端开发环境搭建"><a href="#web前端开发环境搭建" class="headerlink" title="web前端开发环境搭建"></a>web前端开发环境搭建</h1><h2 id="代码编辑器与IDE"><a href="#代码编辑器与IDE" class="headerlink" title="代码编辑器与IDE"></a>代码编辑器与IDE</h2><h3 id="Visual-Studio-Code"><a href="#Visual-Studio-Code" class="headerlink" title="Visual Studio Code"></a>Visual Studio Code</h3><ul>
-<li>下载链接<ul>
-<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/Download">https://code.visualstudio.com/Download</a></li>
-<li><a target="_blank" rel="noopener" href="https://pc.qq.com/detail/16/detail_22856.html">【Visual Studio Code下载】2023年最新官方正式版Visual Studio Code免费下载 - 腾讯软件中心官网 (qq.com)</a></li>
-</ul>
+                <h1 id="Vue项目组成逻辑文件关系和作用"><a href="#Vue项目组成逻辑文件关系和作用" class="headerlink" title="Vue项目组成逻辑文件关系和作用"></a>Vue项目组成逻辑文件关系和作用</h1><h2 id="手动创建Vue项目"><a href="#手动创建Vue项目" class="headerlink" title="手动创建Vue项目"></a>手动创建Vue项目</h2><h3 id="创建项目基础文件"><a href="#创建项目基础文件" class="headerlink" title="创建项目基础文件"></a>创建项目基础文件</h3><ol>
+<li><p>创建项目目录<code>mkdir egg-big</code>，切换到项目目录 <code>cd egg-big</code></p>
 </li>
-</ul>
-<h3 id="HBuilder-X"><a href="#HBuilder-X" class="headerlink" title="HBuilder X"></a>HBuilder X</h3><ul>
-<li>下载链接<ul>
-<li><a target="_blank" rel="noopener" href="https://dcloud.io/hbuilderx.html">HBuilderX-高效极客技巧 (dcloud.io)</a></li>
-</ul>
+<li><p>创建<code>index.html</code></p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+</code></pre>
 </li>
-</ul>
-<h3 id="WebStorm"><a href="#WebStorm" class="headerlink" title="WebStorm"></a>WebStorm</h3><ul>
-<li>下载链接<ul>
-<li><a target="_blank" rel="noopener" href="https://www.jetbrains.com/webstorm/">WebStorm: The Smartest JavaScript IDE, by JetBrains</a></li>
-</ul>
+<li><p>创建<code>App.vue</code></p>
+<pre class=" language-vue"><code class="language-vue"><template>
+  <div>
+    <p>&#123;&#123; message &#125;&#125;</p>
+  </div>
+</template>
+
+<script>
+export default &#123;
+  data() &#123;
+    return &#123;
+      message: "蛋蛋",
+    &#125;;
+  &#125;,
+&#125;;
+</script>
+<style>
+div p &#123;
+  font-size: 36px;
+&#125;
+</style>
+</code></pre>
 </li>
-</ul>
-<h3 id="小程序开发工具"><a href="#小程序开发工具" class="headerlink" title="小程序开发工具"></a>小程序开发工具</h3><ul>
-<li><p>微信开发者工具</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">微信开发者工具下载地址与更新日志 | 微信开放文档 (qq.com)</a></li>
-</ul>
+<li><p>创建<code>main.js</code></p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> createApp <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./App.vue'</span>
+
+<span class="token function">createApp</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 </li>
-<li><p>支付宝开发者工具</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://opendocs.alipay.com/mini/02bzsm">概述 - 支付宝文档中心 (alipay.com)</a></li>
-</ul>
+<li><p>终端输入 <code>npm init -y</code> 生成<code>package.json</code></p>
+<p><strong>package.json：</strong>简易包管理文件</p>
 </li>
-<li><p>字节跳动开发者工具</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/developer-instrument/overview/">字节小程序 | 概览 (bytedance.com)</a></li>
-</ul>
+<li><p>终端输入 <code>npm install vue</code> 生成 <code>node_modules</code> 文件夹</p>
+<p><strong>node_modules&#x2F;：</strong>项目依赖文件</p>
+<p><strong>package-lock.json：</strong> 详细包管理文件</p>
 </li>
-<li><p>百度开发者工具</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://smartprogram.baidu.com/docs/introduction/tool/">开发工具 - 百度智能小程序文档 (baidu.com)</a></li>
-</ul>
+<li><p>创建<code>src</code>文件夹，并将<code>index.html</code>、<code>App.vue</code>、<code>main.js</code> 移入，<code>src文件夹</code>就是<code>开发的源文件夹</code></p>
 </li>
-</ul>
-<h2 id="切图工具"><a href="#切图工具" class="headerlink" title="切图工具"></a>切图工具</h2><h3 id="Adobe-Photoshop"><a href="#Adobe-Photoshop" class="headerlink" title="Adobe Photoshop"></a>Adobe Photoshop</h3><h3 id="PxCook"><a href="#PxCook" class="headerlink" title="PxCook"></a>PxCook</h3><ul>
-<li>下载链接<ul>
-<li><a target="_blank" rel="noopener" href="https://www.fancynode.com.cn/pxcook">PxCook - 高效易用的自动标注工具,生成前端代码,设计研发协作利器 (fancynode.com.cn)</a></li>
-</ul>
+<li><p>在项目根目录创建<code>webpack.config.js</code> 用于配置<code>Webpack</code></p>
 </li>
-</ul>
-<h3 id="蓝湖"><a href="#蓝湖" class="headerlink" title="蓝湖"></a>蓝湖</h3><ul>
-<li>下载链接<ul>
-<li><a target="_blank" rel="noopener" href="https://lanhuapp.com/">蓝湖 - 高效的产品设计协作平台 (lanhuapp.com)</a></li>
-</ul>
+<li><p>安装<code>Webpack</code>依赖</p>
+<pre class=" language-shell"><code class="language-shell">npm i -D webpack webpack-cli webpack-dev-server
+</code></pre>
+<p><strong>webpack-dev-server：</strong>类似于 <code>vscode</code> 的 <code>live server</code></p>
+<p><strong>-D：</strong>表示安装的是开发环境的依赖，并不放在生产环境上</p>
 </li>
-</ul>
-<h2 id="协助开发工具"><a href="#协助开发工具" class="headerlink" title="协助开发工具"></a>协助开发工具</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><ul>
-<li>官方下载链接<ul>
-<li><a target="_blank" rel="noopener" href="https://git-scm.com/downloads">Git - Downloads (git-scm.com)</a></li>
-</ul>
-</li>
-<li>腾讯软件中心（下载速度快）<ul>
-<li><a target="_blank" rel="noopener" href="https://pc.qq.com/detail/13/detail_22693.html">【Git下载】2023年最新官方正式版Git免费下载 - 腾讯软件中心官网 (qq.com)</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="Sourcetree"><a href="#Sourcetree" class="headerlink" title="Sourcetree"></a>Sourcetree</h3><ul>
-<li>下载链接<ul>
-<li><a target="_blank" rel="noopener" href="https://www.sourcetreeapp.com/">Sourcetree | Free Git GUI for Mac and Windows (sourcetreeapp.com)</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="Postman"><a href="#Postman" class="headerlink" title="Postman"></a>Postman</h3><ul>
-<li>下载链接<ul>
-<li><a target="_blank" rel="noopener" href="https://www.postman.com/">Postman API Platform | Sign Up for Free</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="Apifox"><a href="#Apifox" class="headerlink" title="Apifox"></a>Apifox</h3><ul>
-<li>下载链接<ul>
-<li><a target="_blank" rel="noopener" href="https://www.apifox.cn/">Apifox - API 文档、调试、Mock、测试一体化协作平台 - 接口文档工具，接口自动化测试工具，接口Mock工具，API文档工具，API Mock工具，API自动化测试工具</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="石墨文档"><a href="#石墨文档" class="headerlink" title="石墨文档"></a>石墨文档</h3><ul>
-<li>下载链接<ul>
-<li><a target="_blank" rel="noopener" href="https://shimo.im/">石墨文档官网-在线协同办公系统平台,支持云端多人在线协作文档,表格,幻灯片 (shimo.im)</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="ToDesk"><a href="#ToDesk" class="headerlink" title="ToDesk"></a>ToDesk</h3><ul>
-<li>下载链接<ul>
-<li><a target="_blank" rel="noopener" href="https://www.todesk.com/">ToDesk远程控制软件-免费安全流畅的远程连接电脑手机</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="生产环境"><a href="#生产环境" class="headerlink" title="生产环境"></a>生产环境</h2><h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h3><blockquote>
-<p>安装最新的LTS版本</p>
+<li><p>安装<code>Babel</code></p>
+<pre class=" language-shell"><code class="language-shell">npm i -D babel-loader @babel/core @babel/preset-env
+</code></pre>
+<blockquote>
+<p>并不是每个浏览器都能识别并处理ES6语法，需要Babel将代码从高版本转成低版本</p>
 </blockquote>
-<ul>
-<li>下载链接<ul>
-<li><a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">Download | Node.js (nodejs.org)</a></li>
-</ul>
 </li>
-</ul>
-<h3 id="包管理器"><a href="#包管理器" class="headerlink" title="包管理器"></a>包管理器</h3><ul>
-<li><p>yarn</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://yarn.bootcss.com/docs/install#windows-stable">安装 | Yarn 中文文档 (bootcss.com)</a></li>
-</ul>
+<li><p>安装<code>vue-loader</code> 使浏览器识别<code>Vue</code>单文件组件</p>
+<pre class=" language-shell"><code class="language-shell">npm i -D vue-loader vue-template-compiler css-loader vue-style-loader html-webpack-plugin
+</code></pre>
+<p><strong><code>vue-template-compiler</code> <code>css-loader</code>：</strong>css识别依赖</p>
+<p><strong><code>html-webpack-plugin</code>：</strong>将源文件的<code>HTML</code>和<code>JS</code>合并，并生成最终的文件夹和文件</p>
 </li>
-<li><p>pnpm</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.pnpm.cn/installation">安装 | pnpm中文文档 | pnpm中文网</a></li>
-</ul>
+<li><p>编辑<code>webpack.config.js</code></p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> HtmlWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'html-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> VueLoaderPlugin <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'vue-loader'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    entry<span class="token punctuation">:</span> <span class="token string">'./src/main.js'</span><span class="token punctuation">,</span>
+    module<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> test<span class="token punctuation">:</span> <span class="token regex">/\.js$/</span><span class="token punctuation">,</span> use<span class="token punctuation">:</span> <span class="token string">'babel-loader'</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> test<span class="token punctuation">:</span> <span class="token regex">/\.vue$/</span><span class="token punctuation">,</span> use<span class="token punctuation">:</span> <span class="token string">'vue-loader'</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> test<span class="token punctuation">:</span> <span class="token regex">/\.css$/</span><span class="token punctuation">,</span> use<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'vue-style-loader'</span><span class="token punctuation">,</span> <span class="token string">'css-loader'</span><span class="token punctuation">]</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token punctuation">]</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+    plugins<span class="token punctuation">:</span><span class="token punctuation">[</span>
+        <span class="token keyword">new</span> <span class="token class-name">HtmlWebpackPlugin</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            template<span class="token punctuation">:</span><span class="token string">'./src/index.html'</span><span class="token punctuation">,</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token keyword">new</span> <span class="token class-name">VueLoaderPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+</code></pre>
 </li>
-<li><p>cnpm</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://npmmirror.com/">npmmirror 镜像站</a></li>
-</ul>
+<li><p>项目根目录创建<code>.babelrc.js</code> 配置babel</p>
+<pre class=" language-javascript"><code class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    presets<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'@babel/preset-env'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
 </li>
-</ul>
-<h3 id="脚手架"><a href="#脚手架" class="headerlink" title="脚手架"></a>脚手架</h3><ul>
-<li>Vue CLI<ul>
-<li><a target="_blank" rel="noopener" href="https://cli.vuejs.org/zh/">Home | Vue CLI (vuejs.org)</a></li>
-</ul>
+<li><p>编辑<code>package.json</code>，修改<code>scripts</code>的内容</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token string">"scripts"</span><span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token string">"serve"</span><span class="token punctuation">:</span> <span class="token string">"webpack-dev-server --mode development"</span><span class="token punctuation">,</span>
+    <span class="token string">"build"</span><span class="token punctuation">:</span> <span class="token string">"webpack --mode production"</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+</code></pre>
+<p><strong>运行<code>npm run serve</code>：</strong>生成模仿http服务器，<a target="_blank" rel="noopener" href="http://localhost:8080/">http://localhost:8080</a> 预览项目</p>
+<p><strong>运行<code>npm run build</code>：</strong>构建生产版本，生成<code>dist文件夹</code></p>
 </li>
-<li>Vite<ul>
-<li><a target="_blank" rel="noopener" href="https://cn.vitejs.dev/">Vite | 下一代的前端工具链 (vitejs.dev)</a></li>
-</ul>
+<li><p>终端输入<code>git init</code> ，项目根目录创建<code>.gitignore</code>、<code>README.md</code></p>
 </li>
-</ul>
+<li><p>编辑<code>.gitignore</code></p>
+<pre class=" language-javascript"><code class="language-javascript">node_modules
+</code></pre>
+</li>
+<li><p>项目根目录创建<code>jsconfig.json</code></p>
+<pre class=" language-json"><code class="language-json">&amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token property">"compilerOptions"</span><span class="token operator">:</span> &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token property">"target"</span><span class="token operator">:</span> <span class="token string">"ES5"</span><span class="token punctuation">,</span>
+        <span class="token property">"module"</span><span class="token operator">:</span> <span class="token string">"esnext"</span><span class="token punctuation">,</span>
+        <span class="token property">"baseUrl"</span><span class="token operator">:</span> <span class="token string">"./"</span><span class="token punctuation">,</span>
+        <span class="token property">"moduleResolution"</span><span class="token operator">:</span> <span class="token string">"node"</span><span class="token punctuation">,</span>
+        <span class="token property">"paths"</span><span class="token operator">:</span> &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token property">"@/*"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">"src/*"</span><span class="token punctuation">,</span>
+            <span class="token punctuation">]</span>
+        &amp;#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+        <span class="token property">"lib"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">"esnext"</span><span class="token punctuation">,</span>
+            <span class="token string">"dom"</span><span class="token punctuation">,</span>
+            <span class="token string">"dom.iterable"</span><span class="token punctuation">,</span>
+            <span class="token string">"scripthost"</span>
+        <span class="token punctuation">]</span>
+    &amp;#<span class="token number">125</span><span class="token punctuation">;</span>
+&amp;#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<blockquote>
+<p><code>Vue</code>有<code>Vue Cli</code> 和 <code>Vite</code> 可以创建项目，<code>Vue Cli</code>基于<code>Webpack</code></p>
+</blockquote>
+<h2 id="Vue-Cli-脚手架创建Vue项目"><a href="#Vue-Cli-脚手架创建Vue项目" class="headerlink" title="Vue Cli 脚手架创建Vue项目"></a>Vue Cli 脚手架创建Vue项目</h2><pre class=" language-shell"><code class="language-shell">vue create [项目名称]
+</code></pre>
+<p><strong>项目名称：</strong>不可有大写英文字母</p>
+<p><strong>src&#x2F;assets&#x2F;：</strong>用来存放图片和字体等</p>
+<p><strong>src&#x2F;components&#x2F;：</strong>组件文件夹</p>
+<p><strong>public&#x2F;：</strong>存放静态资源，不需要打包的文件</p>
+</li>
+</ol>
 
                 
             </div>
@@ -464,7 +485,7 @@ https://code.visualstudio.com/Download
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2023/01/01/web-qian-duan-kai-fa-huan-jing-da-jian/">http://example.com/2023/01/01/web-qian-duan-kai-fa-huan-jing-da-jian/</a>
+                    <a href="http://example.com/2023/01/02/vue/vue-xiang-mu-zu-cheng-luo-ji-wen-jian-guan-xi-he-zuo-yong/">http://example.com/2023/01/02/vue/vue-xiang-mu-zu-cheng-luo-ji-wen-jian-guan-xi-he-zuo-yong/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -502,8 +523,12 @@ https://code.visualstudio.com/Download
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Web-Development-Environment/">
-                                    <span class="chip bg-color">Web Development Environment</span>
+                                <a href="/tags/Vue2/">
+                                    <span class="chip bg-color">Vue2</span>
+                                </a>
+                            
+                                <a href="/tags/Webpack/">
+                                    <span class="chip bg-color">Webpack</span>
                                 </a>
                             
                         </div>
@@ -543,9 +568,9 @@ https://code.visualstudio.com/Download
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://example.com/2023/01/01/web-qian-duan-kai-fa-huan-jing-da-jian/';
-        this.page.identifier = '/2023/01/01/web-qian-duan-kai-fa-huan-jing-da-jian/';
-        this.page.title = 'web前端开发环境搭建';
+        this.page.url = 'http://example.com/2023/01/02/vue/vue-xiang-mu-zu-cheng-luo-ji-wen-jian-guan-xi-he-zuo-yong/';
+        this.page.identifier = '/2023/01/02/vue/vue-xiang-mu-zu-cheng-luo-ji-wen-jian-guan-xi-he-zuo-yong/';
+        this.page.title = 'Vue项目组成逻辑文件关系和作用';
     };
     let disqus_shortname = 'wearecio';
 
@@ -575,9 +600,10 @@ https://code.visualstudio.com/Download
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2023/01/02/vue/vue-xiang-mu-zu-cheng-luo-ji-wen-jian-guan-xi-he-zuo-yong/">
                     <div class="card-image">
@@ -595,9 +621,9 @@ https://code.visualstudio.com/Download
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -610,6 +636,7 @@ https://code.visualstudio.com/Download
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -632,13 +659,13 @@ https://code.visualstudio.com/Download
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/09/18/packagemanager/anaconda/">
+                <a href="/2023/01/01/web-qian-duan-kai-fa-huan-jing-da-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Anaconda">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="web前端开发环境搭建">
                         
-                        <span class="card-title">Anaconda</span>
+                        <span class="card-title">web前端开发环境搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -649,14 +676,14 @@ https://code.visualstudio.com/Download
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-09-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Package-Manager/" class="post-category">
-                                    Package Manager
+                            <a href="/categories/Software-Development-Environment/" class="post-category">
+                                    Software Development Environment
                                 </a>
                             
                             
@@ -666,12 +693,8 @@ https://code.visualstudio.com/Download
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Anaconda/">
-                        <span class="chip bg-color">Anaconda</span>
-                    </a>
-                    
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
+                    <a href="/tags/Web-Development-Environment/">
+                        <span class="chip bg-color">Web Development Environment</span>
                     </a>
                     
                 </div>
@@ -743,87 +766,6 @@ https://code.visualstudio.com/Download
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
-
-    </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
-
-
-<script src="/libs/tocbot/tocbot.min.js"></script>
-<script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
-        });
-
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
-
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
-
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
-
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).hide();
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).show();
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
-</script>
 
     
 
