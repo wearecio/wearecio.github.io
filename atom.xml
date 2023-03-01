@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-03-01T12:09:50.348Z</updated>
+  <updated>2023-03-01T12:26:53.018Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>web前端开发环境搭建</title>
+    <link href="http://example.com/2023/01/01/web-qian-duan-kai-fa-huan-jing-da-jian/"/>
+    <id>http://example.com/2023/01/01/web-qian-duan-kai-fa-huan-jing-da-jian/</id>
+    <published>2022-12-31T16:00:00.000Z</published>
+    <updated>2023-03-01T12:26:53.018Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;web前端开发环境搭建&quot;&gt;&lt;a href=&quot;#web前端开发环境搭建&quot; class=&quot;headerlink&quot; title=&quot;web前端开发环境搭建&quot;&gt;&lt;/a&gt;web前端开发环境搭建&lt;/h1&gt;&lt;h2 id=&quot;代码编辑器与IDE&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Software Development Environment" scheme="http://example.com/categories/Software-Development-Environment/"/>
+    
+    
+    <category term="Web Development Environment" scheme="http://example.com/tags/Web-Development-Environment/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Anaconda</title>
+    <link href="http://example.com/2018/09/18/packagemanager/anaconda/"/>
+    <id>http://example.com/2018/09/18/packagemanager/anaconda/</id>
+    <published>2018-09-17T16:00:00.000Z</published>
+    <updated>2023-03-01T12:30:27.584Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Anaconda&quot;&gt;&lt;a href=&quot;#Anaconda&quot; class=&quot;headerlink&quot; title=&quot;Anaconda&quot;&gt;&lt;/a&gt;Anaconda&lt;/h1&gt;&lt;h2 id=&quot;下载安装&quot;&gt;&lt;a href=&quot;#下载安装&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Package Manager" scheme="http://example.com/categories/Package-Manager/"/>
+    
+    
+    <category term="Anaconda" scheme="http://example.com/tags/Anaconda/"/>
+    
+    <category term="Python" scheme="http://example.com/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
@@ -36,6 +88,131 @@
     
     <category term="Markdown" scheme="http://example.com/categories/Markdown/"/>
     
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2018/09/07/database/oracle/"/>
+    <id>http://example.com/2018/09/07/database/oracle/</id>
+    <published>2018-09-07T01:25:00.000Z</published>
+    <updated>2023-03-01T12:31:04.228Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Oracle&quot;&gt;&lt;a href=&quot;#Oracle&quot; class=&quot;headerlink&quot; title=&quot;Oracle&quot;&gt;&lt;/a&gt;Oracle&lt;/h1&gt;&lt;h2 id=&quot;实验二&quot;&gt;&lt;a href=&quot;#实验二&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Markdown" scheme="http://example.com/categories/Markdown/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>软件工程基础</title>
+    <link href="http://example.com/2018/09/03/ncre/cheng-xu-she-ji/"/>
+    <id>http://example.com/2018/09/03/ncre/cheng-xu-she-ji/</id>
+    <published>2018-09-02T16:00:00.000Z</published>
+    <updated>2023-03-01T12:39:32.711Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;程序设计基础&quot;&gt;&lt;a href=&quot;#程序设计基础&quot; class=&quot;headerlink&quot; title=&quot;程序设计基础&quot;&gt;&lt;/a&gt;程序设计基础&lt;/h1&gt;&lt;h2 id=&quot;程序设计方法与风格&quot;&gt;&lt;a href=&quot;#程序设计方法与风格&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="NCRE" scheme="http://example.com/categories/NCRE/"/>
+    
+    
+    <category term="Programming Design" scheme="http://example.com/tags/Programming-Design/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>软件工程基础</title>
+    <link href="http://example.com/2018/09/03/ncre/ruan-jian-gong-cheng/"/>
+    <id>http://example.com/2018/09/03/ncre/ruan-jian-gong-cheng/</id>
+    <published>2018-09-02T16:00:00.000Z</published>
+    <updated>2023-03-01T12:39:41.234Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;软件工程基础&quot;&gt;&lt;a href=&quot;#软件工程基础&quot; class=&quot;headerlink&quot; title=&quot;软件工程基础&quot;&gt;&lt;/a&gt;软件工程基础&lt;/h1&gt;&lt;h2 id=&quot;软件工程的基本概念&quot;&gt;&lt;a href=&quot;#软件工程的基本概念&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="NCRE" scheme="http://example.com/categories/NCRE/"/>
+    
+    
+    <category term="Software Engineering" scheme="http://example.com/tags/Software-Engineering/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构与算法</title>
+    <link href="http://example.com/2018/09/02/ncre/shu-ju-jie-gou-yu-suan-fa/"/>
+    <id>http://example.com/2018/09/02/ncre/shu-ju-jie-gou-yu-suan-fa/</id>
+    <published>2018-09-01T16:00:00.000Z</published>
+    <updated>2023-03-01T12:35:47.208Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;数据结构与算法&quot;&gt;&lt;a href=&quot;#数据结构与算法&quot; class=&quot;headerlink&quot; title=&quot;数据结构与算法&quot;&gt;&lt;/a&gt;数据结构与算法&lt;/h1&gt;&lt;h2 id=&quot;算法的基本概念&quot;&gt;&lt;a href=&quot;#算法的基本概念&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="NCRE" scheme="http://example.com/categories/NCRE/"/>
+    
+    
+    <category term="Data Structures" scheme="http://example.com/tags/Data-Structures/"/>
+    
+    <category term="Algorithms" scheme="http://example.com/tags/Algorithms/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库基础</title>
+    <link href="http://example.com/2018/09/01/ncre/shu-ju-ku/"/>
+    <id>http://example.com/2018/09/01/ncre/shu-ju-ku/</id>
+    <published>2018-08-31T16:00:00.000Z</published>
+    <updated>2023-03-01T12:34:11.230Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;数据库基础&quot;&gt;&lt;a href=&quot;#数据库基础&quot; class=&quot;headerlink&quot; title=&quot;数据库基础&quot;&gt;&lt;/a&gt;数据库基础&lt;/h1&gt;&lt;h2 id=&quot;数据库系统的基本概念&quot;&gt;&lt;a href=&quot;#数据库系统的基本概念&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="NCRE" scheme="http://example.com/categories/NCRE/"/>
+    
+    
+    <category term="Database" scheme="http://example.com/tags/Database/"/>
     
   </entry>
   

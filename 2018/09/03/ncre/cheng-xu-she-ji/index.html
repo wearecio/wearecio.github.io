@@ -4,8 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="分类, ききょう&#39;blog">
-    <meta name="description" content="Never start something you&#39;re not willing to finish">
+    <meta name="keywords" content="软件工程基础, ききょう&#39;blog">
+    <meta name="description" content="程序设计基础程序设计方法与风格
+形成良好的程序设计风格需注意：①源程序文档化；②数据说明的方法；③语句的结构；④输入和输出。⑤模块设计要保证低耦合、高内聚。(内聚：每个模块尽可能独立完成自己的功能，不依赖于模块外部的代码。耦合：模块与模块之">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>分类 | ききょう&#39;blog</title>
+    <title>软件工程基础 | ききょう&#39;blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -38,9 +39,7 @@
 
 
 
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
     <link rel="stylesheet" href="/css/post.css">
-
 
 
 
@@ -222,168 +221,403 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                ききょう
-                
-            </div>
+    
 
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="/libs/typed/typed.js"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [ 
-                            
-                                "永远不要开始你不愿意完成的事情",
-                            
-                                "Never start something you&#39;re not willing to finish",
-                            
-                        ],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">软件工程基础</h1>
+                </div>
             </div>
         </div>
     </div>
+</div>
+
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Programming-Design/">
+                                <span class="chip bg-color">Programming Design</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/NCRE/" class="post-category">
+                                NCRE
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2018-09-03
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-03-01
+                </div>
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="程序设计基础"><a href="#程序设计基础" class="headerlink" title="程序设计基础"></a>程序设计基础</h1><h2 id="程序设计方法与风格"><a href="#程序设计方法与风格" class="headerlink" title="程序设计方法与风格"></a>程序设计方法与风格</h2><ol>
+<li><p>形成良好的程序设计风格需注意：<br>①源程序文档化；<br>②数据说明的方法；<br>③语句的结构；<br>④输入和输出。<br>⑤模块设计要保证低耦合、高内聚。<br>(内聚：每个模块尽可能独立完成自己的功能，不依赖于模块外部的代码。<br>耦合：模块与模块之间接口的复杂程度，模块之间联系越复杂耦合度越高，牵一发<strong>而动全身。)</strong></p>
+<p><strong>清晰第一，效率第二。</strong></p>
+</li>
+</ol>
+<h2 id="结构化程序设计"><a href="#结构化程序设计" class="headerlink" title="结构化程序设计"></a>结构化程序设计</h2><ol>
+<li>结构化程序设计方法的四条原则：<br>①自顶向下；<br>②逐步求精；<br>③模块化；<br>④限制使用goto语句。</li>
+<li>两类循环语句：先判断后执行的循环体称为<strong>当型循环</strong>结构；先执行循环体后判断的称为<strong>直到型循环</strong>结构。</li>
+<li>结构化程序的基本结构：<strong>顺序结构、选择结构（分支结构）、重复结构（循环结构）</strong></li>
+</ol>
+<h2 id="面向对象的程序设计"><a href="#面向对象的程序设计" class="headerlink" title="面向对象的程序设计"></a>面向对象的程序设计</h2><ol>
+<li>面向对象的程序设计以对象为核心，强调对象的<strong>抽象性</strong>，<strong>封装性</strong>，<strong>继承性</strong>、<strong>多态性</strong>、（依赖性）。</li>
+<li>对象的基本特点：<br>（1）标识惟一性；<br>（2）分类性；<br>（3）多态性；<br>（4）封装性；<br>（5）模块独立性好。</li>
+<li><strong>属性</strong>：即对象所包含的信息，它在设计对象时确定，一般只能通过执行对象的操作来改变。<strong>类</strong>：<strong>是具有相似属性与操作的一组对象</strong>。类是关于对象性质的描述。类是对象的抽象，对象是其对应类的一个实例。</li>
+<li><strong>消息</strong>：是一个实例与另一个实例之间传递的信息。<strong>对象间的通信靠消息传递</strong>。它请求对象执行某一处理或回答某一要求的信息，它统一了数据流和控制流。消息的<strong>组成</strong>包括：<br>（1）接收消息的对象的名称；<br>（2）消息标识符，也称消息名；<br>（3）零个或多个参数。</li>
+<li><strong>多态性</strong>：是指同样的消息被不同的对象接受时可导致完全不同的行动的现象。</li>
+<li>在<strong>软件设计</strong>过程中，必须遵循软件工程的基本原则：这些原则包括<strong>抽象</strong>、<strong>信息隐蔽</strong>、<strong>模块化</strong>、<strong>局部化</strong>、<strong>确定性</strong>、<strong>一致性</strong>、<strong>完备性</strong>和<strong>可靠性</strong>。</li>
+<li><strong>面向对象</strong>的设计方法与传统的的面向过程的方法有本质不同，它的<strong>基本原理是，使用现实世界的概念抽象地思考问题从而自然地解决问题。</strong>它强调模拟现实世界中的概念而不强调算法，它鼓励开发者在软件开发的绝大部分中都用应用领域的概念去思考。</li>
+<li>字符常量是单引号括起来的一个字符，例如’a’，也可以通过转义序列表示方法表示一些不可显示字符或无法通过键盘输入的字符，例如’\n’的含义是换行。</li>
+</ol>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">ききょう</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2018/09/03/ncre/cheng-xu-she-ji/">http://example.com/2018/09/03/ncre/cheng-xu-she-ji/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">ききょう</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Programming-Design/">
+                                    <span class="chip bg-color">Programming Design</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'http://example.com/2018/09/03/ncre/cheng-xu-she-ji/';
+        this.page.identifier = '/2018/09/03/ncre/cheng-xu-she-ji/';
+        this.page.title = '软件工程基础';
+    };
+    let disqus_shortname = 'wearecio';
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2018/09/07/database/oracle/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        
+                        <span class="card-title">Hello World</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            This is the content of your custom post summary. If there is a value for this attribute, the post card summary will display the text, otherwise the program will automatically intercept part of the post content as a summary.
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2018-09-07
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Markdown/" class="post-category">
+                                    Markdown
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2018/09/03/ncre/ruan-jian-gong-cheng/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="软件工程基础">
+                        
+                        <span class="card-title">软件工程基础</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-09-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/NCRE/" class="post-category">
+                                    NCRE
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Software-Engineering/">
+                        <span class="chip bg-color">Software Engineering</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
 </div>
 
 
 <script>
-    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: ききょう&#39;blog<br />'
+            + '文章作者: ききょう<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
 </script>
 
 
-    </div>
-</div>
-
-<main class="content">
-
-    
-
-<div id="category-cloud" class="container chip-container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fas fa-bookmark"></i>&nbsp;&nbsp;文章分类
-            </div>
-            <div class="tag-chips">
-                
-                
-                
-                <a href="/categories/Markdown/" title="Markdown: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F9EBEA;">Markdown
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/Software-Development-Environment/" title="Software Development Environment: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F5EEF8;">Software Development Environment
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/NCRE/" title="NCRE: 4">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #D5F5E3;">NCRE
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/Package-Manager/" title="Package Manager: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #E8F8F5;">Package Manager
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-            </div>
-        </div>
-    </div>
-</div>
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
 
-    
-    <style type="text/css">
-    #category-radar {
-        width: 100%;
-        height: 360px;
-    }
-</style>
 
-<div class="container" data-aos="fade-up">
-    <div class="card">
-        <div id="category-radar" class="card-content"></div>
-    </div>
-</div>
+<!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/echarts/echarts.min.js"></script>
-<script type="text/javascript">
-    let radarChart = echarts.init(document.getElementById('category-radar'));
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
-    
 
-    let option = {
-        title: {
-            left: 'center',
-            text: '文章分类雷达图',
-            textStyle: {
-                fontWeight: 500,
-                fontSize: 22
-            }
-        },
-        tooltip: {},
-        radar: {
-            name: {
-                textStyle: {
-                    color: '#3C4858'
-                }
-            },
-            indicator: [{"name":"Markdown","max":5},{"name":"Software Development Environment","max":5},{"name":"NCRE","max":5},{"name":"Package Manager","max":5}],
-            nameGap: 5,
-            center: ['50%','55%'],
-            radius: '66%'
-        },
-        series: [{
-            type: 'radar',
-            color: ['#3ecf8e'],
-            itemStyle: {normal: {areaStyle: {type: 'default'}}},
-            data : [
-                {
-                    value : [2,1,4,1],
-                    name : '文章分类数量'
-                }
-            ]
-        }]
-    };
+<!-- 代码块复制 -->
 
-    radarChart.setOption(option);
-</script>
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
 
     
 
 </main>
+
+
 
 
     <footer class="page-footer bg-color">
